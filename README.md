@@ -1,6 +1,6 @@
-mostlyopen_mostlyopen
-=====================
+mostlyopen_clvhealth_jcafb
+==========================
 
-the MostlyOpen Odoo Solution
+the CLVsol health management solution for JCAFB
 
 Developed by: ["CLVsol"](http://clvsol.com). 

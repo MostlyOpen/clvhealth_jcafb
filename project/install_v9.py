@@ -50,7 +50,7 @@ def install_update_module(module, update, config_admin=False):
     return new_module
 
 
-def mostlyopen_install():
+def clvhealth_jcafb_install():
 
     update = base.update
 
@@ -93,10 +93,10 @@ if __name__ == '__main__':
 
     start = time()
 
-    print '--> Executing mostlyopen_install.py...'
+    print '--> Executing clvhealth_jcafb_install.py...'
 
-    print '--> Executing mostlyopen_install()...'
-    mostlyopen_install()
+    print '--> Executing clvhealth_jcafb_install()...'
+    clvhealth_jcafb_install()
 
-    print '--> mostlyopen_install.py'
+    print '--> clvhealth_jcafb_install.py'
     print '--> Execution time:', secondsToStr(time() - start)
