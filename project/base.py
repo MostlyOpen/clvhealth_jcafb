@@ -39,7 +39,7 @@ admin_user_pw = 'admin'
 # admin_user_pw = '*'
 admin_user_email = 'admin@clvsol.com'
 
-dbname = 'jcafb_dev'
+dbname = 'clvhealth_jcafb_dev'
 # dbname = '*'
 demo_data = False
 
