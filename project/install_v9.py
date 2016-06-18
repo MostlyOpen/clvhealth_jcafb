@@ -35,10 +35,10 @@ def install_update_module(module, update, config_admin=False):
     else:
         new_module = base.install_update_module(module, update)
 
-    method = '%s%s' % ('user_groups_set_', module)
-    methodToCall = getattr(user_groups_set, method)
-
     if new_module and config_admin:
+        method = '%s%s' % ('user_groups_set_', module)
+        methodToCall = getattr(user_groups_set, method)
+
         user_name = 'Administrator'
         print '%s%s(%s)' % ('--> ', method, user_name)
         methodToCall(user_name)
