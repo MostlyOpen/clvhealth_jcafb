@@ -78,6 +78,7 @@ def clvhealth_jcafb_install():
 
     install_update_module('myo_base', update, True)
     install_update_module('myo_tag', update, True)
+    install_update_module('myo_annotation', update, True)
 
 
 def secondsToStr(t):
