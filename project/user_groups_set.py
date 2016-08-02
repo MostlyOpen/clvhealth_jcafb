@@ -96,36 +96,36 @@ def user_groups_set_myo_base(user_name):
     print 'Done.'
 
 
-# def user_groups_set_myo_tag(user_name):
+def user_groups_set_myo_tag(user_name):
 
-#     print 'Executing user_groups_set_myo_tag...'
+    print 'Executing user_groups_set_myo_tag...'
 
-#     sock_common = xmlrpclib.ServerProxy(base.sock_common_url)
-#     uid = sock_common.login(base.dbname, base.admin_user, base.admin_user_pw)
-#     sock = xmlrpclib.ServerProxy(base.sock_str)
+    sock_common = xmlrpclib.ServerProxy(base.sock_common_url)
+    uid = sock_common.login(base.dbname, base.admin_user, base.admin_user_pw)
+    sock = xmlrpclib.ServerProxy(base.sock_str)
 
-#     args = [('name', '=', user_name), ]
-#     user_id = sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'search', args)
+    args = [('name', '=', user_name), ]
+    user_id = sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'search', args)
 
-#     # myo_tag
-#     values = {
-#         'groups_id': [(
-#             4, sock.execute(base.dbname, uid, base.admin_user_pw,
-#                             'res.groups', 'search', [('name', '=', 'Tag User')]
-#                             )[0]
-#         )],
-#     }
-#     sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'write', user_id, values)
-#     values = {
-#         'groups_id': [(
-#             4, sock.execute(base.dbname, uid, base.admin_user_pw,
-#                             'res.groups', 'search', [('name', '=', 'Tag Manager')]
-#                             )[0]
-#         )],
-#     }
-#     sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'write', user_id, values)
+    # myo_tag
+    values = {
+        'groups_id': [(
+            4, sock.execute(base.dbname, uid, base.admin_user_pw,
+                            'res.groups', 'search', [('name', '=', 'Tag User')]
+                            )[0]
+        )],
+    }
+    sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'write', user_id, values)
+    values = {
+        'groups_id': [(
+            4, sock.execute(base.dbname, uid, base.admin_user_pw,
+                            'res.groups', 'search', [('name', '=', 'Tag Manager')]
+                            )[0]
+        )],
+    }
+    sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'write', user_id, values)
 
-#     print 'Done.'
+    print 'Done.'
 
 
 # def user_groups_set_myo_annotation(user_name):
