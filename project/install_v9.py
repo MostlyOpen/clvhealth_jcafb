@@ -77,6 +77,7 @@ def clvhealth_jcafb_install():
         proxy.update_list()
 
     install_update_module('myo_employee', update)
+    install_update_module('myo_survey', update)
 
     install_update_module('myo_base', update, True)
     install_update_module('myo_tag', update, True)
