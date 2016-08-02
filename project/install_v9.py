@@ -81,6 +81,8 @@ def clvhealth_jcafb_install():
     install_update_module('myo_annotation', update, True)
     install_update_module('myo_address', update, True)
 
+    install_update_module('myo_residence', update, True)
+
 
 def secondsToStr(t):
 
