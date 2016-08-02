@@ -76,6 +76,8 @@ def clvhealth_jcafb_install():
         proxy = client.model('ir.module.module')
         proxy.update_list()
 
+    install_update_module('myo_employee', update)
+
     install_update_module('myo_base', update, True)
     install_update_module('myo_tag', update, True)
     install_update_module('myo_annotation', update, True)
