@@ -224,6 +224,38 @@ def user_groups_set_myo_document(user_name):
     print 'Done.'
 
 
+def user_groups_set_myo_patient(user_name):
+
+    print 'Executing user_groups_set_myo_patient...'
+
+    sock_common = xmlrpclib.ServerProxy(base.sock_common_url)
+    uid = sock_common.login(base.dbname, base.admin_user, base.admin_user_pw)
+    sock = xmlrpclib.ServerProxy(base.sock_str)
+
+    args = [('name', '=', user_name), ]
+    user_id = sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'search', args)
+
+    # myo_patient
+    values = {
+        'groups_id': [(
+            4, sock.execute(base.dbname, uid, base.admin_user_pw,
+                            'res.groups', 'search', [('name', '=', 'Patient User')]
+                            )[0]
+        )],
+    }
+    sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'write', user_id, values)
+    values = {
+        'groups_id': [(
+            4, sock.execute(base.dbname, uid, base.admin_user_pw,
+                            'res.groups', 'search', [('name', '=', 'Patient Manager')]
+                            )[0]
+        )],
+    }
+    sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'write', user_id, values)
+
+    print 'Done.'
+
+
 def user_groups_set_myo_person(user_name):
 
     print 'Executing user_groups_set_myo_person...'
