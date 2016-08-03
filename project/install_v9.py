@@ -90,6 +90,8 @@ def clvhealth_jcafb_install():
 
     install_update_module('myo_patient', update, True)
 
+    install_update_module('myo_person_l10n_br', update)
+
 
 def secondsToStr(t):
 
