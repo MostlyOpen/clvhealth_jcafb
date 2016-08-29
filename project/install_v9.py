@@ -90,12 +90,17 @@ def clvhealth_jcafb_install():
 
     install_update_module('myo_patient', update, True)
 
+    install_update_module('myo_address_mng', update, True)
+    install_update_module('myo_person_mng', update, True)
+
     install_update_module('l10n_br_base', update)
     install_update_module('l10n_br_zip', update)
     install_update_module('trust_search_cep', update)
 
     install_update_module('myo_address_l10n_br', update)
+    install_update_module('myo_address_mng_l10n_br', update)
     install_update_module('myo_person_l10n_br', update)
+    install_update_module('myo_person_mng_l10n_br', update)
 
     install_update_module('mass_editing', update)
 
