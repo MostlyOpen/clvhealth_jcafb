@@ -103,8 +103,13 @@ def clvhealth_jcafb_install():
     install_update_module('myo_person_l10n_br', update)
     install_update_module('myo_person_mng_l10n_br', update)
 
+    install_update_module('myo_employee_cst', update)
     install_update_module('myo_tag_cst', update)
+    install_update_module('myo_annotation_cst', update)
     install_update_module('myo_address_cst', update)
+    install_update_module('myo_document_cst', update)
+    install_update_module('myo_person_cst', update)
+    install_update_module('myo_community_cst', update)
 
     install_update_module('mass_editing', update)
 
