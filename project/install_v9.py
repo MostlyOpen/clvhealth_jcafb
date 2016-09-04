@@ -104,6 +104,7 @@ def clvhealth_jcafb_install():
     install_update_module('myo_person_mng_l10n_br', update)
 
     install_update_module('myo_tag_cst', update)
+    install_update_module('myo_address_cst', update)
 
     install_update_module('mass_editing', update)
 
