@@ -337,11 +337,11 @@ if __name__ == '__main__':
     # print('--> Executing person_mng_search_address()...')
     # person_mng_search_address(client, batch_name, state)
 
-    batch_name = 'JCAFB_2017_Dados_Fernao'
-    state = 'revised'
-    print('-->', client, batch_name, state)
-    print('--> Executing person_mng_create_person()...')
-    person_mng_create_person(client, batch_name, state)
+    # batch_name = 'JCAFB_2017_Dados_Fernao'
+    # state = 'revised'
+    # print('-->', client, batch_name, state)
+    # print('--> Executing person_mng_create_person()...')
+    # person_mng_create_person(client, batch_name, state)
 
     print()
     print('--> person_mng_model.py', '- Execution time:', secondsToStr(time() - start))
