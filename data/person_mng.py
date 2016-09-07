@@ -22,6 +22,8 @@
 from __future__ import print_function
 
 import csv
+import sqlite3
+import re
 
 from odoo_api import *
 
@@ -68,23 +70,23 @@ def str_title(string):
 
 def person_mng_import(client, file_name, batch_name):
 
-    tag_id_ZonaRural = myo_tag_get_id(
+    tag_id_ZonaRural = tag_get_id(
         client,
         'Zona Rural',
         'Pessoa residente na Zona Rural.')
-    tag_id_ZonaUrbana = myo_tag_get_id(
+    tag_id_ZonaUrbana = tag_get_id(
         client,
         'Zona Urbana',
         'Pessoa residente na Zona Urbana.')
-    tag_id_Crianca = myo_tag_get_id(
+    tag_id_Crianca = tag_get_id(
         client,
         'Criança',
         'Pessoa classificada como Crinça.')
-    tag_id_Idoso = myo_tag_get_id(
+    tag_id_Idoso = tag_get_id(
         client,
         'Idoso',
         'Pessoa classificada como Idoso.')
-    tag_id_DadosConferidos = myo_tag_get_id(
+    tag_id_DadosConferidos = tag_get_id(
         client,
         'Dados Conferidos',
         'Os dados do registro já foram conferidos.')
@@ -251,3 +253,215 @@ def person_mng_import(client, file_name, batch_name):
     print('--> rownum: ', rownum - 1)
     print('--> imported: ', imported)
     print('--> not_imported: ', not_imported)
+
+
+def person_mng_export_sqlite(client, args, db_path, table_name):
+
+    conn = sqlite3.connect(db_path)
+    conn.text_factory = str
+
+    cursor = conn.cursor()
+    try:
+        cursor.execute('''DROP TABLE ''' + table_name + ''';''')
+    except Exception as e:
+        print('------->', e)
+    cursor.execute(
+        '''
+        CREATE TABLE ''' + table_name + ''' (
+            id INTEGER NOT NULL PRIMARY KEY,
+            name,
+            code,
+            batch_name,
+            gender,
+            birthday,
+            tag_ids,
+            zip,
+            country_id,
+            state_id,
+            l10n_br_city_id,
+            street,
+            number,
+            street2,
+            district,
+            phone,
+            responsible_name,
+            state,
+            notes,
+            new_id INTEGER
+            );
+        '''
+    )
+
+    person_mng_model = client.model('myo.person.mng')
+    person_mng_browse = person_mng_model.browse(args)
+
+    person_mng_count = 0
+    for person_mng_reg in person_mng_browse:
+        person_mng_count += 1
+
+        print(person_mng_count, person_mng_reg.id, person_mng_reg.code, person_mng_reg.name.encode("utf-8"))
+
+        cursor.execute('''
+            INSERT INTO ''' + table_name + '''(
+                id,
+                name,
+                code,
+                batch_name,
+                gender,
+                birthday,
+                tag_ids,
+                zip,
+                country_id,
+                state_id,
+                l10n_br_city_id,
+                street,
+                number,
+                street2,
+                district,
+                phone,
+                responsible_name,
+                notes,
+                state,
+                notes
+                )
+            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            ''', (person_mng_reg.id,
+                  person_mng_reg.name,
+                  person_mng_reg.code,
+                  person_mng_reg.batch_name,
+                  person_mng_reg.gender,
+                  person_mng_reg.birthday,
+                  str(person_mng_reg.tag_ids.id),
+                  person_mng_reg.zip,
+                  person_mng_reg.country_id.id,
+                  person_mng_reg.state_id.id,
+                  person_mng_reg.l10n_br_city_id.id,
+                  person_mng_reg.street,
+                  person_mng_reg.number,
+                  person_mng_reg.street2,
+                  person_mng_reg.district,
+                  person_mng_reg.phone,
+                  person_mng_reg.responsible_name,
+                  person_mng_reg.notes,
+                  person_mng_reg.state,
+                  person_mng_reg.notes,
+                  )
+        )
+
+    conn.commit()
+    conn.close()
+
+    print()
+    print('--> person_mng_count: ', person_mng_count)
+
+
+def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name):
+
+    conn = sqlite3.connect(db_path)
+    conn.text_factory = str
+
+    cursor = conn.cursor()
+
+    cursor2 = conn.cursor()
+
+    data = cursor.execute(
+        '''
+        SELECT
+            id,
+            name,
+            code,
+            batch_name,
+            gender,
+            birthday,
+            tag_ids,
+            zip,
+            country_id,
+            state_id,
+            l10n_br_city_id,
+            street,
+            number,
+            street2,
+            district,
+            phone,
+            responsible_name,
+            notes,
+            state,
+            notes
+            new_id
+        FROM ''' + table_name + ''';
+        '''
+    )
+
+    person_mng_model = client.model('myo.person.mng')
+
+    print(data)
+    print([field[0] for field in cursor.description])
+    person_mng_count = 0
+    for row in cursor:
+        person_mng_count += 1
+
+        print(person_mng_count, row[0], row[1], row[2], row[3])
+
+        values = {
+            'name': row[1],
+            'code': row[2],
+            'batch_name': row[3],
+            'gender': row[4],
+            'birthday': row[5],
+            # 'tag_ids': row[6],
+            'zip': row[7],
+            'country_id': row[8],
+            'state_id': row[9],
+            'l10n_br_city_id': row[10],
+            'street': row[11],
+            'number': row[12],
+            'street2': row[13],
+            'district': row[14],
+            'phone': row[15],
+            'responsible_name': row[16],
+            'notes': row[17],
+            'state': row[18],
+            'notes': row[19],
+        }
+        person_mng_id = person_mng_model.create(values).id
+
+        cursor2.execute(
+            '''
+           UPDATE ''' + table_name + '''
+           SET new_id = ?
+           WHERE id = ?;''',
+            (person_mng_id,
+             row[0]
+             )
+        )
+
+        if row[6] != '[]':
+
+            tag_ids = row[6].split(',')
+            new_tag_ids = []
+            for x in range(0, len(tag_ids)):
+                tag_id = int(re.sub('[^0-9]', '', tag_ids[x]))
+                cursor2.execute(
+                    '''
+                    SELECT new_id
+                    FROM ''' + tag_table_name + '''
+                    WHERE id = ?;''',
+                    (tag_id,
+                     )
+                )
+                new_tag_id = cursor2.fetchone()[0]
+
+                values = {
+                    'tag_ids': [(4, new_tag_id)],
+                }
+                person_mng_model.write(person_mng_id, values)
+
+                new_tag_ids.append(new_tag_id)
+
+            print('>>>>>', row[6], new_tag_ids)
+
+    conn.commit()
+    conn.close()
+
+    print()
+    print('--> person_mng_count: ', person_mng_count)

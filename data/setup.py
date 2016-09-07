@@ -97,6 +97,9 @@ if __name__ == '__main__':
 
     client = erppeek.Client(server, dbname, username, password)
 
+    # ***** 2016-09-07 *****
+    #
+
     # zip_code = '17455-000'
     # print('-->', client, zip_code)
     # print('--> Executing search_by_cep()...')
@@ -107,6 +110,42 @@ if __name__ == '__main__':
     # print('-->', client, file_name, batch_name)
     # print('--> Executing person_mng_import()...')
     # person_mng_import(client, file_name, batch_name)
+
+    # tag_args = []
+    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    # table_name = 'myo_tag'
+    # print('-->', client, tag_args, db_path, table_name)
+    # print('--> Executing tag_export_sqlite()...')
+    # print()
+    # tag_export_sqlite(client, tag_args, db_path, table_name)
+
+    # person_mng_args = []
+    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    # table_name = 'myo_person_mng'
+    # print('-->', client, person_mng_args, db_path, table_name)
+    # print('--> Executing person_mng_export_sqlite()...')
+    # print()
+    # person_mng_export_sqlite(client, person_mng_args, db_path, table_name)
+
+    # tag_args = []
+    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    # table_name = 'myo_tag'
+    # print('-->', client, tag_args, db_path, table_name)
+    # print('--> Executing tag_import_sqlite()...')
+    # print()
+    # tag_import_sqlite(client, tag_args, db_path, table_name)
+
+    # person_mng_args = []
+    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    # table_name = 'myo_person_mng'
+    # tag_table_name = 'myo_tag'
+    # print('-->', client, person_mng_args, db_path, table_name, tag_table_name)
+    # print('--> Executing person_mng_import_sqlite()...')
+    # print()
+    # person_mng_import_sqlite(client, person_mng_args, db_path, table_name, tag_table_name)
+
+    # ***** 2016-09-?? *****
+    #
 
     # batch_name = 'JCAFB_2017_Dados_Fernao'
     # state = 'draft'
