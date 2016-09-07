@@ -182,18 +182,6 @@ if __name__ == '__main__':
 
     client = erppeek.Client(server, dbname, username, password)
 
-    # batch_name = 'JCAFB_2017_Dados_Fernao'
-    # state = 'draft'
-    # print('-->', client, batch_name, state)
-    # print('--> Executing address_mng_import_from_person_mng()...')
-    # address_mng_import_from_person_mng(client, batch_name, state)
-
-    # batch_name = 'JCAFB_2017_Dados_Fernao'
-    # state = 'draft'
-    # print('-->', client, batch_name, state)
-    # print('--> Executing address_mng_create_address()...')
-    # address_mng_create_address(client, batch_name, state)
-
     print()
     print('--> addres_mng.py', '- Execution time:', secondsToStr(time() - start))
     print()

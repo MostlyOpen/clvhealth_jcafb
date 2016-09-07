@@ -207,6 +207,8 @@ def person_mng_model_import(client, file_name, batch_name):
                 phone = False
 
             responsible_name = str_title(row[column_name['Nome do responsável']])
+            if responsible_name == '' or responsible_name == '-':
+                responsible_name = False
 
             notes = notes + 'Dados conferidos?: ' + row[column_name['Dados conferidos?']] + '\n'
 
@@ -319,29 +321,6 @@ if __name__ == '__main__':
     start = time()
 
     client = erppeek.Client(server, dbname, username, password)
-
-    # zip_code = '17455-000'
-    # print('-->', client, zip_code)
-    # print('--> Executing search_by_cep()...')
-    # search_by_cep(client, zip_code)
-
-    # file_name = 'data/JCAFB_2017_Dados_Fernao.csv'
-    # batch_name = 'JCAFB_2017_Dados_Fernao'
-    # print('-->', client, file_name, batch_name)
-    # print('--> Executing person_mng_model_import()...')
-    # person_mng_model_import(client, file_name, batch_name)
-
-    # batch_name = 'JCAFB_2017_Dados_Fernao'
-    # state = 'revised'
-    # print('-->', client, batch_name, state)
-    # print('--> Executing person_mng_search_address()...')
-    # person_mng_search_address(client, batch_name, state)
-
-    # batch_name = 'JCAFB_2017_Dados_Fernao'
-    # state = 'revised'
-    # print('-->', client, batch_name, state)
-    # print('--> Executing person_mng_create_person()...')
-    # person_mng_create_person(client, batch_name, state)
 
     print()
     print('--> person_mng_model.py', '- Execution time:', secondsToStr(time() - start))
