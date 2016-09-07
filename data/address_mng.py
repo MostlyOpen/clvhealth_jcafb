@@ -21,10 +21,6 @@
 
 from __future__ import print_function
 
-import argparse
-import getpass
-import erppeek
-
 from odoo_api import *
 
 
@@ -114,74 +110,3 @@ def address_mng_import_from_person_mng(client, batch_name, state):
     print('--> duplicated: ', duplicated)
     print('--> imported: ', imported)
     print('--> not_imported: ', not_imported)
-
-
-def get_arguments():
-
-    global server
-    global username
-    global password
-    global dbname
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--server', action="store", dest="server")
-    parser.add_argument('--user', action="store", dest="username")
-    parser.add_argument('--pw', action="store", dest="password")
-    parser.add_argument('--db', action="store", dest="dbname")
-
-    args = parser.parse_args()
-    print('%s%s' % ('--> ', args))
-
-    if args.server is not None:
-        server = args.server
-    elif server == '*':
-        server = raw_input('server: ')
-
-    if args.dbname is not None:
-        dbname = args.dbname
-    elif dbname == '*':
-        dbname = raw_input('dbname: ')
-
-    if args.username is not None:
-        username = args.username
-    elif username == '*':
-        username = raw_input('username: ')
-
-    if args.password is not None:
-        password = args.password
-    elif password == '*':
-        password = getpass.getpass('password: ')
-
-
-def secondsToStr(t):
-
-    return "%d:%02d:%02d.%03d" % reduce(lambda ll, b: divmod(ll[0], b) + ll[1:], [(t * 1000,), 1000, 60, 60])
-
-
-if __name__ == '__main__':
-
-    server = 'http://localhost:8069'
-    # server = '*'
-
-    username = 'username'
-    # username = '*'
-    password = 'password'
-    # password = '*'
-
-    dbname = 'odoo'
-    # dbname = '*'
-
-    print()
-    print('--> addres_mng.py...')
-    print('--> server:', server)
-
-    get_arguments()
-
-    from time import time
-    start = time()
-
-    client = erppeek.Client(server, dbname, username, password)
-
-    print()
-    print('--> addres_mng.py', '- Execution time:', secondsToStr(time() - start))
-    print()

@@ -105,8 +105,8 @@ if __name__ == '__main__':
     # file_name = 'data/JCAFB_2017_Dados_Fernao.csv'
     # batch_name = 'JCAFB_2017_Dados_Fernao'
     # print('-->', client, file_name, batch_name)
-    # print('--> Executing person_mng_model_import()...')
-    # person_mng_model_import(client, file_name, batch_name)
+    # print('--> Executing person_mng_import()...')
+    # person_mng_import(client, file_name, batch_name)
 
     # batch_name = 'JCAFB_2017_Dados_Fernao'
     # state = 'draft'
