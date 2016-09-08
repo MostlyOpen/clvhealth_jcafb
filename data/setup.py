@@ -31,6 +31,61 @@ from address_mng import *
 from person_mng import *
 
 
+def jcafb_export_sqlite(client, db_path):
+
+    l10n_br_zip_args = []
+    db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    table_name = 'l10n_br_zip'
+    print('-->', client, l10n_br_zip_args, db_path, table_name)
+    print('--> Executing l10n_br_zip_export_sqlite()...')
+    print()
+    l10n_br_zip_export_sqlite(client, l10n_br_zip_args, db_path, table_name)
+
+    tag_args = []
+    db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    table_name = 'myo_tag'
+    print('-->', client, tag_args, db_path, table_name)
+    print('--> Executing tag_export_sqlite()...')
+    print()
+    tag_export_sqlite(client, tag_args, db_path, table_name)
+
+    person_mng_args = []
+    db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    table_name = 'myo_person_mng'
+    print('-->', client, person_mng_args, db_path, table_name)
+    print('--> Executing person_mng_export_sqlite()...')
+    print()
+    person_mng_export_sqlite(client, person_mng_args, db_path, table_name)
+
+
+def jcafb_import_sqlite(client, db_path):
+
+    l10n_br_zip_args = []
+    db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    table_name = 'l10n_br_zip'
+    print('-->', client, l10n_br_zip_args, db_path, table_name)
+    print('--> Executing l10n_br_zip_import_sqlite()...')
+    print()
+    l10n_br_zip_import_sqlite(client, l10n_br_zip_args, db_path, table_name)
+
+    tag_args = []
+    db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    table_name = 'myo_tag'
+    print('-->', client, tag_args, db_path, table_name)
+    print('--> Executing tag_import_sqlite()...')
+    print()
+    tag_import_sqlite(client, tag_args, db_path, table_name)
+
+    person_mng_args = []
+    db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    table_name = 'myo_person_mng'
+    tag_table_name = 'myo_tag'
+    print('-->', client, person_mng_args, db_path, table_name, tag_table_name)
+    print('--> Executing person_mng_import_sqlite()...')
+    print()
+    person_mng_import_sqlite(client, person_mng_args, db_path, table_name, tag_table_name)
+
+
 def get_arguments():
 
     global server
@@ -97,7 +152,7 @@ if __name__ == '__main__':
 
     client = erppeek.Client(server, dbname, username, password)
 
-    # ***** 2016-09-07 *****
+    # ***** 2016-09-08 *****
     #
 
     # zip_code = '17455-000'
@@ -111,38 +166,15 @@ if __name__ == '__main__':
     # print('--> Executing person_mng_import()...')
     # person_mng_import(client, file_name, batch_name)
 
-    # tag_args = []
-    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
-    # table_name = 'myo_tag'
-    # print('-->', client, tag_args, db_path, table_name)
-    # print('--> Executing tag_export_sqlite()...')
-    # print()
-    # tag_export_sqlite(client, tag_args, db_path, table_name)
+    # file_name = 'data/JCAFB_2017_Dados_Fernao.csv'
+    # print('-->', client, file_name)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, file_name)
 
-    # person_mng_args = []
-    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
-    # table_name = 'myo_person_mng'
-    # print('-->', client, person_mng_args, db_path, table_name)
-    # print('--> Executing person_mng_export_sqlite()...')
-    # print()
-    # person_mng_export_sqlite(client, person_mng_args, db_path, table_name)
-
-    # tag_args = []
-    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
-    # table_name = 'myo_tag'
-    # print('-->', client, tag_args, db_path, table_name)
-    # print('--> Executing tag_import_sqlite()...')
-    # print()
-    # tag_import_sqlite(client, tag_args, db_path, table_name)
-
-    # person_mng_args = []
-    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
-    # table_name = 'myo_person_mng'
-    # tag_table_name = 'myo_tag'
-    # print('-->', client, person_mng_args, db_path, table_name, tag_table_name)
-    # print('--> Executing person_mng_import_sqlite()...')
-    # print()
-    # person_mng_import_sqlite(client, person_mng_args, db_path, table_name, tag_table_name)
+    # file_name = 'data/JCAFB_2017_Dados_Fernao.csv'
+    # print('-->', client, file_name)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, file_name)
 
     # ***** 2016-09-?? *****
     #
