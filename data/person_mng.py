@@ -173,6 +173,23 @@ def person_mng_import(client, file_name, batch_name):
             street = str_title(row[column_name['Endereço']])
             if street == '' or street == '-':
                 street = False
+            if street is not False:
+                street = street.replace("Alameda Capitao Cavalcanti", "Alameda Capitão Cavalcanti")
+                street = street.replace("Coronel Eduardo de Souza Porto", "Avenida Coronel Eduardo de Souza Pôrto")
+                street = street.replace("Antonio Cabette", "Rua Antônio Cabette")
+                street = street.replace("Antonio Maria Agostinho Simoes", "Rua Antônio Maria Agostinho Simões")
+                street = street.replace("Benedito Soares Fidencio", "Rua Benedito Soares Fidêncio")
+                street = street.replace("10 de Novembro", "Rua Dez de Novembro")
+                street = street.replace("Fernao Dias Paes Leme", "Rua Fernão Dias Paes Leme")
+                street = street.replace("Joao Albino", "Rua Joâo Albino")
+                street = street.replace("Joao Alves de Mira", "Rua João Alves de Mira")
+                street = street.replace("Joao Pastre", "Rua João Pastre")
+                street = street.replace("Jose Bonifacio", "Rua José Bonifácio")
+                street = street.replace("Jose Sevilha Filho", "Rua José Sevilha Filho")
+                street = street.replace("Salvador Dias de Almeida", "Rua Salvador Dias de Almeida")
+                street = street.replace("Sebastiao Andre da Fonseca", "Rua Sebastião André da Fonseca")
+                street = street.replace("Sete de Setembro", "Rua Sete de Setembro")
+                street = street.replace("Vereador Manoel da Silva Juliao", "Rua Vereador Manoel da Silva Julião")
 
             number = row[column_name['Número']]
             number = number.strip()
@@ -190,16 +207,15 @@ def person_mng_import(client, file_name, batch_name):
             district = str_title(row[column_name['Bairro']])
             if district == '' or district == '-':
                 district = False
-            if district == 'Água de Peroba':
-                district = 'Água da Peroba'
-            if district == 'Agua da Peroba':
-                district = 'Água da Peroba'
-            if district == 'Agua do Arroz':
-                district = 'Água do Arroz'
-            if district == 'Agua Virada':
-                district = 'Água Virada'
-            if district == 'Poco de Pedra':
-                district = 'Poço de Pedra'
+            if district is not False:
+                district = district.replace("Água de Peroba", "Água da Peroba")
+                district = district.replace("Agua de Peroba", "Água da Peroba")
+                district = district.replace("Agua da Peroba", "Água da Peroba")
+                district = district.replace("Agua do Arroz", "Água do Arroz")
+                district = district.replace("Agua Virada", "Água Virada")
+                district = district.replace("Poco de Pedra", "Poço de Pedra")
+                district = district.replace("Asfalto Galia", "Asfalto Gália")
+                district = district.replace("Asfalto GáLia", "Asfalto Gália")
 
             phone = row[column_name['Telefone']]
             if phone == '-':
