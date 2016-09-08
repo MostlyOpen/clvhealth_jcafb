@@ -26,11 +26,11 @@ from odoo_api import *
 
 def address_mng_import_from_person_mng(client, batch_name, state):
 
-    tag_id_ZonaRural = myo_tag_get_id(
+    tag_id_ZonaRural = tag_get_id(
         client,
         'Zona Rural',
         'Pessoa residente na Zona Rural.')
-    tag_id_ZonaUrbana = myo_tag_get_id(
+    tag_id_ZonaUrbana = tag_get_id(
         client,
         'Zona Urbana',
         'Pessoa residente na Zona Urbana.')

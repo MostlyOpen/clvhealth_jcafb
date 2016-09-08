@@ -176,6 +176,11 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_import_sqlite()...')
     # jcafb_import_sqlite(client, file_name)
 
+    # file_name = 'data/JCAFB_2017_Dados_Fernao.csv'
+    # print('-->', client, file_name)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, file_name)
+
     # ***** 2016-09-?? *****
     #
 
