@@ -29,12 +29,12 @@ from odoo_api import *
 
 from address_mng import *
 from person_mng import *
+from jcafb_2017_users import *
 
 
 def jcafb_export_sqlite(client, db_path):
 
     l10n_br_zip_args = []
-    db_path = 'data/clvhealth_jcafb_2017.sqlite'
     table_name = 'l10n_br_zip'
     print('-->', client, l10n_br_zip_args, db_path, table_name)
     print('--> Executing l10n_br_zip_export_sqlite()...')
@@ -42,7 +42,6 @@ def jcafb_export_sqlite(client, db_path):
     l10n_br_zip_export_sqlite(client, l10n_br_zip_args, db_path, table_name)
 
     tag_args = []
-    db_path = 'data/clvhealth_jcafb_2017.sqlite'
     table_name = 'myo_tag'
     print('-->', client, tag_args, db_path, table_name)
     print('--> Executing tag_export_sqlite()...')
@@ -50,7 +49,6 @@ def jcafb_export_sqlite(client, db_path):
     tag_export_sqlite(client, tag_args, db_path, table_name)
 
     person_mng_args = []
-    db_path = 'data/clvhealth_jcafb_2017.sqlite'
     table_name = 'myo_person_mng'
     print('-->', client, person_mng_args, db_path, table_name)
     print('--> Executing person_mng_export_sqlite()...')
@@ -61,7 +59,6 @@ def jcafb_export_sqlite(client, db_path):
 def jcafb_import_sqlite(client, db_path):
 
     l10n_br_zip_args = []
-    db_path = 'data/clvhealth_jcafb_2017.sqlite'
     table_name = 'l10n_br_zip'
     print('-->', client, l10n_br_zip_args, db_path, table_name)
     print('--> Executing l10n_br_zip_import_sqlite()...')
@@ -69,7 +66,6 @@ def jcafb_import_sqlite(client, db_path):
     l10n_br_zip_import_sqlite(client, l10n_br_zip_args, db_path, table_name)
 
     tag_args = []
-    db_path = 'data/clvhealth_jcafb_2017.sqlite'
     table_name = 'myo_tag'
     print('-->', client, tag_args, db_path, table_name)
     print('--> Executing tag_import_sqlite()...')
@@ -77,7 +73,6 @@ def jcafb_import_sqlite(client, db_path):
     tag_import_sqlite(client, tag_args, db_path, table_name)
 
     person_mng_args = []
-    db_path = 'data/clvhealth_jcafb_2017.sqlite'
     table_name = 'myo_person_mng'
     tag_table_name = 'myo_tag'
     print('-->', client, person_mng_args, db_path, table_name, tag_table_name)
@@ -92,12 +87,18 @@ def get_arguments():
     global username
     global password
     global dbname
+    global db_server
+    global db_user
+    global db_password
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--server', action="store", dest="server")
     parser.add_argument('--user', action="store", dest="username")
     parser.add_argument('--pw', action="store", dest="password")
     parser.add_argument('--db', action="store", dest="dbname")
+    parser.add_argument('--dbserver', action="store", dest="db_server")
+    parser.add_argument('--dbu', action="store", dest="db_user")
+    parser.add_argument('--dbw', action="store", dest="db_password")
 
     args = parser.parse_args()
     print('%s%s' % ('--> ', args))
@@ -122,6 +123,21 @@ def get_arguments():
     elif password == '*':
         password = getpass.getpass('password: ')
 
+    if args.db_server is not None:
+        db_server = args.db_server
+    elif db_server == '*':
+        db_server = getpass.getpass('db_server: ')
+
+    if args.db_user is not None:
+        db_user = args.db_user
+    elif db_user == '*':
+        db_user = getpass.getpass('db_user: ')
+
+    if args.db_password is not None:
+        db_password = args.db_password
+    elif db_password == '*':
+        db_password = getpass.getpass('db_password: ')
+
 
 def secondsToStr(t):
 
@@ -141,8 +157,17 @@ if __name__ == '__main__':
     dbname = 'odoo'
     # dbname = '*'
 
+    db_server = 'localhost'
+    # db_server = '*'
+
+    db_user = 'openerp'
+    # db_user = '*'
+
+    db_password = 'openerp'
+    # db_password = '*'
+
     print()
-    print('--> person_mng_model.py...')
+    print('--> setup.py...')
     print('--> server:', server)
 
     get_arguments()
@@ -166,20 +191,78 @@ if __name__ == '__main__':
     # print('--> Executing person_mng_import()...')
     # person_mng_import(client, file_name, batch_name)
 
-    # file_name = 'data/JCAFB_2017_Dados_Fernao.csv'
-    # print('-->', client, file_name)
+    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    # print('-->', client, db_path)
     # print('--> Executing jcafb_export_sqlite()...')
-    # jcafb_export_sqlite(client, file_name)
+    # jcafb_export_sqlite(client, db_path)
 
-    # file_name = 'data/JCAFB_2017_Dados_Fernao.csv'
-    # print('-->', client, file_name)
+    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    # print('-->', client, db_path)
     # print('--> Executing jcafb_import_sqlite()...')
-    # jcafb_import_sqlite(client, file_name)
+    # jcafb_import_sqlite(client, db_path)
 
-    # file_name = 'data/JCAFB_2017_Dados_Fernao.csv'
-    # print('-->', client, file_name)
+    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    # print('-->', client, db_path)
     # print('--> Executing jcafb_export_sqlite()...')
-    # jcafb_export_sqlite(client, file_name)
+    # jcafb_export_sqlite(client, db_path)
+
+    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path)
+
+    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path)
+
+    # ***** 2016-09-15 *****
+    #
+
+    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path)
+
+    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path)
+
+    # db_path = 'data/clvhealth_jcafb_2017.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path)
+
+    # ***** 2016-09-xx *****
+    #
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-09-15.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # res_partner_args = []
+    # db_path = 'data/clvhealth_jcafb_2017_test.sqlite'
+    # table_name = 'res_partner'
+    # print('-->', client, res_partner_args, db_path, table_name)
+    # print('--> Executing res_partner_export_sqlite()...')
+    # print()
+    # res_partner_export_sqlite(client, res_partner_args, db_path, table_name)
+
+    # conn_string = "dbname='" + dbname + "' user='" + db_user + "' host='" + db_server + \
+    #               "' password='" + db_password + "'"
+    # res_users_args = []
+    # db_path = 'data/clvhealth_jcafb_2017_test.sqlite'
+    # table_name = 'res_users'
+    # print('-->', client, res_users_args, db_path, table_name, conn_string)
+    # print('--> Executing res_users_export_sqlite()...')
+    # print()
+    # res_users_export_sqlite(client, res_users_args, db_path, table_name, conn_string)
 
     # ***** 2016-09-?? *****
     #
@@ -209,5 +292,5 @@ if __name__ == '__main__':
     # person_mng_create_person(client, batch_name, state)
 
     print()
-    print('--> person_mng_model.py', '- Execution time:', secondsToStr(time() - start))
+    print('--> setup.py', '- Execution time:', secondsToStr(time() - start))
     print()
