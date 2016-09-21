@@ -90,6 +90,7 @@ def clvhealth_jcafb_install():
     install_update_module('myo_community', update, True)
 
     install_update_module('myo_patient', update, True)
+    install_update_module('myo_lab_test', update, True)
 
     install_update_module('myo_address_mng', update, True)
     install_update_module('myo_person_mng', update, True)
