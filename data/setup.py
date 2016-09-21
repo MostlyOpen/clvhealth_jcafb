@@ -234,17 +234,20 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_import_sqlite()...')
     # jcafb_import_sqlite(client, db_path)
 
-    # ***** 2016-09-xx *****
+    # ***** 2016-09-21 *****
     #
 
-    # db_path = 'data/clvhealth_jcafb_2017_2016-09-15.sqlite'
-    # print('-->', client, db_path)
-    # print('--> Executing jcafb_import_sqlite()...')
-    # jcafb_import_sqlite(client, db_path)
+    db_path = 'data/clvhealth_jcafb_2017_2016-09-15.sqlite'
+    print('-->', client, db_path)
+    print('--> Executing jcafb_import_sqlite()...')
+    jcafb_import_sqlite(client, db_path)
 
-    # print('-->', client)
-    # print('--> Executing jcafb_set_users()...')
-    # jcafb_set_users(client)
+    print('-->', client)
+    print('--> Executing jcafb_set_users()...')
+    jcafb_set_users(client)
+
+    # ***** 2016-09-?? *****
+    #
 
     # res_partner_args = []
     # db_path = 'data/clvhealth_jcafb_2017_test.sqlite'
@@ -263,9 +266,6 @@ if __name__ == '__main__':
     # print('--> Executing res_users_export_sqlite()...')
     # print()
     # res_users_export_sqlite(client, res_users_args, db_path, table_name, conn_string)
-
-    # ***** 2016-09-?? *****
-    #
 
     # batch_name = 'JCAFB_2017_Dados_Fernao'
     # state = 'draft'
