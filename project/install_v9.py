@@ -76,9 +76,6 @@ def clvhealth_jcafb_install():
         proxy = client.model('ir.module.module')
         proxy.update_list()
 
-    install_update_module('myo_employee', update)
-    install_update_module('myo_survey', update)
-
     install_update_module('myo_base', update, True)
     install_update_module('myo_tag', update, True)
     install_update_module('myo_annotation', update, True)
@@ -94,6 +91,9 @@ def clvhealth_jcafb_install():
 
     install_update_module('myo_address_mng', update, True)
     install_update_module('myo_person_mng', update, True)
+
+    install_update_module('myo_employee', update)
+    install_update_module('myo_survey', update)
 
     install_update_module('l10n_br_base', update)
     install_update_module('l10n_br_zip', update)
