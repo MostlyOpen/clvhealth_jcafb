@@ -84,6 +84,7 @@ def clvhealth_jcafb_install():
 
     install_update_module('myo_residence', update, True)
     install_update_module('myo_person', update, True)
+    install_update_module('myo_person_address', update)
     install_update_module('myo_community', update, True)
 
     install_update_module('myo_patient', update, True)
