@@ -234,7 +234,7 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_import_sqlite()...')
     # jcafb_import_sqlite(client, db_path)
 
-    # ***** 2016-09-21 *****
+    # ***** 2016-09-nn *****
     #
 
     db_path = 'data/clvhealth_jcafb_2017_2016-09-15.sqlite'
@@ -248,6 +248,30 @@ if __name__ == '__main__':
 
     # ***** 2016-09-?? *****
     #
+
+    batch_name = 'JCAFB_2017_Dados_Fernao'
+    state = 'draft'
+    print('-->', client, batch_name, state)
+    print('--> Executing address_mng_import_from_person_mng()...')
+    address_mng_import_from_person_mng(client, batch_name, state)
+
+    batch_name = 'JCAFB_2017_Dados_Fernao'
+    state = 'draft'
+    print('-->', client, batch_name, state)
+    print('--> Executing address_mng_create_address()...')
+    address_mng_create_address(client, batch_name, state)
+
+    batch_name = 'JCAFB_2017_Dados_Fernao'
+    state = 'revised'
+    print('-->', client, batch_name, state)
+    print('--> Executing person_mng_search_address()...')
+    person_mng_search_address(client, batch_name, state)
+
+    batch_name = 'JCAFB_2017_Dados_Fernao'
+    state = 'revised'
+    print('-->', client, batch_name, state)
+    print('--> Executing person_mng_create_person()...')
+    person_mng_create_person(client, batch_name, state)
 
     # res_partner_args = []
     # db_path = 'data/clvhealth_jcafb_2017_test.sqlite'
@@ -266,30 +290,6 @@ if __name__ == '__main__':
     # print('--> Executing res_users_export_sqlite()...')
     # print()
     # res_users_export_sqlite(client, res_users_args, db_path, table_name, conn_string)
-
-    # batch_name = 'JCAFB_2017_Dados_Fernao'
-    # state = 'draft'
-    # print('-->', client, batch_name, state)
-    # print('--> Executing address_mng_import_from_person_mng()...')
-    # address_mng_import_from_person_mng(client, batch_name, state)
-
-    # batch_name = 'JCAFB_2017_Dados_Fernao'
-    # state = 'draft'
-    # print('-->', client, batch_name, state)
-    # print('--> Executing address_mng_create_address()...')
-    # address_mng_create_address(client, batch_name, state)
-
-    # batch_name = 'JCAFB_2017_Dados_Fernao'
-    # state = 'revised'
-    # print('-->', client, batch_name, state)
-    # print('--> Executing person_mng_search_address()...')
-    # person_mng_search_address(client, batch_name, state)
-
-    # batch_name = 'JCAFB_2017_Dados_Fernao'
-    # state = 'revised'
-    # print('-->', client, batch_name, state)
-    # print('--> Executing person_mng_create_person()...')
-    # person_mng_create_person(client, batch_name, state)
 
     print()
     print('--> setup.py', '- Execution time:', secondsToStr(time() - start))
