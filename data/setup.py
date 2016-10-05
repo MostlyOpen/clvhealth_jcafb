@@ -48,6 +48,13 @@ def jcafb_export_sqlite(client, db_path):
     print()
     tag_export_sqlite(client, tag_args, db_path, table_name)
 
+    address_args = []
+    table_name = 'myo_address'
+    print('-->', client, address_args, db_path, table_name)
+    print('--> Executing address_export_sqlite()...')
+    print()
+    address_export_sqlite(client, address_args, db_path, table_name)
+
     address_mng_args = []
     table_name = 'myo_address_mng'
     print('-->', client, address_mng_args, db_path, table_name)
@@ -79,13 +86,22 @@ def jcafb_import_sqlite(client, db_path):
     print()
     tag_import_sqlite(client, tag_args, db_path, table_name)
 
+    address_args = []
+    table_name = 'myo_address'
+    tag_table_name = 'myo_tag'
+    print('-->', client, address_args, db_path, table_name, tag_table_name)
+    print('--> Executing address_import_sqlite()...')
+    print()
+    address_import_sqlite(client, address_args, db_path, table_name, tag_table_name)
+
     address_mng_args = []
     table_name = 'myo_address_mng'
     tag_table_name = 'myo_tag'
-    print('-->', client, address_mng_args, db_path, table_name, tag_table_name)
+    address_table_name = 'myo_address'
+    print('-->', client, address_mng_args, db_path, table_name, tag_table_name, address_table_name)
     print('--> Executing address_mng_import_sqlite()...')
     print()
-    address_mng_import_sqlite(client, address_mng_args, db_path, table_name, tag_table_name)
+    address_mng_import_sqlite(client, address_mng_args, db_path, table_name, tag_table_name, address_table_name)
 
     person_mng_args = []
     table_name = 'myo_person_mng'
@@ -296,20 +312,50 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_import_sqlite()...')
     # jcafb_import_sqlite(client, db_path)
 
-    # ***** 2016-10-?? *****
+    # ***** 2016-10-05 *****
     #
 
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-05a.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-05b.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-05b.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path)
+
     # batch_name = 'JCAFB_2017_Dados_Fernao'
-    # state = 'draft'
+    # state = 'waiting'
     # print('-->', client, batch_name, state)
     # print('--> Executing address_mng_create_address()...')
     # address_mng_create_address(client, batch_name, state)
 
-    # batch_name = 'JCAFB_2017_Dados_Fernao'
-    # state = 'revised'
-    # print('-->', client, batch_name, state)
-    # print('--> Executing person_mng_search_address()...')
-    # person_mng_search_address(client, batch_name, state)
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-05c.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-05c.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path)
+
+    # ***** 2016-10-?? *****
+    #
 
     # batch_name = 'JCAFB_2017_Dados_Fernao'
     # state = 'revised'

@@ -141,6 +141,7 @@ def address_mng_export_sqlite(client, args, db_path, table_name):
             mobile,
             state,
             notes,
+            address_id,
             new_id INTEGER
             );
         '''
@@ -154,6 +155,10 @@ def address_mng_export_sqlite(client, args, db_path, table_name):
         address_mng_count += 1
 
         print(address_mng_count, address_mng_reg.id, address_mng_reg.code, address_mng_reg.name.encode("utf-8"))
+
+        address_id = False
+        if address_mng_reg.address_id is not False:
+            address_id = address_mng_reg.address_id.id
 
         cursor.execute('''
             INSERT INTO ''' + table_name + '''(
@@ -173,9 +178,10 @@ def address_mng_export_sqlite(client, args, db_path, table_name):
                 phone,
                 mobile,
                 state,
-                notes
+                notes,
+                address_id
                 )
-            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
             ''', (address_mng_reg.id,
                   address_mng_reg.name,
                   address_mng_reg.code,
@@ -193,6 +199,7 @@ def address_mng_export_sqlite(client, args, db_path, table_name):
                   address_mng_reg.mobile,
                   address_mng_reg.state,
                   address_mng_reg.notes,
+                  address_id,
                   )
         )
 
@@ -203,7 +210,7 @@ def address_mng_export_sqlite(client, args, db_path, table_name):
     print('--> address_mng_count: ', address_mng_count)
 
 
-def address_mng_import_sqlite(client, args, db_path, table_name, tag_table_name):
+def address_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, address_table_name):
 
     conn = sqlite3.connect(db_path)
     conn.text_factory = str
@@ -235,6 +242,7 @@ def address_mng_import_sqlite(client, args, db_path, table_name, tag_table_name)
                 mobile,
                 state,
                 notes,
+                address_id,
                 new_id
             FROM ''' + table_name + ''';
             '''
@@ -266,6 +274,7 @@ def address_mng_import_sqlite(client, args, db_path, table_name, tag_table_name)
                 'mobile': row[14],
                 'state': row[15],
                 'notes': row[16],
+                'address_id': row[17]
             }
             address_mng_id = address_mng_model.create(values).id
 
@@ -303,6 +312,28 @@ def address_mng_import_sqlite(client, args, db_path, table_name, tag_table_name)
                     new_tag_ids.append(new_tag_id)
 
                 print('>>>>>', row[4], new_tag_ids)
+
+            if row[17] != 0:
+
+                address_id = row[17]
+
+                cursor2.execute(
+                    '''
+                    SELECT new_id
+                    FROM ''' + address_table_name + '''
+                    WHERE id = ?;''',
+                    (address_id,
+                     )
+                )
+                address_id = cursor2.fetchone()[0]
+
+                values = {
+                    'address_id': address_id,
+                }
+                address_mng_model.write(address_mng_id, values)
+
+                print('>>>>>', row[17], address_id)
+
     except Exception as e:
         print('>>>>>', e)
 
