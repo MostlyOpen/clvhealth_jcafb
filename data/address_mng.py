@@ -57,7 +57,6 @@ def address_mng_import_from_person_mng(client, batch_name, state):
 
                 values = {
                     "address_mng_id": address_mng_browse.id[0],
-                    "state": 'revised',
                 }
                 person_mng_model.write(person_reg.id, values)
 
@@ -89,13 +88,13 @@ def address_mng_import_from_person_mng(client, batch_name, state):
                     'state_id': person_reg.state_id,
                     'l10n_br_city_id': person_reg.l10n_br_city_id,
                     'phone': person_reg.phone,
+                    'mobile': person_reg.mobile,
                     'tag_ids': tag_ids,
                 }
                 address_mng_reg_new = address_mng_model.create(values)
 
                 values = {
                     "address_mng_id": address_mng_reg_new.id,
-                    "state": 'revised',
                 }
                 person_mng_model.write(person_reg.id, values)
 
@@ -110,3 +109,205 @@ def address_mng_import_from_person_mng(client, batch_name, state):
     print('--> duplicated: ', duplicated)
     print('--> imported: ', imported)
     print('--> not_imported: ', not_imported)
+
+
+def address_mng_export_sqlite(client, args, db_path, table_name):
+
+    conn = sqlite3.connect(db_path)
+    conn.text_factory = str
+
+    cursor = conn.cursor()
+    try:
+        cursor.execute('''DROP TABLE ''' + table_name + ''';''')
+    except Exception as e:
+        print('------->', e)
+    cursor.execute(
+        '''
+        CREATE TABLE ''' + table_name + ''' (
+            id INTEGER NOT NULL PRIMARY KEY,
+            name,
+            code,
+            batch_name,
+            tag_ids,
+            zip,
+            country_id,
+            state_id,
+            l10n_br_city_id,
+            street,
+            number,
+            street2,
+            district,
+            phone,
+            mobile,
+            state,
+            notes,
+            new_id INTEGER
+            );
+        '''
+    )
+
+    address_mng_model = client.model('myo.address.mng')
+    address_mng_browse = address_mng_model.browse(args)
+
+    address_mng_count = 0
+    for address_mng_reg in address_mng_browse:
+        address_mng_count += 1
+
+        print(address_mng_count, address_mng_reg.id, address_mng_reg.code, address_mng_reg.name.encode("utf-8"))
+
+        cursor.execute('''
+            INSERT INTO ''' + table_name + '''(
+                id,
+                name,
+                code,
+                batch_name,
+                tag_ids,
+                zip,
+                country_id,
+                state_id,
+                l10n_br_city_id,
+                street,
+                number,
+                street2,
+                district,
+                phone,
+                mobile,
+                state,
+                notes
+                )
+            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            ''', (address_mng_reg.id,
+                  address_mng_reg.name,
+                  address_mng_reg.code,
+                  address_mng_reg.batch_name,
+                  str(address_mng_reg.tag_ids.id),
+                  address_mng_reg.zip,
+                  address_mng_reg.country_id.id,
+                  address_mng_reg.state_id.id,
+                  address_mng_reg.l10n_br_city_id.id,
+                  address_mng_reg.street,
+                  address_mng_reg.number,
+                  address_mng_reg.street2,
+                  address_mng_reg.district,
+                  address_mng_reg.phone,
+                  address_mng_reg.mobile,
+                  address_mng_reg.state,
+                  address_mng_reg.notes,
+                  )
+        )
+
+    conn.commit()
+    conn.close()
+
+    print()
+    print('--> address_mng_count: ', address_mng_count)
+
+
+def address_mng_import_sqlite(client, args, db_path, table_name, tag_table_name):
+
+    conn = sqlite3.connect(db_path)
+    conn.text_factory = str
+
+    cursor = conn.cursor()
+
+    cursor2 = conn.cursor()
+
+    address_mng_count = 0
+
+    try:
+        data = cursor.execute(
+            '''
+            SELECT
+                id,
+                name,
+                code,
+                batch_name,
+                tag_ids,
+                zip,
+                country_id,
+                state_id,
+                l10n_br_city_id,
+                street,
+                number,
+                street2,
+                district,
+                phone,
+                mobile,
+                state,
+                notes,
+                new_id
+            FROM ''' + table_name + ''';
+            '''
+        )
+
+        address_mng_model = client.model('myo.address.mng')
+
+        print(data)
+        print([field[0] for field in cursor.description])
+        for row in cursor:
+            address_mng_count += 1
+
+            print(address_mng_count, row[0], row[1], row[2], row[3])
+
+            values = {
+                'name': row[1],
+                'code': row[2],
+                'batch_name': row[3],
+                # 'tag_ids': row[4],
+                'zip': row[5],
+                'country_id': row[6],
+                'state_id': row[7],
+                'l10n_br_city_id': row[8],
+                'street': row[9],
+                'number': row[10],
+                'street2': row[11],
+                'district': row[12],
+                'phone': row[13],
+                'mobile': row[14],
+                'state': row[15],
+                'notes': row[16],
+            }
+            address_mng_id = address_mng_model.create(values).id
+
+            cursor2.execute(
+                '''
+               UPDATE ''' + table_name + '''
+               SET new_id = ?
+               WHERE id = ?;''',
+                (address_mng_id,
+                 row[0]
+                 )
+            )
+
+            if row[4] != '[]':
+
+                tag_ids = row[4].split(',')
+                new_tag_ids = []
+                for x in range(0, len(tag_ids)):
+                    tag_id = int(re.sub('[^0-9]', '', tag_ids[x]))
+                    cursor2.execute(
+                        '''
+                        SELECT new_id
+                        FROM ''' + tag_table_name + '''
+                        WHERE id = ?;''',
+                        (tag_id,
+                         )
+                    )
+                    new_tag_id = cursor2.fetchone()[0]
+
+                    values = {
+                        'tag_ids': [(4, new_tag_id)],
+                    }
+                    address_mng_model.write(address_mng_id, values)
+
+                    new_tag_ids.append(new_tag_id)
+
+                print('>>>>>', row[4], new_tag_ids)
+    except Exception as e:
+        print('>>>>>', e)
+
+    conn.commit()
+    conn.close()
+
+    print()
+    print('--> address_mng_count: ', address_mng_count)
