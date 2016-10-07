@@ -125,13 +125,15 @@ def address_mng_export_sqlite(client, args, db_path, table_name):
         '''
         CREATE TABLE ''' + table_name + ''' (
             id INTEGER NOT NULL PRIMARY KEY,
-            name,
-            code,
-            batch_name,
             tag_ids,
+            category_ids,
+            name,
+            alias,
+            code,
             zip,
             country_id,
             state_id,
+            city,
             l10n_br_city_id,
             street,
             number,
@@ -139,9 +141,15 @@ def address_mng_export_sqlite(client, args, db_path, table_name):
             district,
             phone,
             mobile,
+            fax,
+            email,
             state,
             notes,
+            batch_name,
+            date_inclusion,
             address_id,
+            active,
+            active_log,
             new_id INTEGER
             );
         '''
@@ -156,20 +164,66 @@ def address_mng_export_sqlite(client, args, db_path, table_name):
 
         print(address_mng_count, address_mng_reg.id, address_mng_reg.code, address_mng_reg.name.encode("utf-8"))
 
-        address_id = False
-        if address_mng_reg.address_id is not False:
+        alias = None
+        if address_mng_reg.alias:
+            alias = address_mng_reg.alias
+
+        city = None
+        if address_mng_reg.city:
+            city = address_mng_reg.city
+
+        street = None
+        if address_mng_reg.street:
+            street = address_mng_reg.street
+
+        number = None
+        if address_mng_reg.number:
+            number = address_mng_reg.number
+
+        street2 = None
+        if address_mng_reg.street2:
+            street2 = address_mng_reg.street2
+
+        district = None
+        if address_mng_reg.district:
+            district = address_mng_reg.district
+
+        phone = None
+        if address_mng_reg.phone:
+            phone = address_mng_reg.phone
+
+        mobile = None
+        if address_mng_reg.mobile:
+            mobile = address_mng_reg.mobile
+
+        fax = None
+        if address_mng_reg.fax:
+            fax = address_mng_reg.fax
+
+        email = None
+        if address_mng_reg.email:
+            email = address_mng_reg.email
+
+        notes = None
+        if address_mng_reg.notes:
+            notes = address_mng_reg.notes
+
+        address_id = None
+        if address_mng_reg.address_id:
             address_id = address_mng_reg.address_id.id
 
         cursor.execute('''
             INSERT INTO ''' + table_name + '''(
                 id,
-                name,
-                code,
-                batch_name,
                 tag_ids,
+                category_ids,
+                name,
+                alias,
+                code,
                 zip,
                 country_id,
                 state_id,
+                city,
                 l10n_br_city_id,
                 street,
                 number,
@@ -177,29 +231,43 @@ def address_mng_export_sqlite(client, args, db_path, table_name):
                 district,
                 phone,
                 mobile,
+                fax,
+                email,
                 state,
                 notes,
-                address_id
+                batch_name,
+                date_inclusion,
+                address_id,
+                active,
+                active_log
                 )
-            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
             ''', (address_mng_reg.id,
-                  address_mng_reg.name,
-                  address_mng_reg.code,
-                  address_mng_reg.batch_name,
                   str(address_mng_reg.tag_ids.id),
+                  str(address_mng_reg.category_ids.id),
+                  address_mng_reg.name,
+                  alias,
+                  address_mng_reg.code,
                   address_mng_reg.zip,
                   address_mng_reg.country_id.id,
                   address_mng_reg.state_id.id,
+                  city,
                   address_mng_reg.l10n_br_city_id.id,
-                  address_mng_reg.street,
-                  address_mng_reg.number,
-                  address_mng_reg.street2,
-                  address_mng_reg.district,
-                  address_mng_reg.phone,
-                  address_mng_reg.mobile,
+                  street,
+                  number,
+                  street2,
+                  district,
+                  phone,
+                  mobile,
+                  fax,
+                  email,
                   address_mng_reg.state,
-                  address_mng_reg.notes,
+                  notes,
+                  address_mng_reg.batch_name,
+                  address_mng_reg.date_inclusion,
                   address_id,
+                  address_mng_reg.active,
+                  address_mng_reg.active_log,
                   )
         )
 

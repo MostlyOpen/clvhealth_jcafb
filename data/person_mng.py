@@ -285,15 +285,31 @@ def person_mng_export_sqlite(client, args, db_path, table_name):
         '''
         CREATE TABLE ''' + table_name + ''' (
             id INTEGER NOT NULL PRIMARY KEY,
-            name,
-            code,
-            batch_name,
-            gender,
-            birthday,
             tag_ids,
+            category_ids,
+            name,
+            alias,
+            code,
+            gender,
+            marital,
+            birthday,
+            spouse_name,
+            spouse_id,
+            father_name,
+            father_id,
+            mother_name,
+            mother_id,
+            responsible_name,
+            responsible_id,
+            identification_id,
+            otherid,
+            rg,
+            cpf,
+            country_id_2,
             zip,
             country_id,
             state_id,
+            city,
             l10n_br_city_id,
             street,
             number,
@@ -301,10 +317,17 @@ def person_mng_export_sqlite(client, args, db_path, table_name):
             district,
             phone,
             mobile,
-            responsible_name,
+            fax,
+            email,
             state,
             notes,
+            batch_name,
+            date_inclusion,
             address_mng_id,
+            address_id,
+            person_id,
+            active,
+            active_log,
             new_id INTEGER
             );
         '''
@@ -319,22 +342,158 @@ def person_mng_export_sqlite(client, args, db_path, table_name):
 
         print(person_mng_count, person_mng_reg.id, person_mng_reg.code, person_mng_reg.name.encode("utf-8"))
 
-        address_mng_id = False
-        if person_mng_reg.address_mng_id is not False:
+        alias = None
+        if person_mng_reg.alias:
+            alias = person_mng_reg.alias
+
+        code = None
+        if person_mng_reg.code:
+            code = person_mng_reg.code
+
+        marital = None
+        if person_mng_reg.marital:
+            marital = person_mng_reg.marital
+
+        birthday = None
+        if person_mng_reg.birthday:
+            birthday = person_mng_reg.birthday
+
+        spouse_name = None
+        if person_mng_reg.spouse_name:
+            spouse_name = person_mng_reg.spouse_name
+
+        spouse_id = None
+        if person_mng_reg.spouse_id:
+            spouse_id = person_mng_reg.spouse_id.id
+
+        father_name = None
+        if person_mng_reg.father_name:
+            father_name = person_mng_reg.father_name
+
+        father_id = None
+        if person_mng_reg.father_id:
+            father_id = person_mng_reg.father_id.id
+
+        mother_name = None
+        if person_mng_reg.mother_name:
+            mother_name = person_mng_reg.mother_name
+
+        mother_id = None
+        if person_mng_reg.mother_id:
+            mother_id = person_mng_reg.mother_id.id
+
+        responsible_name = None
+        if person_mng_reg.responsible_name:
+            responsible_name = person_mng_reg.responsible_name
+
+        responsible_id = None
+        if person_mng_reg.responsible_id:
+            responsible_id = person_mng_reg.responsible_id.id
+
+        identification_id = None
+        if person_mng_reg.identification_id:
+            identification_id = person_mng_reg.identification_id
+
+        otherid = None
+        if person_mng_reg.otherid:
+            otherid = person_mng_reg.otherid
+
+        rg = None
+        if person_mng_reg.rg:
+            rg = person_mng_reg.rg
+
+        cpf = None
+        if person_mng_reg.cpf:
+            cpf = person_mng_reg.cpf
+
+        country_id = None
+        if person_mng_reg.country_id:
+            country_id = person_mng_reg.country_id.id
+
+        country_id_2 = None
+        if person_mng_reg.country_id_2:
+            country_id_2 = person_mng_reg.country_id_2.id
+
+        city = None
+        if person_mng_reg.city:
+            city = person_mng_reg.city
+
+        street = None
+        if person_mng_reg.street:
+            street = person_mng_reg.street
+
+        number = None
+        if person_mng_reg.number:
+            number = person_mng_reg.number
+
+        street2 = None
+        if person_mng_reg.street2:
+            street2 = person_mng_reg.street2
+
+        district = None
+        if person_mng_reg.district:
+            district = person_mng_reg.district
+
+        phone = None
+        if person_mng_reg.phone:
+            phone = person_mng_reg.phone
+
+        mobile = None
+        if person_mng_reg.mobile:
+            mobile = person_mng_reg.mobile
+
+        fax = None
+        if person_mng_reg.fax:
+            fax = person_mng_reg.fax
+
+        email = None
+        if person_mng_reg.email:
+            email = person_mng_reg.email
+
+        notes = None
+        if person_mng_reg.notes:
+            notes = person_mng_reg.notes
+
+        address_mng_id = None
+        if person_mng_reg.address_mng_id:
             address_mng_id = person_mng_reg.address_mng_id.id
+
+        address_id = None
+        if person_mng_reg.address_id:
+            address_id = person_mng_reg.address_id.id
+
+        person_id = None
+        if person_mng_reg.person_id:
+            person_id = person_mng_reg.person_id.id
 
         cursor.execute('''
             INSERT INTO ''' + table_name + '''(
                 id,
-                name,
-                code,
-                batch_name,
-                gender,
-                birthday,
                 tag_ids,
+                category_ids,
+                name,
+                alias,
+                code,
+                gender,
+                marital,
+                birthday,
+                spouse_name,
+                spouse_id,
+                father_name,
+                father_id,
+                mother_name,
+                mother_id,
+                responsible_name,
+                responsible_id,
+                identification_id,
+                otherid,
+                rg,
+                cpf,
+                country_id_2,
                 zip,
                 country_id,
                 state_id,
+                city,
                 l10n_br_city_id,
                 street,
                 number,
@@ -342,33 +501,63 @@ def person_mng_export_sqlite(client, args, db_path, table_name):
                 district,
                 phone,
                 mobile,
-                responsible_name,
+                fax,
+                email,
                 state,
                 notes,
-                address_mng_id
+                batch_name,
+                date_inclusion,
+                address_mng_id,
+                address_id,
+                person_id,
+                active,
+                active_log
                 )
-            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
             ''', (person_mng_reg.id,
-                  person_mng_reg.name,
-                  person_mng_reg.code,
-                  person_mng_reg.batch_name,
-                  person_mng_reg.gender,
-                  person_mng_reg.birthday,
                   str(person_mng_reg.tag_ids.id),
+                  str(person_mng_reg.category_ids.id),
+                  person_mng_reg.name,
+                  alias,
+                  code,
+                  person_mng_reg.gender,
+                  marital,
+                  birthday,
+                  spouse_name,
+                  spouse_id,
+                  father_name,
+                  father_id,
+                  mother_name,
+                  mother_id,
+                  responsible_name,
+                  responsible_id,
+                  identification_id,
+                  otherid,
+                  rg,
+                  cpf,
+                  country_id_2,
                   person_mng_reg.zip,
-                  person_mng_reg.country_id.id,
+                  country_id,
                   person_mng_reg.state_id.id,
+                  city,
                   person_mng_reg.l10n_br_city_id.id,
-                  person_mng_reg.street,
-                  person_mng_reg.number,
-                  person_mng_reg.street2,
-                  person_mng_reg.district,
-                  person_mng_reg.phone,
-                  person_mng_reg.mobile,
-                  person_mng_reg.responsible_name,
+                  street,
+                  number,
+                  street2,
+                  district,
+                  phone,
+                  mobile,
+                  fax,
+                  email,
                   person_mng_reg.state,
-                  person_mng_reg.notes,
+                  notes,
+                  person_mng_reg.batch_name,
+                  person_mng_reg.date_inclusion,
                   address_mng_id,
+                  address_id,
+                  person_id,
+                  person_mng_reg.active,
+                  person_mng_reg.active_log,
                   )
         )
 
@@ -379,7 +568,7 @@ def person_mng_export_sqlite(client, args, db_path, table_name):
     print('--> person_mng_count: ', person_mng_count)
 
 
-def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, address_mng_table_name):
+def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, address_mng_table_name, address_table_name, person_table_name):
 
     conn = sqlite3.connect(db_path)
     conn.text_factory = str
@@ -412,6 +601,8 @@ def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, 
             state,
             notes,
             address_mng_id,
+            address_id,
+            person_id,
             new_id
         FROM ''' + table_name + ''';
         '''
@@ -505,6 +696,48 @@ def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, 
             person_mng_model.write(person_mng_id, values)
 
             print('>>>>>', row[20], new_address_mng_id)
+
+        if row[21] != 0:
+
+            address_id = row[21]
+
+            cursor2.execute(
+                '''
+                SELECT new_id
+                FROM ''' + address_table_name + '''
+                WHERE id = ?;''',
+                (address_id,
+                 )
+            )
+            new_address_id = cursor2.fetchone()[0]
+
+            values = {
+                'address_id': new_address_id,
+            }
+            person_mng_model.write(person_mng_id, values)
+
+            print('>>>>>', row[21], new_address_id)
+
+        if row[22] != 0:
+
+            person_id = row[22]
+
+            cursor2.execute(
+                '''
+                SELECT new_id
+                FROM ''' + person_table_name + '''
+                WHERE id = ?;''',
+                (person_id,
+                 )
+            )
+            new_person_id = cursor2.fetchone()[0]
+
+            values = {
+                'person_id': new_person_id,
+            }
+            person_mng_model.write(person_mng_id, values)
+
+            print('>>>>>', row[22], new_person_id)
 
     conn.commit()
     conn.close()
