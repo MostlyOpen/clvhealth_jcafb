@@ -501,6 +501,58 @@ if __name__ == '__main__':
     # print('-->', client, db_path)
     # print('--> Executing jcafb_import_sqlite()...')
     # jcafb_import_sqlite(client, db_path)
+    # # myo.tag.code (next = 6)
+    # # myo.annotation.code (next = 1)
+    # # myo.address.code (next = 153)
+    # # myo.document.code (next = 1)
+    # # myo.event.code (next = 1)
+    # # myo.person.code (next = 208)
+    # # myo.community.code (next = 1)
+    # # myo.employee.code (next = 17)
+
+    # ***** 2016-10-08 *****
+    #
+
+    # person_mng_args = [('state', '=', 'done'), ]
+    # batch_name = 'JCAFB_2017_Dados_Fernao_responsible_01'
+    # print('-->', client, person_mng_args, batch_name)
+    # print('--> Executing person_mng_include_responsible()...')
+    # print()
+    # person_mng_include_responsible(client, person_mng_args, batch_name)
+
+    # batch_name = 'JCAFB_2017_Dados_Fernao_responsible_01'
+    # state = 'waiting'
+    # print('-->', client, batch_name, state)
+    # print('--> Executing person_mng_create_person()...')
+    # person_mng_create_person(client, batch_name, state)
+
+    # person_mng_args = [('state', '=', 'done'), ]
+    # print('-->', client, person_mng_args)
+    # print('--> Executing person_mng_set_responsible()...')
+    # print()
+    # person_mng_set_responsible(client, person_mng_args)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-08a.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-08a.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path)
+    # # myo.tag.code (next = 7)
+    # # myo.annotation.code (next = 1)
+    # # myo.address.code (next = 153)
+    # # myo.document.code (next = 1)
+    # # myo.event.code (next = 1)
+    # # myo.person.code (next = 283)
+    # # myo.community.code (next = 1)
+    # # myo.employee.code (next = 17)
 
     # ***** 2016-10-?? *****
     #

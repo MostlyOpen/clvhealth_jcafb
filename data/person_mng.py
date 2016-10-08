@@ -814,3 +814,95 @@ def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, 
 
     print()
     print('--> person_mng_count: ', person_mng_count)
+
+
+def person_mng_include_responsible(client, args, batch_name):
+
+    tag_id_VerificarCadastro = tag_get_id(
+        client,
+        'Verificar Cadastro',
+        'Os dados de cadastro do registro precisam ser verificados.')
+
+    tag_ids = []
+    tag_ids = tag_ids + [(4, tag_id_VerificarCadastro)]
+
+    person_mng_model = client.model('myo.person.mng')
+
+    person_mng_browse = person_mng_model.browse(
+        args +
+        [('responsible_name', '!=', False), ]
+    )
+
+    responsible_count = 0
+    new_person_mng_count = 0
+    for person_mng_reg in person_mng_browse:
+        responsible_count += 1
+        print(responsible_count, person_mng_reg.responsible_name)
+
+        person_mng_browse_2 = person_mng_model.browse([('name', '=', person_mng_reg.responsible_name), ])
+        if person_mng_browse_2.id == []:
+            new_person_mng_count += 1
+
+            values = {
+                'name': person_mng_reg.responsible_name,
+                'code': False,
+                'address_id': person_mng_reg.address_id.id,
+                'address_mng_id': person_mng_reg.address_mng_id.id,
+                'batch_name': batch_name,
+                'state': 'waiting',
+                'tag_ids': tag_ids,
+                'zip': person_mng_reg.zip,
+                'country_id': person_mng_reg.country_id.id,
+                'state_id': person_mng_reg.state_id.id,
+                'l10n_br_city_id': person_mng_reg.l10n_br_city_id.id,
+                'street': person_mng_reg.street,
+                'number': person_mng_reg.number,
+                'street2': person_mng_reg.street2,
+                'district': person_mng_reg.district,
+                'phone': person_mng_reg.phone,
+                'mobile': person_mng_reg.mobile,
+            }
+            person_mng_new = person_mng_model.create(values)
+            print('>>>>>', person_mng_new)
+
+    print()
+    print('--> responsible_count: ', responsible_count)
+    print('--> new_person_mng_count: ', new_person_mng_count)
+    print()
+
+
+def person_mng_set_responsible(client, args):
+
+    person_mng_model = client.model('myo.person.mng')
+    person_model = client.model('myo.person')
+
+    person_mng_browse = person_mng_model.browse(
+        args +
+        [('responsible_name', '!=', False),
+         ('responsible_id', '=', False),
+         ]
+    )
+
+    responsible_count = 0
+    for person_mng_reg in person_mng_browse:
+        responsible_count += 1
+        print(responsible_count, person_mng_reg.responsible_name)
+
+        person_browse = person_model.browse([('name', '=', person_mng_reg.responsible_name), ])
+        if person_browse.id != []:
+            responsible_id = person_browse.id[0]
+            print('>>>>>', responsible_id)
+
+            values = {
+                "responsible_id": responsible_id,
+            }
+            person_mng_model.write(person_mng_reg.id, values)
+
+            values = {
+                "responsible_id": responsible_id,
+            }
+            person_model.write(person_mng_reg.person_id.id, values)
+
+    print()
+    print('--> responsible_count: ', responsible_count)
+    print()
