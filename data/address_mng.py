@@ -280,8 +280,10 @@ def address_mng_export_sqlite(client, args, db_path, table_name):
 
 def address_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, address_table_name):
 
+    address_mng_model = client.model('myo.address.mng')
+
     conn = sqlite3.connect(db_path)
-    conn.text_factory = str
+    conn.row_factory = sqlite3.Row
 
     cursor = conn.cursor()
 
@@ -289,121 +291,156 @@ def address_mng_import_sqlite(client, args, db_path, table_name, tag_table_name,
 
     address_mng_count = 0
 
-    try:
-        data = cursor.execute(
+    data = cursor.execute(
+        '''
+        SELECT
+            id,
+            tag_ids,
+            category_ids,
+            name,
+            alias,
+            code,
+            zip,
+            country_id,
+            state_id,
+            city,
+            l10n_br_city_id,
+            street,
+            number,
+            street2,
+            district,
+            phone,
+            mobile,
+            fax,
+            email,
+            state,
+            notes,
+            batch_name,
+            date_inclusion,
+            address_id,
+            active,
+            active_log,
+            new_id
+        FROM ''' + table_name + ''';
+        '''
+    )
+
+    print(data)
+    print([field[0] for field in cursor.description])
+    for row in cursor:
+        address_mng_count += 1
+
+        print(address_mng_count, row['id'], row['name'], row['code'], row['batch_name'])
+
+        values = {
+            # 'tag_ids': row['tag_ids'],
+            # 'category_ids': row['category_ids'],
+            'name': row['name'],
+            'alias': row['alias'],
+            'code': row['code'],
+            'zip': row['zip'],
+            'country_id': row['country_id'],
+            'state_id': row['state_id'],
+            'city': row['city'],
+            'l10n_br_city_id': row['l10n_br_city_id'],
+            'street': row['street'],
+            'number': row['number'],
+            'street2': row['street2'],
+            'district': row['district'],
+            'phone': row['phone'],
+            'mobile': row['mobile'],
+            'fax': row['fax'],
+            'email': row['email'],
+            'state': row['state'],
+            'notes': row['notes'],
+            'batch_name': row['batch_name'],
+            'date_inclusion': row['date_inclusion'],
+            # 'address_id': row['address_id']
+            'active': row['active'],
+            'active_log': row['active_log'],
+        }
+        address_mng_id = address_mng_model.create(values).id
+
+        cursor2.execute(
             '''
-            SELECT
-                id,
-                name,
-                code,
-                batch_name,
-                tag_ids,
-                zip,
-                country_id,
-                state_id,
-                l10n_br_city_id,
-                street,
-                number,
-                street2,
-                district,
-                phone,
-                mobile,
-                state,
-                notes,
-                address_id,
-                new_id
-            FROM ''' + table_name + ''';
-            '''
+           UPDATE ''' + table_name + '''
+           SET new_id = ?
+           WHERE id = ?;''',
+            (address_mng_id,
+             row['id']
+             )
         )
 
-        address_mng_model = client.model('myo.address.mng')
+        if row['tag_ids'] != '[]':
 
-        print(data)
-        print([field[0] for field in cursor.description])
-        for row in cursor:
-            address_mng_count += 1
-
-            print(address_mng_count, row[0], row[1], row[2], row[3])
-
-            values = {
-                'name': row[1],
-                'code': row[2],
-                'batch_name': row[3],
-                # 'tag_ids': row[4],
-                'zip': row[5],
-                'country_id': row[6],
-                'state_id': row[7],
-                'l10n_br_city_id': row[8],
-                'street': row[9],
-                'number': row[10],
-                'street2': row[11],
-                'district': row[12],
-                'phone': row[13],
-                'mobile': row[14],
-                'state': row[15],
-                'notes': row[16],
-                'address_id': row[17]
-            }
-            address_mng_id = address_mng_model.create(values).id
-
-            cursor2.execute(
-                '''
-               UPDATE ''' + table_name + '''
-               SET new_id = ?
-               WHERE id = ?;''',
-                (address_mng_id,
-                 row[0]
-                 )
-            )
-
-            if row[4] != '[]':
-
-                tag_ids = row[4].split(',')
-                new_tag_ids = []
-                for x in range(0, len(tag_ids)):
-                    tag_id = int(re.sub('[^0-9]', '', tag_ids[x]))
-                    cursor2.execute(
-                        '''
-                        SELECT new_id
-                        FROM ''' + tag_table_name + '''
-                        WHERE id = ?;''',
-                        (tag_id,
-                         )
-                    )
-                    new_tag_id = cursor2.fetchone()[0]
-
-                    values = {
-                        'tag_ids': [(4, new_tag_id)],
-                    }
-                    address_mng_model.write(address_mng_id, values)
-
-                    new_tag_ids.append(new_tag_id)
-
-                print('>>>>>', row[4], new_tag_ids)
-
-            if row[17] != 0:
-
-                address_id = row[17]
-
+            tag_ids = row['tag_ids'].split(',')
+            new_tag_ids = []
+            for x in range(0, len(tag_ids)):
+                tag_id = int(re.sub('[^0-9]', '', tag_ids[x]))
                 cursor2.execute(
                     '''
                     SELECT new_id
-                    FROM ''' + address_table_name + '''
+                    FROM ''' + tag_table_name + '''
                     WHERE id = ?;''',
-                    (address_id,
+                    (tag_id,
                      )
                 )
-                address_id = cursor2.fetchone()[0]
+                new_tag_id = cursor2.fetchone()[0]
 
                 values = {
-                    'address_id': address_id,
+                    'tag_ids': [(4, new_tag_id)],
                 }
                 address_mng_model.write(address_mng_id, values)
 
-                print('>>>>>', row[17], address_id)
+                new_tag_ids.append(new_tag_id)
 
-    except Exception as e:
-        print('>>>>>', e)
+            print('>>>>>', row['tag_ids'], new_tag_ids)
+
+        if row['category_ids'] != '[]':
+
+            category_ids = row['category_ids'].split(',')
+            new_category_ids = []
+            for x in range(0, len(category_ids)):
+                category_id = int(re.sub('[^0-9]', '', category_ids[x]))
+                cursor2.execute(
+                    '''
+                    SELECT new_id
+                    FROM ''' + category_table_name + '''
+                    WHERE id = ?;''',
+                    (category_id,
+                     )
+                )
+                new_category_id = cursor2.fetchone()[0]
+
+                values = {
+                    'category_ids': [(4, new_category_id)],
+                }
+                address_mng_model.write(address_id, values)
+
+                new_category_ids.append(new_category_id)
+
+            print('>>>>>', row[4], new_category_ids)
+
+        if row['address_id'] != 0:
+
+            address_id = row['address_id']
+
+            cursor2.execute(
+                '''
+                SELECT new_id
+                FROM ''' + address_table_name + '''
+                WHERE id = ?;''',
+                (address_id,
+                 )
+            )
+            address_id = cursor2.fetchone()[0]
+
+            values = {
+                'address_id': address_id,
+            }
+            address_mng_model.write(address_mng_id, values)
+
+            print('>>>>>', row['address_id'], address_id)
 
     conn.commit()
     conn.close()

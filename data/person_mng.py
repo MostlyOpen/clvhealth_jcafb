@@ -568,10 +568,12 @@ def person_mng_export_sqlite(client, args, db_path, table_name):
     print('--> person_mng_count: ', person_mng_count)
 
 
-def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, address_mng_table_name, address_table_name, person_table_name):
+def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, category_table_name, address_mng_table_name, address_table_name, person_table_name):
+
+    person_mng_model = client.model('myo.person.mng')
 
     conn = sqlite3.connect(db_path)
-    conn.text_factory = str
+    conn.row_factory = sqlite3.Row
 
     cursor = conn.cursor()
 
@@ -581,15 +583,31 @@ def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, 
         '''
         SELECT
             id,
-            name,
-            code,
-            batch_name,
-            gender,
-            birthday,
             tag_ids,
+            category_ids,
+            name,
+            alias,
+            code,
+            gender,
+            marital,
+            birthday,
+            spouse_name,
+            spouse_id,
+            father_name,
+            father_id,
+            mother_name,
+            mother_id,
+            responsible_name,
+            responsible_id,
+            identification_id,
+            otherid,
+            rg,
+            cpf,
+            country_id_2,
             zip,
             country_id,
             state_id,
+            city,
             l10n_br_city_id,
             street,
             number,
@@ -597,18 +615,21 @@ def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, 
             district,
             phone,
             mobile,
-            responsible_name,
+            fax,
+            email,
             state,
             notes,
+            batch_name,
+            date_inclusion,
             address_mng_id,
             address_id,
             person_id,
+            active,
+            active_log,
             new_id
         FROM ''' + table_name + ''';
         '''
     )
-
-    person_mng_model = client.model('myo.person.mng')
 
     print(data)
     print([field[0] for field in cursor.description])
@@ -616,28 +637,52 @@ def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, 
     for row in cursor:
         person_mng_count += 1
 
-        print(person_mng_count, row[0], row[1], row[2], row[3])
+        print(person_mng_count, row['id'], row['name'], row['code'], row['batch_name'])
 
         values = {
-            'name': row[1],
-            'code': row[2],
-            'batch_name': row[3],
-            'gender': row[4],
-            'birthday': row[5],
-            # 'tag_ids': row[6],
-            'zip': row[7],
-            'country_id': row[8],
-            'state_id': row[9],
-            'l10n_br_city_id': row[10],
-            'street': row[11],
-            'number': row[12],
-            'street2': row[13],
-            'district': row[14],
-            'phone': row[15],
-            'mobile': row[16],
-            'responsible_name': row[17],
-            'state': row[18],
-            'notes': row[19],
+            # 'tag_ids': row['tag_ids'],
+            # 'category_ids': row['category_ids'],
+            'name': row['name'],
+            'alias': row['alias'],
+            'code': row['code'],
+            'gender': row['gender'],
+            'marital': row['marital'],
+            'birthday': row['birthday'],
+            'spouse_name': row['spouse_name'],
+            'spouse_id': row['spouse_id'],
+            'father_name': row['father_name'],
+            'father_id': row['father_id'],
+            'mother_name': row['mother_name'],
+            'mother_id': row['mother_id'],
+            'responsible_name': row['responsible_name'],
+            'responsible_id': row['responsible_id'],
+            'identification_id': row['identification_id'],
+            'otherid': row['otherid'],
+            'rg': row['rg'],
+            'cpf': row['cpf'],
+            'country_id_2': row['country_id_2'],
+            'zip': row['zip'],
+            'country_id': row['country_id'],
+            'state_id': row['state_id'],
+            'city': row['city'],
+            'l10n_br_city_id': row['l10n_br_city_id'],
+            'street': row['street'],
+            'number': row['number'],
+            'street2': row['street2'],
+            'district': row['district'],
+            'phone': row['phone'],
+            'mobile': row['mobile'],
+            'fax': row['fax'],
+            'email': row['email'],
+            'state': row['state'],
+            'notes': row['state'],
+            'batch_name': row['batch_name'],
+            'date_inclusion': row['date_inclusion'],
+            # 'address_mng_id': row['address_mng_id'],
+            # 'address_id': row['address_id'],
+            # 'person_id': row['person_id'],
+            'active': row['active'],
+            'active_log': row['active_log'],
         }
         person_mng_id = person_mng_model.create(values).id
 
@@ -647,13 +692,13 @@ def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, 
            SET new_id = ?
            WHERE id = ?;''',
             (person_mng_id,
-             row[0]
+             row['id']
              )
         )
 
-        if row[6] != '[]':
+        if row['tag_ids'] != '[]':
 
-            tag_ids = row[6].split(',')
+            tag_ids = row['tag_ids'].split(',')
             new_tag_ids = []
             for x in range(0, len(tag_ids)):
                 tag_id = int(re.sub('[^0-9]', '', tag_ids[x]))
@@ -674,11 +719,36 @@ def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, 
 
                 new_tag_ids.append(new_tag_id)
 
-            print('>>>>>', row[6], new_tag_ids)
+            print('>>>>>', row['tag_ids'], new_tag_ids)
 
-        if row[20] != 0:
+        if row['category_ids'] != '[]':
 
-            address_mng_id = row[20]
+            category_ids = row['category_ids'].split(',')
+            new_category_ids = []
+            for x in range(0, len(category_ids)):
+                category_id = int(re.sub('[^0-9]', '', category_ids[x]))
+                cursor2.execute(
+                    '''
+                    SELECT new_id
+                    FROM ''' + category_table_name + '''
+                    WHERE id = ?;''',
+                    (category_id,
+                     )
+                )
+                new_category_id = cursor2.fetchone()[0]
+
+                values = {
+                    'category_ids': [(4, new_category_id)],
+                }
+                person_mng_model.write(person_id, values)
+
+                new_category_ids.append(new_category_id)
+
+            print('>>>>>', row['category_ids'], new_category_ids)
+
+        if row['address_mng_id']:
+
+            address_mng_id = row['address_mng_id']
 
             cursor2.execute(
                 '''
@@ -695,11 +765,11 @@ def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, 
             }
             person_mng_model.write(person_mng_id, values)
 
-            print('>>>>>', row[20], new_address_mng_id)
+            print('>>>>>', row['address_mng_id'], new_address_mng_id)
 
-        if row[21] != 0:
+        if row['address_id']:
 
-            address_id = row[21]
+            address_id = row['address_id']
 
             cursor2.execute(
                 '''
@@ -716,11 +786,11 @@ def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, 
             }
             person_mng_model.write(person_mng_id, values)
 
-            print('>>>>>', row[21], new_address_id)
+            print('>>>>>', row['address_id'], new_address_id)
 
-        if row[22] != 0:
+        if row['person_id']:
 
-            person_id = row[22]
+            person_id = row['person_id']
 
             cursor2.execute(
                 '''
@@ -737,7 +807,7 @@ def person_mng_import_sqlite(client, args, db_path, table_name, tag_table_name, 
             }
             person_mng_model.write(person_mng_id, values)
 
-            print('>>>>>', row[22], new_person_id)
+            print('>>>>>', row['person_id'], new_person_id)
 
     conn.commit()
     conn.close()
