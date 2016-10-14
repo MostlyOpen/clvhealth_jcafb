@@ -33,6 +33,7 @@ from jcafb_2017_users import *
 from jcafb_2017_communities import *
 from jcafb_2017_residences import *
 from jcafb_2017_persons import *
+from jcafb_2017_events import *
 
 
 def jcafb_export_sqlite(client, db_path, conn_string):
@@ -267,6 +268,17 @@ def jcafb_mass_editing_create(client):
     name = 'Person Address'
     model = 'myo.person.address'
     fields = ['address_id', 'role_id', 'sign_in_date', 'sign_out_date', 'tag_ids', 'active', 'active_log']
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
+
+    name = 'Event'
+    model = 'myo.event'
+    fields = [
+        'user_id', 'state', 'category_ids', 'tag_ids',
+        'planned_hours', 'date_start', 'data_foreseen', 'data_deadline',
+        'active', 'active_log'
+    ]
     print('-->', client, name, model, fields)
     print('--> Executing mass_editing_create()...')
     mass_editing_create(client, name, model, fields)
@@ -711,6 +723,10 @@ if __name__ == '__main__':
     # print('-->', client)
     # print('--> Executing jcafb_select_community_persons()...')
     # jcafb_select_community_persons(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_events()...')
+    # jcafb_set_events(client)
 
     # db_path = 'data/clvhealth_jcafb_2017_2016-10-14a.sqlite'
     # print('-->', client, db_path, conn_string)
