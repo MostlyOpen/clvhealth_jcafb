@@ -30,9 +30,33 @@ from odoo_api import *
 from address_mng import *
 from person_mng import *
 from jcafb_2017_users import *
+from jcafb_2017_communities import *
+from jcafb_2017_residences import *
+from jcafb_2017_persons import *
 
 
-def jcafb_export_sqlite(client, db_path):
+def jcafb_export_sqlite(client, db_path, conn_string):
+
+    res_partner_args = []
+    table_name = 'res_partner'
+    print('-->', client, res_partner_args, db_path, table_name)
+    print('--> Executing res_partner_export_sqlite()...')
+    print()
+    res_partner_export_sqlite(client, res_partner_args, db_path, table_name)
+
+    res_users_args = []
+    table_name = 'res_users'
+    print('-->', client, res_users_args, db_path, table_name, conn_string)
+    print('--> Executing res_users_export_sqlite()...')
+    print()
+    res_users_export_sqlite(client, res_users_args, db_path, table_name, conn_string)
+
+    hr_employee_args = []
+    table_name = 'hr_employee'
+    print('-->', client, hr_employee_args, db_path, table_name)
+    print('--> Executing hr_employee_export_sqlite()...')
+    print()
+    hr_employee_export_sqlite(client, hr_employee_args, db_path, table_name)
 
     l10n_br_zip_args = []
     table_name = 'l10n_br_zip'
@@ -210,6 +234,44 @@ def jcafb_import_sqlite(client, db_path):
     )
 
 
+def jcafb_mass_editing_create(client):
+
+    name = 'Address'
+    model = 'myo.address'
+    fields = ['state', 'category_ids', 'tag_ids', 'active', 'active_log']
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
+
+    name = 'Residence'
+    model = 'myo.address'
+    fields = ['is_residence', 'state', 'category_ids', 'tag_ids', 'active', 'active_log']
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
+
+    name = 'Person'
+    model = 'myo.person'
+    fields = ['state', 'category_ids', 'tag_ids', 'address_id', 'active', 'active_log']
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
+
+    name = 'Patient'
+    model = 'myo.person'
+    fields = ['is_patient', 'state', 'category_ids', 'tag_ids', 'address_id', 'active', 'active_log']
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
+
+    name = 'Person Address'
+    model = 'myo.person.address'
+    fields = ['address_id', 'role_id', 'sign_in_date', 'sign_out_date', 'tag_ids', 'active', 'active_log']
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
+
+
 def get_arguments():
 
     global server
@@ -305,6 +367,8 @@ if __name__ == '__main__':
     start = time()
 
     client = erppeek.Client(server, dbname, username, password)
+    conn_string = "dbname='" + dbname + "' user='" + db_user + "' host='" + db_server + \
+                  "' password='" + db_password + "'"
 
     # ***** 2016-09-08 *****
     #
@@ -554,26 +618,104 @@ if __name__ == '__main__':
     # # myo.community.code (next = 1)
     # # myo.employee.code (next = 17)
 
-    # ***** 2016-10-?? *****
+    # ***** 2016-10-11 *****
     #
 
-    # res_partner_args = []
-    # db_path = 'data/clvhealth_jcafb_2017_test.sqlite'
-    # table_name = 'res_partner'
-    # print('-->', client, res_partner_args, db_path, table_name)
-    # print('--> Executing res_partner_export_sqlite()...')
-    # print()
-    # res_partner_export_sqlite(client, res_partner_args, db_path, table_name)
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
 
-    # conn_string = "dbname='" + dbname + "' user='" + db_user + "' host='" + db_server + \
-    #               "' password='" + db_password + "'"
-    # res_users_args = []
-    # db_path = 'data/clvhealth_jcafb_2017_test.sqlite'
-    # table_name = 'res_users'
-    # print('-->', client, res_users_args, db_path, table_name, conn_string)
-    # print('--> Executing res_users_export_sqlite()...')
-    # print()
-    # res_users_export_sqlite(client, res_users_args, db_path, table_name, conn_string)
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-08a.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path)
+    # # myo.tag.code (next = 7)
+    # # myo.annotation.code (next = 1)
+    # # myo.address.code (next = 153)
+    # # myo.document.code (next = 1)
+    # # myo.event.code (next = 1)
+    # # myo.person.code (next = 283)
+    # # myo.community.code (next = 1)
+    # # myo.employee.code (next = 17)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-11a.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-11a.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path)
+    # # myo.tag.code (next = 7)
+    # # myo.annotation.code (next = 1)
+    # # myo.address.code (next = 153)
+    # # myo.document.code (next = 1)
+    # # myo.event.code (next = 1)
+    # # myo.person.code (next = 283)
+    # # myo.community.code (next = 1)
+    # # myo.employee.code (next = 17)
+
+    # ***** 2016-10-14 *****
+    #
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-11a.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path)
+    # # myo.tag.code (next = 7)
+    # # myo.annotation.code (next = 1)
+    # # myo.address.code (next = 153)
+    # # myo.document.code (next = 1)
+    # # myo.event.code (next = 1)
+    # # myo.person.code (next = 283)
+    # # myo.community.code (next = 1)
+    # # myo.employee.code (next = 17)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_select_residences()...')
+    # jcafb_select_residences(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_select_persons()...')
+    # jcafb_select_persons(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_select_community_residences()...')
+    # jcafb_select_community_residences(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_select_community_persons()...')
+    # jcafb_select_community_persons(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-14a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
 
     print()
     print('--> setup.py', '- Execution time:', secondsToStr(time() - start))
