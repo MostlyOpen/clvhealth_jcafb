@@ -236,46 +236,6 @@ def user_groups_set_myo_community(user_name):
         )],
     }
     sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'write', user_id, values)
-    values = {
-        'groups_id': [(
-            4, sock.execute(base.dbname, uid, base.admin_user_pw,
-                            'res.groups', 'search', [('name', '=', 'Community Category Manager')]
-                            )[0]
-        )],
-    }
-    sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'write', user_id, values)
-    values = {
-        'groups_id': [(
-            4, sock.execute(base.dbname, uid, base.admin_user_pw,
-                            'res.groups', 'search', [('name', '=', 'Community Member Role Manager')]
-                            )[0]
-        )],
-    }
-    sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'write', user_id, values)
-    values = {
-        'groups_id': [(
-            4, sock.execute(base.dbname, uid, base.admin_user_pw,
-                            'res.groups', 'search', [('name', '=', 'Community Address Manager')]
-                            )[0]
-        )],
-    }
-    sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'write', user_id, values)
-    values = {
-        'groups_id': [(
-            4, sock.execute(base.dbname, uid, base.admin_user_pw,
-                            'res.groups', 'search', [('name', '=', 'Community Person Manager')]
-                            )[0]
-        )],
-    }
-    sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'write', user_id, values)
-    values = {
-        'groups_id': [(
-            4, sock.execute(base.dbname, uid, base.admin_user_pw,
-                            'res.groups', 'search', [('name', '=', 'Community Employee Manager')]
-                            )[0]
-        )],
-    }
-    sock.execute(base.dbname, uid, base.admin_user_pw, 'res.users', 'write', user_id, values)
 
     print 'Done.'
 
