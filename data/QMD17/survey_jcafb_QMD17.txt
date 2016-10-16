@@ -1,0 +1,34 @@
+[QMD17] JCAFB 2017 - Questionário Medicamento
+    [QMD17_01] Identificação do Questionário
+        [QMD17_01_01] Código do Questionário:
+            (textbox)
+            ____________________________________
+        [QMD17_01_02] Data da Entrevista (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        [QMD17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):
+            (free_text)
+            ____________________________________
+            ____________________________________
+            ____________________________________
+            ____________________________________
+    [QMD17_02] Identificação do Paciente/Entrevistado
+        [QMD17_02_01] Nome do Paciente:
+            (textbox)
+            ____________________________________
+        [QMD17_02_02] Código do Paciente:
+            (textbox)
+            ____________________________________
+        [QMD17_02_03] Nome do Endereço
+            (textbox)
+            ____________________________________
+        [QMD17_02_04] Código do Endereço
+            (textbox)
+            ____________________________________
+        [QMD17_02_05] Entrevistado
+            (simple_choice)
+            a) Responsável
+            b) Paciente
+            c) Cuidador
+            d) Outro
+            Nome do Cuidador e, se a resposta for "Outro", especificar nome e grau de parentesco____________________________________
