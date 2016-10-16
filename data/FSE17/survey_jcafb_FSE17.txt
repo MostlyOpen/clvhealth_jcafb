@@ -1,0 +1,28 @@
+[FSE17] JCAFB 2017 - Questionário Socioeconômico Familiar (Crianças e Idosos)
+    [FSE17_01] Identificação do Questionário
+        [FSE17_01_01] Código do Questionário:
+            (textbox)
+            ____________________________________
+        [FSE17_01_02] Data da Entrevista (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        [FSE17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):
+            (free_text)
+            ____________________________________
+            ____________________________________
+            ____________________________________
+            ____________________________________
+    [FSE17_02] Identificação do Endereço/Entrevistado
+        [FSE17_02_01] Nome do Endereço
+            (textbox)
+            ____________________________________
+        [FSE17_02_02] Código do Endereço
+            (textbox)
+            ____________________________________
+        [FSE17_02_03] Entrevistado:
+            (simple_choice)
+            a) Responsável pela(s) Criança(s) da casa
+            b) Paciente Idoso
+            c) Cuidador (da(s) Criança(s) e/ou do(s) Idoso(s) da casa
+            d) Outro (especificar)
+            Se a resposta for "Outro", especificar o papel na residência:____________________________________
