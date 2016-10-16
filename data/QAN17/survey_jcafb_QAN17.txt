@@ -1,0 +1,34 @@
+[QAN17] JCAFB 2017 - Questionário para detecção de Anemia
+    [QAN17_01] Identificação do Questionário
+        [QAN17_01_01] Código do Questionário:
+            (textbox)
+            ____________________________________
+        [QAN17_01_02] Data da Entrevista (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        [QAN17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):
+            (free_text)
+            ____________________________________
+            ____________________________________
+            ____________________________________
+            ____________________________________
+    [QAN17_02] Identificação do Paciente/Entrevistado
+        [QAN17_02_01] Nome do Paciente:
+            (textbox)
+            ____________________________________
+        [QAN17_02_02] Código do Paciente:
+            (textbox)
+            ____________________________________
+        [QAN17_02_03] Nome do Endereço
+            (textbox)
+            ____________________________________
+        [QAN17_02_04] Código do Endereço
+            (textbox)
+            ____________________________________
+        [QAN17_02_05] Entrevistado
+            (simple_choice)
+            a) Responsável
+            b) Paciente
+            c) Cuidador
+            d) Outro
+            Nome e grau de parentesco do Responsável ou do Cuidador; se "Outro", especificar:____________________________________
