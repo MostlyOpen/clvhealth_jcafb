@@ -1,0 +1,34 @@
+[TCR17] JCAFB 2017 - TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO PARA REALIZAÇÃO DE EXAMES COPROPARASITOLÓGICOS, DETECÇÃO DE ANEMIA E QUESTIONÁRIO SOCIOECONÔMICO
+    [TCR17_01] Identificação do Termo de Consentimento
+        [TCR17_01_01] Código do Termo de Consentimento:
+            (textbox)
+            ____________________________________
+        [TCR17_01_02] Data da Assinatura (dd-mm-yyyy):
+            (textbox)
+            ____________________________________
+        [TCR17_01_03] Código do Professor Responsável:
+            (textbox)
+            ____________________________________
+        [TCR17_01_04] Códigos do(s) Coletor(es) (um em cada linha):
+            (free_text)
+            ____________________________________
+            ____________________________________
+            ____________________________________
+            ____________________________________
+    [TCR17_02] Identificação do Indivíduo
+        [TCR17_02_01] Nome do Indivíduo:
+            (textbox)
+            ____________________________________
+        [TCR17_02_02] Código do Indivíduo:
+            (textbox)
+            ____________________________________
+        [TCR17_02_03] Nome do Responsável Legal
+            (textbox)
+            ____________________________________
+        [TCR17_02_04] Código do Responsável Legal
+            (textbox)
+            ____________________________________
+        [TCR17_02_05] Quem assinou o Termo de Consentimento?
+            (simple_choice)
+            a) Indivíduo
+            b) Responsável Legal
