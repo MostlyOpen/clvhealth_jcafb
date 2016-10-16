@@ -1,0 +1,21 @@
+[ITM17] JCAFB 2017 - Interpretação das Tabelas de Medicamentos
+    [ITM17_01] Identificação do Questionário
+        [ITM17_01_01] Código do Questionário:
+            (textbox)
+            ____________________________________
+        [ITM17_01_02] Data da Entrevista (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        [ITM17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):
+            (free_text)
+            ____________________________________
+            ____________________________________
+            ____________________________________
+            ____________________________________
+    [ITM17_02] Identificação do Paciente/Entrevistado
+        [ITM17_02_01] Nome do Paciente:
+            (textbox)
+            ____________________________________
+        [ITM17_02_02] Código do Paciente:
+            (textbox)
+            ____________________________________
