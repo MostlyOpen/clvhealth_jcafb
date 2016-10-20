@@ -34,6 +34,7 @@ from jcafb_2017_communities import *
 from jcafb_2017_residences import *
 from jcafb_2017_persons import *
 from jcafb_2017_events import *
+from jcafb_2017_documents import *
 
 
 def jcafb_export_sqlite(client, db_path, conn_string):
@@ -276,7 +277,18 @@ def jcafb_mass_editing_create(client):
     model = 'myo.event'
     fields = [
         'user_id', 'state', 'category_ids', 'tag_ids',
-        'planned_hours', 'date_start', 'data_foreseen', 'data_deadline',
+        'planned_hours', 'date_start', 'date_foreseen', 'date_deadline',
+        'active', 'active_log'
+    ]
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
+
+    name = 'Document'
+    model = 'myo.document'
+    fields = [
+        'user_id', 'state', 'category_ids', 'tag_ids',
+        'date_document', 'date_foreseen', 'date_deadline',
         'active', 'active_log'
     ]
     print('-->', client, name, model, fields)
@@ -680,7 +692,7 @@ if __name__ == '__main__':
     # # myo.community.code (next = 1)
     # # myo.employee.code (next = 17)
 
-    # ***** 2016-10-15 *****
+    # ***** 2016-10-20 *****
     #
 
     print('-->', client)
@@ -728,7 +740,11 @@ if __name__ == '__main__':
     print('--> Executing jcafb_set_events()...')
     jcafb_set_events(client)
 
-    # db_path = 'data/clvhealth_jcafb_2017_2016-10-15a.sqlite'
+    print('-->', client)
+    print('--> Executing jcafb_set_documents()...')
+    jcafb_set_documents(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-20a.sqlite'
     # print('-->', client, db_path, conn_string)
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
