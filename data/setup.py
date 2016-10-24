@@ -130,6 +130,41 @@ def jcafb_export_sqlite(client, db_path, conn_string):
     print()
     person_mng_export_sqlite(client, person_mng_args, db_path, table_name)
 
+    event_category_args = []
+    table_name = 'myo_event_category'
+    print('-->', client, event_category_args, db_path, table_name)
+    print('--> Executing event_category_export_sqlite()...')
+    print()
+    event_category_export_sqlite(client, event_category_args, db_path, table_name)
+
+    event_args = []
+    table_name = 'myo_event'
+    print('-->', client, event_args, db_path, table_name)
+    print('--> Executing event_export_sqlite()...')
+    print()
+    event_export_sqlite(client, event_args, db_path, table_name)
+
+    event_participant_role_args = []
+    table_name = 'myo_event_participant_role'
+    print('-->', client, event_participant_role_args, db_path, table_name)
+    print('--> Executing event_participant_role_export_sqlite()...')
+    print()
+    event_participant_role_export_sqlite(client, event_participant_role_args, db_path, table_name)
+
+    event_person_args = []
+    table_name = 'myo_event_person'
+    print('-->', client, event_person_args, db_path, table_name)
+    print('--> Executing event_person_export_sqlite()...')
+    print()
+    event_person_export_sqlite(client, event_person_args, db_path, table_name)
+
+    event_employee_args = []
+    table_name = 'myo_event_employee'
+    print('-->', client, event_employee_args, db_path, table_name)
+    print('--> Executing event_employee_export_sqlite()...')
+    print()
+    event_employee_export_sqlite(client, event_employee_args, db_path, table_name)
+
 
 def jcafb_import_sqlite(client, db_path):
 
@@ -692,62 +727,99 @@ if __name__ == '__main__':
     # # myo.community.code (next = 1)
     # # myo.employee.code (next = 17)
 
-    # ***** 2016-10-20 *****
+    # ***** 2016-10-21 *****
     #
 
-    print('-->', client)
-    print('--> Executing jcafb_mass_editing_create()...')
-    jcafb_mass_editing_create(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
 
-    print('-->', client)
-    print('--> Executing jcafb_set_users()...')
-    jcafb_set_users(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
 
-    db_path = 'data/clvhealth_jcafb_2017_2016-10-11a.sqlite'
-    print('-->', client, db_path)
-    print('--> Executing jcafb_import_sqlite()...')
-    jcafb_import_sqlite(client, db_path)
-    # myo.tag.code (next = 7)
-    # myo.annotation.code (next = 1)
-    # myo.address.code (next = 153)
-    # myo.document.code (next = 1)
-    # myo.event.code (next = 1)
-    # myo.person.code (next = 283)
-    # myo.community.code (next = 1)
-    # myo.employee.code (next = 17)
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-11a.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path)
+    # # myo.tag.code (next = 7)
+    # # myo.annotation.code (next = 1)
+    # # myo.address.code (next = 153)
+    # # myo.document.code (next = 1)
+    # # myo.event.code (next = 1)
+    # # myo.person.code (next = 283)
+    # # myo.community.code (next = 1)
+    # # myo.employee.code (next = 17)
 
-    print('-->', client)
-    print('--> Executing jcafb_set_communities()...')
-    jcafb_set_communities(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
 
-    print('-->', client)
-    print('--> Executing jcafb_select_residences()...')
-    jcafb_select_residences(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_select_residences()...')
+    # jcafb_select_residences(client)
 
-    print('-->', client)
-    print('--> Executing jcafb_select_persons()...')
-    jcafb_select_persons(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_select_persons()...')
+    # jcafb_select_persons(client)
 
-    print('-->', client)
-    print('--> Executing jcafb_select_community_residences()...')
-    jcafb_select_community_residences(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_select_community_residences()...')
+    # jcafb_select_community_residences(client)
 
-    print('-->', client)
-    print('--> Executing jcafb_select_community_persons()...')
-    jcafb_select_community_persons(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_select_community_persons()...')
+    # jcafb_select_community_persons(client)
 
-    print('-->', client)
-    print('--> Executing jcafb_set_events()...')
-    jcafb_set_events(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_set_events()...')
+    # jcafb_set_events(client)
 
-    print('-->', client)
-    print('--> Executing jcafb_set_documents()...')
-    jcafb_set_documents(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_set_documents()...')
+    # jcafb_set_documents(client)
 
-    # db_path = 'data/clvhealth_jcafb_2017_2016-10-20a.sqlite'
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-10-21a.sql
+    # # gzip clvhealth_jcafb_dev_2016-10-21a.sql
+    # #
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-21a.sqlite'
     # print('-->', client, db_path, conn_string)
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
+    # #
+    # # ***** clvhealh-jcafb-2017-pro
+    # #
+    # # /etc/init.d/openerp-server stop
+    # #
+    # # cd '/opt/openerp'
+    # # gzip -d clvhealth_jcafb_dev_2016-10-21a.sql.gz
+    # # dropdb -i clvhealth_jcafb_pro
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_pro
+    # # psql -f clvhealth_jcafb_dev_2016-10-21a.sql -d clvhealth_jcafb_pro -U postgres -h localhost -p 5432 -q
+    # #
+    # # su openerp
+    # # cd /opt/openerp/mostlyopen_odoo_addons
+    # # git pull
+    # # cd /opt/openerp/mostlyopen_odoo_addons_extra
+    # # git pull
+    # # cd /opt/openerp/mostlyopen_odoo_addons_jcafb
+    # # git pull
+    # # cd /opt/openerp/mostlyopen_odoo_addons_l10n_br
+    # # git pull
+    # # exit
+    # #
+    # # /etc/init.d/openerp-server start
+
+    # ***** 2016-10-24 *****
+    #
+
+    db_path = 'data/clvhealth_jcafb_2017_2016-10-24a.sqlite'
+    print('-->', client, db_path, conn_string)
+    print('--> Executing jcafb_export_sqlite()...')
+    jcafb_export_sqlite(client, db_path, conn_string)
 
     print()
     print('--> setup.py', '- Execution time:', secondsToStr(time() - start))
