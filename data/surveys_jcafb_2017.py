@@ -35,7 +35,7 @@ if __name__ == '__main__':
     from time import time
     start = time()
 
-    destination_directory = '/opt/openerp/mostlyopen_odoo_addons_jcafb/jcafb_2017_consent_forms/data'
+    destination_directory = '/opt/openerp/mostlyopen_odoo_addons_jcafb/jcafb_2017_surveys/data'
     copy_xml_file = True
     print('--> Executing jcafb_2017_surveys.py ...')
 

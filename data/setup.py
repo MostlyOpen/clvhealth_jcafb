@@ -35,6 +35,7 @@ from jcafb_2017_residences import *
 from jcafb_2017_persons import *
 from jcafb_2017_events import *
 from jcafb_2017_documents import *
+from jcafb_2017_surveys import *
 
 
 def jcafb_export_sqlite(client, db_path, conn_string):
@@ -813,13 +814,69 @@ if __name__ == '__main__':
     # #
     # # /etc/init.d/openerp-server start
 
-    # ***** 2016-10-24 *****
+    # ***** 2016-10-25 *****
     #
 
-    db_path = 'data/clvhealth_jcafb_2017_2016-10-24a.sqlite'
-    print('-->', client, db_path, conn_string)
-    print('--> Executing jcafb_export_sqlite()...')
-    jcafb_export_sqlite(client, db_path, conn_string)
+    print('-->', client)
+    print('--> Executing jcafb_mass_editing_create()...')
+    jcafb_mass_editing_create(client)
+
+    print('-->', client)
+    print('--> Executing jcafb_set_users()...')
+    jcafb_set_users(client)
+
+    db_path = 'data/clvhealth_jcafb_2017_2016-10-21a.sqlite'
+    print('-->', client, db_path)
+    print('--> Executing jcafb_import_sqlite()...')
+    jcafb_import_sqlite(client, db_path)
+    # myo.tag.code (next = 7)
+    # myo.annotation.code (next = 1)
+    # myo.address.code (next = 153)
+    # myo.document.code (next = 1)
+    # myo.event.code (next = 1)
+    # myo.person.code (next = 283)
+    # myo.community.code (next = 1)
+    # myo.employee.code (next = 17)
+
+    print('-->', client)
+    print('--> Executing jcafb_set_communities()...')
+    jcafb_set_communities(client)
+
+    print('-->', client)
+    print('--> Executing jcafb_select_residences()...')
+    jcafb_select_residences(client)
+
+    print('-->', client)
+    print('--> Executing jcafb_select_persons()...')
+    jcafb_select_persons(client)
+
+    print('-->', client)
+    print('--> Executing jcafb_select_community_residences()...')
+    jcafb_select_community_residences(client)
+
+    print('-->', client)
+    print('--> Executing jcafb_select_community_persons()...')
+    jcafb_select_community_persons(client)
+
+    print('-->', client)
+    print('--> Executing jcafb_set_events()...')
+    jcafb_set_events(client)
+
+    print('-->', client)
+    print('--> Executing jcafb_set_documents()...')
+    jcafb_set_documents(client)
+
+    print('-->', client)
+    print('--> Executing jcafb_set_surveys()...')
+    jcafb_set_surveys(client)
+
+    # ***** 2016-10-nn *****
+    #
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-24a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
 
     print()
     print('--> setup.py', '- Execution time:', secondsToStr(time() - start))

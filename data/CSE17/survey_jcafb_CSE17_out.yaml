@@ -28,10 +28,10 @@ CSE17:
 
         CSE17_01_03:
             model: survey.question
-            question: 'Códigos do(s) Entrevistador(es) (um em cada linha):'
-            type: free_text
+            question: 'Códigos do(s) Entrevistador(es) (separados por ","):'
+            type: textbox
             constr_mandatory: True
-            constr_error_msg: 'Informar os Códigos quem fez a entrevista.'
+            constr_error_msg: 'Informar o(s) Código(s) do(s) entrevistador(es).'
 
     CSE17_02:
         model: survey.page

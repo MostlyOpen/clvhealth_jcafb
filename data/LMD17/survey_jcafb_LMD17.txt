@@ -6,11 +6,8 @@
         [LMD17_01_02] Data da Entrevista (dd-mm-aaaa):
             (textbox)
             ____________________________________
-        [LMD17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):
-            (free_text)
-            ____________________________________
-            ____________________________________
-            ____________________________________
+        [LMD17_01_03] Códigos do(s) Entrevistador(es) (separados por ","):
+            (textbox)
             ____________________________________
     [LMD17_02] Identificação do Entrevistado
         [LMD17_02_01] Nome do Paciente:

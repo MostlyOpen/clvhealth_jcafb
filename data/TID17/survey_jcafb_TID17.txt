@@ -9,11 +9,8 @@
         [TID17_01_03] Código do Professor Responsável:
             (textbox)
             ____________________________________
-        [TID17_01_04] Códigos do(s) Coletor(es) (um em cada linha):
-            (free_text)
-            ____________________________________
-            ____________________________________
-            ____________________________________
+        [TID17_01_04] Códigos do(s) Entrevistador(es) (separados por ","):
+            (textbox)
             ____________________________________
     [TID17_02] Identificação do Indivíduo
         [TID17_02_01] Nome do Indivíduo:

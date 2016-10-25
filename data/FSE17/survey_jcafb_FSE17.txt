@@ -6,11 +6,8 @@
         [FSE17_01_02] Data da Entrevista (dd-mm-aaaa):
             (textbox)
             ____________________________________
-        [FSE17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):
-            (free_text)
-            ____________________________________
-            ____________________________________
-            ____________________________________
+        [FSE17_01_03] Códigos do(s) Entrevistador(es) (separados por ","):
+            (textbox)
             ____________________________________
     [FSE17_02] Identificação do Endereço/Entrevistado
         [FSE17_02_01] Nome do Endereço

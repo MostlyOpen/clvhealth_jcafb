@@ -9,11 +9,8 @@
         [TCR17_01_03] Código do Professor Responsável:
             (textbox)
             ____________________________________
-        [TCR17_01_04] Códigos do(s) Coletor(es) (um em cada linha):
-            (free_text)
-            ____________________________________
-            ____________________________________
-            ____________________________________
+        [TCR17_01_04] Códigos do(s) Entrevistador(es) (separados por ","):
+            (textbox)
             ____________________________________
     [TCR17_02] Identificação do Indivíduo
         [TCR17_02_01] Nome do Indivíduo:

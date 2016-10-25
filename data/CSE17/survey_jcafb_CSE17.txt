@@ -6,11 +6,8 @@
         [CSE17_01_02] Data da Entrevista (dd-mm-aaaa):
             (textbox)
             ____________________________________
-        [CSE17_01_03] Códigos do(s) Entrevistador(es) (um em cada linha):
-            (free_text)
-            ____________________________________
-            ____________________________________
-            ____________________________________
+        [CSE17_01_03] Códigos do(s) Entrevistador(es) (separados por ","):
+            (textbox)
             ____________________________________
     [CSE17_02] Identificação da Criança/Entrevistado
         [CSE17_02_01] Nome da Criança:
