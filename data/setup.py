@@ -331,6 +331,16 @@ def jcafb_mass_editing_create(client):
     print('--> Executing mass_editing_create()...')
     mass_editing_create(client, name, model, fields)
 
+    name = 'Survey User Input'
+    model = 'survey.user_input'
+    fields = [
+        'linked_message', 'linked_state',
+        'link_survey_user_input', 'active'
+    ]
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
+
 
 def get_arguments():
 
@@ -814,7 +824,7 @@ if __name__ == '__main__':
     # #
     # # /etc/init.d/openerp-server start
 
-    # ***** 2016-10-25 *****
+    # ***** 2016-10-26 *****
     #
 
     print('-->', client)
@@ -873,7 +883,7 @@ if __name__ == '__main__':
     # ***** 2016-10-nn *****
     #
 
-    # db_path = 'data/clvhealth_jcafb_2017_2016-10-24a.sqlite'
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-26a.sqlite'
     # print('-->', client, db_path, conn_string)
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
