@@ -166,8 +166,15 @@ def jcafb_export_sqlite(client, db_path, conn_string):
     print()
     event_employee_export_sqlite(client, event_employee_args, db_path, table_name)
 
+    ir_sequence_args = []
+    table_name = 'ir_sequence'
+    print('-->', client, ir_sequence_args, db_path, table_name, conn_string)
+    print('--> Executing ir_sequence_export_sqlite()...')
+    print()
+    ir_sequence_export_sqlite(client, ir_sequence_args, db_path, table_name, conn_string)
 
-def jcafb_import_sqlite(client, db_path):
+
+def jcafb_import_sqlite(client, db_path, conn_string):
 
     l10n_br_zip_args = []
     table_name = 'l10n_br_zip'
@@ -270,6 +277,13 @@ def jcafb_import_sqlite(client, db_path):
         table_name, tag_table_name, category_table_name,
         address_mng_table_name, address_table_name, person_table_name
     )
+
+    ir_sequence_args = []
+    table_name = 'ir_sequence'
+    print('-->', client, ir_sequence_args, db_path, table_name, conn_string)
+    print('--> Executing ir_sequence_import_sqlite()...')
+    print()
+    ir_sequence_import_sqlite(client, ir_sequence_args, db_path, table_name, conn_string)
 
 
 def jcafb_mass_editing_create(client):
@@ -827,58 +841,107 @@ if __name__ == '__main__':
     # ***** 2016-10-26 *****
     #
 
-    print('-->', client)
-    print('--> Executing jcafb_mass_editing_create()...')
-    jcafb_mass_editing_create(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-21a.sqlite'
+    # print('-->', client, db_path)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path)
+    # # myo.tag.code (next = 7)
+    # # myo.annotation.code (next = 1)
+    # # myo.address.code (next = 153)
+    # # myo.document.code (next = 1)
+    # # myo.event.code (next = 1)
+    # # myo.person.code (next = 283)
+    # # myo.community.code (next = 1)
+    # # myo.employee.code (next = 17)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_select_residences()...')
+    # jcafb_select_residences(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_select_persons()...')
+    # jcafb_select_persons(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_select_community_residences()...')
+    # jcafb_select_community_residences(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_select_community_persons()...')
+    # jcafb_select_community_persons(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_events()...')
+    # jcafb_set_events(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_documents()...')
+    # jcafb_set_documents(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_surveys()...')
+    # jcafb_set_surveys(client)
+
+    # ***** 2016-10-31 *****
+    #
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-21a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+    # # myo.tag.code (next = 7)
+    # # myo.annotation.code (next = 1)
+    # # myo.address.code (next = 153)
+    # # myo.document.code (next = 1)
+    # # myo.event.code (next = 1)
+    # # myo.person.code (next = 283)
+    # # myo.community.code (next = 1)
+    # # mmyo.lab_test.code (next = 1)
+    # # myo.employee.code (next = 74)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-31a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-31a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-31b.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
 
     print('-->', client)
     print('--> Executing jcafb_set_users()...')
     jcafb_set_users(client)
 
-    db_path = 'data/clvhealth_jcafb_2017_2016-10-21a.sqlite'
-    print('-->', client, db_path)
+    db_path = 'data/clvhealth_jcafb_2017_2016-10-31b.sqlite'
+    print('-->', client, db_path, conn_string)
     print('--> Executing jcafb_import_sqlite()...')
-    jcafb_import_sqlite(client, db_path)
-    # myo.tag.code (next = 7)
-    # myo.annotation.code (next = 1)
-    # myo.address.code (next = 153)
-    # myo.document.code (next = 1)
-    # myo.event.code (next = 1)
-    # myo.person.code (next = 283)
-    # myo.community.code (next = 1)
-    # myo.employee.code (next = 17)
-
-    print('-->', client)
-    print('--> Executing jcafb_set_communities()...')
-    jcafb_set_communities(client)
-
-    print('-->', client)
-    print('--> Executing jcafb_select_residences()...')
-    jcafb_select_residences(client)
-
-    print('-->', client)
-    print('--> Executing jcafb_select_persons()...')
-    jcafb_select_persons(client)
-
-    print('-->', client)
-    print('--> Executing jcafb_select_community_residences()...')
-    jcafb_select_community_residences(client)
-
-    print('-->', client)
-    print('--> Executing jcafb_select_community_persons()...')
-    jcafb_select_community_persons(client)
-
-    print('-->', client)
-    print('--> Executing jcafb_set_events()...')
-    jcafb_set_events(client)
-
-    print('-->', client)
-    print('--> Executing jcafb_set_documents()...')
-    jcafb_set_documents(client)
-
-    print('-->', client)
-    print('--> Executing jcafb_set_surveys()...')
-    jcafb_set_surveys(client)
+    jcafb_import_sqlite(client, db_path, conn_string)
 
     # ***** 2016-10-nn *****
     #
