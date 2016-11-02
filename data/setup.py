@@ -131,6 +131,48 @@ def jcafb_export_sqlite(client, db_path, conn_string):
     print()
     person_mng_export_sqlite(client, person_mng_args, db_path, table_name)
 
+    community_category_args = []
+    table_name = 'myo_community_category'
+    print('-->', client, community_category_args, db_path, table_name)
+    print('--> Executing community_category_export_sqlite()...')
+    print()
+    community_category_export_sqlite(client, community_category_args, db_path, table_name)
+
+    community_args = []
+    table_name = 'myo_community'
+    print('-->', client, community_args, db_path, table_name)
+    print('--> Executing community_export_sqlite()...')
+    print()
+    community_export_sqlite(client, community_args, db_path, table_name)
+
+    community_member_role_args = []
+    table_name = 'myo_community_member_role'
+    print('-->', client, community_member_role_args, db_path, table_name)
+    print('--> Executing community_member_role_export_sqlite()...')
+    print()
+    community_member_role_export_sqlite(client, community_member_role_args, db_path, table_name)
+
+    community_employee_args = []
+    table_name = 'myo_community_employee'
+    print('-->', client, community_employee_args, db_path, table_name)
+    print('--> Executing community_employee_export_sqlite()...')
+    print()
+    community_employee_export_sqlite(client, community_employee_args, db_path, table_name)
+
+    community_address_args = []
+    table_name = 'myo_community_address'
+    print('-->', client, community_address_args, db_path, table_name)
+    print('--> Executing community_address_export_sqlite()...')
+    print()
+    community_address_export_sqlite(client, community_address_args, db_path, table_name)
+
+    community_person_args = []
+    table_name = 'myo_community_person'
+    print('-->', client, community_person_args, db_path, table_name)
+    print('--> Executing community_person_export_sqlite()...')
+    print()
+    community_person_export_sqlite(client, community_person_args, db_path, table_name)
+
     event_category_args = []
     table_name = 'myo_event_category'
     print('-->', client, event_category_args, db_path, table_name)
@@ -290,26 +332,12 @@ def jcafb_mass_editing_create(client):
 
     name = 'Address'
     model = 'myo.address'
-    fields = ['state', 'category_ids', 'tag_ids', 'active', 'active_log']
-    print('-->', client, name, model, fields)
-    print('--> Executing mass_editing_create()...')
-    mass_editing_create(client, name, model, fields)
-
-    name = 'Residence'
-    model = 'myo.address'
     fields = ['is_residence', 'state', 'category_ids', 'tag_ids', 'active', 'active_log']
     print('-->', client, name, model, fields)
     print('--> Executing mass_editing_create()...')
     mass_editing_create(client, name, model, fields)
 
     name = 'Person'
-    model = 'myo.person'
-    fields = ['state', 'category_ids', 'tag_ids', 'address_id', 'active', 'active_log']
-    print('-->', client, name, model, fields)
-    print('--> Executing mass_editing_create()...')
-    mass_editing_create(client, name, model, fields)
-
-    name = 'Patient'
     model = 'myo.person'
     fields = ['is_patient', 'state', 'category_ids', 'tag_ids', 'address_id', 'active', 'active_log']
     print('-->', client, name, model, fields)
@@ -934,16 +962,86 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
 
+    # ***** 2016-11-02 *****
+    #
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-10-31b.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-02a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-02a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
+
+    # db_path_1 = 'data/clvhealth_jcafb_2017_2016-10-06a.sqlite'
+    # db_path_2 = 'data/clvhealth_jcafb_2017_2016-11-02a.sqlite'
+    # person_mng_args = []
+    # table_name = 'myo_person_mng'
+    # print('-->', client, person_mng_args, db_path_1, db_path_2, table_name)
+    # print('--> Executing person_mng_check_sqlite()...')
+    # print()
+    # person_mng_check_sqlite(client, person_mng_args, db_path_1, db_path_2, table_name)
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-11-02b.sql
+    # # gzip clvhealth_jcafb_dev_2016-11-02b.sql
+    # #
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-02b.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    print('-->', client)
+    print('--> Executing jcafb_mass_editing_create()...')
+    jcafb_mass_editing_create(client)
+
     print('-->', client)
     print('--> Executing jcafb_set_users()...')
     jcafb_set_users(client)
 
-    db_path = 'data/clvhealth_jcafb_2017_2016-10-31b.sqlite'
+    db_path = 'data/clvhealth_jcafb_2017_2016-11-02b.sqlite'
     print('-->', client, db_path, conn_string)
     print('--> Executing jcafb_import_sqlite()...')
     jcafb_import_sqlite(client, db_path, conn_string)
 
-    # ***** 2016-10-nn *****
+    print('-->', client)
+    print('--> Executing jcafb_set_communities()...')
+    jcafb_set_communities(client)
+
+    # ***** 2016-11-nn *****
     #
 
     # db_path = 'data/clvhealth_jcafb_2017_2016-10-26a.sqlite'
