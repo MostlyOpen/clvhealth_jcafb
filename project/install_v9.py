@@ -114,6 +114,7 @@ def clvhealth_jcafb_install():
     install_update_module('myo_event_cst', update)
     install_update_module('myo_person_cst', update)
     install_update_module('myo_person_address_cst', update)
+    install_update_module('myo_person_mng_cst', update)
     install_update_module('myo_community_cst', update)
     install_update_module('myo_lab_test_cst', update)
     install_update_module('jcafb_2017_consent_forms', update)
