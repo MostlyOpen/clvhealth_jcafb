@@ -1049,11 +1049,75 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
 
-    batch_name = 'JCAFB_2017_Dados_Fernao'
-    state = 'revised'
-    print('-->', client, batch_name, state)
-    print('--> Executing address_mng_import_from_person_mng()...')
-    address_mng_import_from_person_mng(client, batch_name, state)
+    # batch_name = 'JCAFB_2017_Dados_Fernao'
+    # state = 'revised'
+    # print('-->', client, batch_name, state)
+    # print('--> Executing address_mng_import_from_person_mng()...')
+    # address_mng_import_from_person_mng(client, batch_name, state)
+
+    # ***** 2016-11-08 *****
+    #
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-07a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-08a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-08a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-08b.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    print('-->', client)
+    print('--> Executing jcafb_mass_editing_create()...')
+    jcafb_mass_editing_create(client)
+
+    print('-->', client)
+    print('--> Executing jcafb_set_users()...')
+    jcafb_set_users(client)
+
+    db_path = 'data/clvhealth_jcafb_2017_2016-11-08b.sqlite'
+    print('-->', client, db_path, conn_string)
+    print('--> Executing jcafb_import_sqlite()...')
+    jcafb_import_sqlite(client, db_path, conn_string)
+
+    print('-->', client)
+    print('--> Executing jcafb_set_communities()...')
+    jcafb_set_communities(client)
 
     # ***** 2016-11-nn *****
     #
