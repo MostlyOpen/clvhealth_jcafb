@@ -421,7 +421,7 @@ def address_mng_import_sqlite(client, args, db_path, table_name, tag_table_name,
 
             print('>>>>>', row[4], new_category_ids)
 
-        if row['address_id'] != 0:
+        if row['address_id'] is not None:
 
             address_id = row['address_id']
 
