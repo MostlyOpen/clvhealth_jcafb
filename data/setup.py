@@ -11,8 +11,7 @@
 #
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
+# MERCHANTABILITY or FITNESS1icense for more details.
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -447,40 +446,8 @@ def secondsToStr(t):
     return "%d:%02d:%02d.%03d" % reduce(lambda ll, b: divmod(ll[0], b) + ll[1:], [(t * 1000,), 1000, 60, 60])
 
 
-if __name__ == '__main__':
-
-    server = 'http://localhost:8069'
-    # server = '*'
-
-    username = 'username'
-    # username = '*'
-    password = 'password'
-    # password = '*'
-
-    dbname = 'odoo'
-    # dbname = '*'
-
-    db_server = 'localhost'
-    # db_server = '*'
-
-    db_user = 'openerp'
-    # db_user = '*'
-
-    db_password = 'openerp'
-    # db_password = '*'
-
-    print()
-    print('--> setup.py...')
-    print('--> server:', server)
-
-    get_arguments()
-
-    from time import time
-    start = time()
-
-    client = erppeek.Client(server, dbname, username, password)
-    conn_string = "dbname='" + dbname + "' user='" + db_user + "' host='" + db_server + \
-                  "' password='" + db_password + "'"
+def buffer():
+    pass
 
     # ***** 2016-09-08 *****
     #
@@ -1055,6 +1022,42 @@ if __name__ == '__main__':
     # print('--> Executing address_mng_import_from_person_mng()...')
     # address_mng_import_from_person_mng(client, batch_name, state)
 
+
+if __name__ == '__main__':
+
+    server = 'http://localhost:8069'
+    # server = '*'
+
+    username = 'username'
+    # username = '*'
+    password = 'password'
+    # password = '*'
+
+    dbname = 'odoo'
+    # dbname = '*'
+
+    db_server = 'localhost'
+    # db_server = '*'
+
+    db_user = 'openerp'
+    # db_user = '*'
+
+    db_password = 'openerp'
+    # db_password = '*'
+
+    print()
+    print('--> setup.py...')
+    print('--> server:', server)
+
+    get_arguments()
+
+    from time import time
+    start = time()
+
+    client = erppeek.Client(server, dbname, username, password)
+    conn_string = "dbname='" + dbname + "' user='" + db_user + "' host='" + db_server + \
+                  "' password='" + db_password + "'"
+
     # ***** 2016-11-08 *****
     #
 
@@ -1102,6 +1105,31 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
 
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-08b.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
+
+    # ***** 2016-11-09 *****
+    #
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-09a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
     print('-->', client)
     print('--> Executing jcafb_mass_editing_create()...')
     jcafb_mass_editing_create(client)
@@ -1110,7 +1138,7 @@ if __name__ == '__main__':
     print('--> Executing jcafb_set_users()...')
     jcafb_set_users(client)
 
-    db_path = 'data/clvhealth_jcafb_2017_2016-11-08b.sqlite'
+    db_path = 'data/clvhealth_jcafb_2017_2016-11-09a.sqlite'
     print('-->', client, db_path, conn_string)
     print('--> Executing jcafb_import_sqlite()...')
     jcafb_import_sqlite(client, db_path, conn_string)
@@ -1119,7 +1147,7 @@ if __name__ == '__main__':
     print('--> Executing jcafb_set_communities()...')
     jcafb_set_communities(client)
 
-    # ***** 2016-11-nn *****
+    # print(-> client)    # ***** 2016-11-nn *****
     #
 
     # db_path = 'data/clvhealth_jcafb_2017_2016-10-26a.sqlite'
