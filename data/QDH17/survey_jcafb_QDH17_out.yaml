@@ -1,10 +1,10 @@
 QDH17:
     model: survey.survey
-    title: 'JCAFB 2017 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia'
+    title: ''
     stage_id: survey.stage_in_progress
     auth_required: False
     users_can_go_back: True
-    description: ''
+    description: 'JCAFB 2017 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia'
     thank_you_message: 'Obrigado por sua participação.'
 
     QDH17_01:

@@ -1,10 +1,10 @@
 TID17:
     model: survey.survey
-    title: 'JCAFB 2017 - TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO PARA REALIZAÇÃO DE EXAME DE URINA, COPROPARASITOLÓGICO, DETECÇÃO DE ANEMIA E QUESTIONÁRIO SOCIOECONÔMICO'
+    title: ''
     stage_id: survey.stage_in_progress
     auth_required: False
     users_can_go_back: True
-    description: ''
+    description: 'JCAFB 2017 - TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO PARA REALIZAÇÃO DE EXAME DE URINA, COPROPARASITOLÓGICO, DETECÇÃO DE ANEMIA E QUESTIONÁRIO SOCIOECONÔMICO'
     thank_you_message: 'Obrigado por sua participação.'
 
     TID17_01:
@@ -91,4 +91,85 @@ TID17:
             TID17_02_05_02:
                 model: survey.label
                 value: 'b) Responsável Legal'
+
+    TID17_03:
+        model: survey.page
+        title: 'Consentimentos'
+        description: ''
+
+        TID17_03_01:
+            model: survey.question
+            question: '1) Questionário Socioeconômico'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            TID17_03_01_01:
+                model: survey.label
+                value: 'Concordo em participar'
+
+            TID17_03_01_02:
+                model: survey.label
+                value: 'Não concordo em participar'
+
+        TID17_03_02:
+            model: survey.question
+            question: '2) Exame coproparasitológico de fezes'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            TID17_03_02_01:
+                model: survey.label
+                value: 'Concordo em participar'
+
+            TID17_03_02_02:
+                model: survey.label
+                value: 'Não concordo em participar'
+
+        TID17_03_03:
+            model: survey.question
+            question: '3) Exame de urina'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            TID17_03_03_01:
+                model: survey.label
+                value: 'Concordo em participar'
+
+            TID17_03_03_02:
+                model: survey.label
+                value: 'Não concordo em participar'
+
+        TID17_03_04:
+            model: survey.question
+            question: '4) Exame de anemia'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Esta questão precisa ser respondida.'
+            comments_allowed: False
+            comments_message: ''
+
+            TID17_03_04_01:
+                model: survey.label
+                value: 'Concordo em participar'
+
+            TID17_03_04_02:
+                model: survey.label
+                value: 'Não concordo em participar'
 

@@ -1,4 +1,4 @@
-[QDH17] JCAFB 2017 - Questionário - Diabetes, Hipertensão Arterial e Hipercolesterolemia
+[QDH17] 
     [QDH17_01] Identificação do Questionário
         [QDH17_01_01] Código do Questionário:
             (textbox)
