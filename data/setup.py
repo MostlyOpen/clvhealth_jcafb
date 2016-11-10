@@ -1130,30 +1130,77 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
 
-    print('-->', client)
-    print('--> Executing jcafb_mass_editing_create()...')
-    jcafb_mass_editing_create(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
 
-    print('-->', client)
-    print('--> Executing jcafb_set_users()...')
-    jcafb_set_users(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
 
-    db_path = 'data/clvhealth_jcafb_2017_2016-11-09a.sqlite'
-    print('-->', client, db_path, conn_string)
-    print('--> Executing jcafb_import_sqlite()...')
-    jcafb_import_sqlite(client, db_path, conn_string)
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-09a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
 
-    print('-->', client)
-    print('--> Executing jcafb_set_communities()...')
-    jcafb_set_communities(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
 
-    # print(-> client)    # ***** 2016-11-nn *****
-    #
+    # person_mng_args = [('state', '=', 'done'), ]
+    # batch_name = 'JCAFB_2017_Dados_Fernao_responsible_02'
+    # print('-->', client, person_mng_args, batch_name)
+    # print('--> Executing person_mng_include_responsible()...')
+    # print()
+    # person_mng_include_responsible(client, person_mng_args, batch_name)
 
-    # db_path = 'data/clvhealth_jcafb_2017_2016-10-26a.sqlite'
+    # person_mng_args = [('state', '=', 'done'), ]
+    # print('-->', client, person_mng_args)
+    # print('--> Executing person_mng_set_responsible()...')
+    # print()
+    # person_mng_set_responsible(client, person_mng_args)
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-11-09b.sql
+    # # gzip clvhealth_jcafb_dev_2016-11-09b.sql
+    # #
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-09b.sqlite'
     # print('-->', client, db_path, conn_string)
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-09b.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
+
+    # ***** 2016-11-10 *****
+    #
+
+    # ***** odoo-mint18
+    #
+    # cd '/opt/openerp'
+    # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-11-10a.sql
+    # gzip clvhealth_jcafb_dev_2016-11-10a.sql
+    #
+    db_path = 'data/clvhealth_jcafb_2017_2016-11-10a.sqlite'
+    print('-->', client, db_path, conn_string)
+    print('--> Executing jcafb_export_sqlite()...')
+    jcafb_export_sqlite(client, db_path, conn_string)
 
     print()
     print('--> setup.py', '- Execution time:', secondsToStr(time() - start))
