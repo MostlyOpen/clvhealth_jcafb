@@ -1,36 +1,36 @@
 [QMD17] 
-    [QMD17_01] Identificação do Questionário
-        [QMD17_01_01] Código do Questionário:
+    1. Identificação do Questionário
+        1.1. Código do Questionário:
             (textbox)
             ____________________________________
-        [QMD17_01_02] Data da Entrevista (dd-mm-aaaa):
+        1.2. Data da Entrevista (dd-mm-aaaa):
             (textbox)
             ____________________________________
-        [QMD17_01_03] Códigos do(s) Entrevistador(es) (separados por ","):
+        1.3. Códigos do(s) Entrevistador(es) (separados por ","):
             (textbox)
             ____________________________________
-    [QMD17_02] Identificação do Paciente/Entrevistado
-        [QMD17_02_01] Nome do Paciente:
+    2. Identificação do Paciente/Entrevistado
+        2.1. Nome do Paciente:
             (textbox)
             ____________________________________
-        [QMD17_02_02] Código do Paciente:
+        2.2. Código do Paciente:
             (textbox)
             ____________________________________
-        [QMD17_02_03] Nome do Endereço
+        2.3. Nome do Endereço
             (textbox)
             ____________________________________
-        [QMD17_02_04] Código do Endereço
+        2.4. Código do Endereço
             (textbox)
             ____________________________________
-        [QMD17_02_05] Entrevistado
+        2.5. Entrevistado
             (simple_choice)
             a) Responsável
             b) Paciente
             c) Cuidador
             d) Outro
             Nome do Cuidador e, se a resposta for "Outro", especificar nome e grau de parentesco____________________________________
-    [QMD17_03] Questionário
-        [QMD17_03_01] Quem administra os medicamentos do(a) Sr.(a)?
+    3. Questionário
+        3.1. Quem administra os medicamentos do(a) Sr.(a)?
             (multiple_choice)
             a) Cuidador não remunerado
             b) Cuidador remunerado
@@ -40,14 +40,14 @@
             f) Não quis responder
             g) Não se aplica
             Se "Outra pessoa", especificar____________________________________
-        [QMD17_03_02] O(a) Sr.(a) toma remédio sem prescrição/orientação de um profissional de saúde (automedicação)?
+        3.2. O(a) Sr.(a) toma remédio sem prescrição/orientação de um profissional de saúde (automedicação)?
             (simple_choice)
             a) Não
             b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-        [QMD17_03_03] De modo geral, como o Sr.(a) identifica seus remédios? (Pode assinalar mais de uma alternativa)?
+        3.3. De modo geral, como o Sr.(a) identifica seus remédios? (Pode assinalar mais de uma alternativa)?
             (multiple_choice)
             a) Pelo tamanho
             b) Pela cor
@@ -60,7 +60,7 @@
             i) Não quis responder
             j) Não se aplica
             Se "Outro", especificar____________________________________
-        [QMD17_03_04] Como o Sr.(a) armazena seus remédios? (Pode assinalar mais de uma alternativa)
+        3.4. Como o Sr.(a) armazena seus remédios? (Pode assinalar mais de uma alternativa)
             (multiple_choice)
             a) No blíster original
             b) No blíster fracionado (COM informação de identificação, lote e validade)
@@ -71,7 +71,7 @@
             g) Não quis responder
             h) Não se aplica
             Se "Outro", especificar____________________________________
-        [QMD17_03_05] O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?
+        3.5. O(A) Sr.(a) utilizou algum chá ou alguma planta medicinal nos últimos 15 dias?
             (simple_choice)
             a) Não
             b) Sim (especificar)
@@ -79,33 +79,37 @@
             d) Não quis responder
             e) Não se aplica
             Se "Sim, especificar____________________________________
-    [QMD17_04] Questionário de Morisky-Green (para avaliar a adesão dos pacientes à terapia medicamentosa)
-        [QMD17_04_01] Você, alguma vez, se esquece de tomar o seu remédio?
+    4. Questionário de Morisky-Green (para avaliar a adesão dos pacientes à terapia medicamentosa)
+        4.1. Você, alguma vez, se esquece de tomar o seu remédio?
             (simple_choice)
             a) Sim
             b) Não
             c) Não sabe
             d) Não quis responder
+            e) Não se aplica
             ____________________________________
-        [QMD17_04_02] Você, às vezes, é descuidado quanto ao horário de tomar o seu remédio?
+        4.2. Você, às vezes, é descuidado quanto ao horário de tomar o seu remédio?
             (simple_choice)
             a) Sim
             b) Não
             c) Não sabe
             d) Não quis responder
+            e) Não se aplica
             ____________________________________
-        [QMD17_04_03] Quando você se sente bem, alguma vez, você deixa de tomar seu remédio?
+        4.3. Quando você se sente bem, alguma vez, você deixa de tomar seu remédio?
             (simple_choice)
             a) Sim
             b) Não
             c) Não sabe
             d) Não quis responder
+            e) Não se aplica
             ____________________________________
-        [QMD17_04_04] Quando você se sente mal com o remédio, às vezes, deixa de tomá-lo?
+        4.4. Quando você se sente mal com o remédio, às vezes, deixa de tomá-lo?
             (simple_choice)
             a) Sim
             b) Não
             c) Não sabe
             d) Não quis responder
+            e) Não se aplica
             ____________________________________
-    [QMD17_05] Lista de todos os medicamentos que o paciente utilizou nos últimos 15 dias, incluindo as receitas que tiver
+    5. Lista de todos os medicamentos que o paciente utilizou nos últimos 15 dias, incluindo as receitas que tiver

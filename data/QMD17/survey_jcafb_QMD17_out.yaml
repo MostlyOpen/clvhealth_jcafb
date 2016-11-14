@@ -322,6 +322,10 @@ QMD17:
                 model: survey.label
                 value: 'd) Não quis responder'
 
+            QMD17_04_01_05:
+                model: survey.label
+                value: 'e) Não se aplica'
+
         QMD17_04_02:
             model: survey.question
             question: 'Você, às vezes, é descuidado quanto ao horário de tomar o seu remédio?'
@@ -348,6 +352,10 @@ QMD17:
             QMD17_04_02_04:
                 model: survey.label
                 value: 'd) Não quis responder'
+
+            QMD17_04_02_05:
+                model: survey.label
+                value: 'e) Não se aplica'
 
         QMD17_04_03:
             model: survey.question
@@ -376,6 +384,10 @@ QMD17:
                 model: survey.label
                 value: 'd) Não quis responder'
 
+            QMD17_04_03_05:
+                model: survey.label
+                value: 'e) Não se aplica'
+
         QMD17_04_04:
             model: survey.question
             question: 'Quando você se sente mal com o remédio, às vezes, deixa de tomá-lo?'
@@ -402,6 +414,10 @@ QMD17:
             QMD17_04_04_04:
                 model: survey.label
                 value: 'd) Não quis responder'
+
+            QMD17_04_04_05:
+                model: survey.label
+                value: 'e) Não se aplica'
 
     QMD17_05:
         model: survey.page

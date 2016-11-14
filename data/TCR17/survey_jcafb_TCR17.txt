@@ -1,48 +1,48 @@
 [TCR17] 
-    [TCR17_01] Identificação do Termo de Consentimento
-        [TCR17_01_01] Código do Termo de Consentimento:
+    1. Identificação do Termo de Consentimento
+        1.1. Código do Termo de Consentimento:
             (textbox)
             ____________________________________
-        [TCR17_01_02] Data da Assinatura (dd-mm-yyyy):
+        1.2. Data da Assinatura (dd-mm-yyyy):
             (textbox)
             ____________________________________
-        [TCR17_01_03] Código do Professor Responsável:
+        1.3. Código do Professor Responsável:
             (textbox)
             ____________________________________
-        [TCR17_01_04] Códigos do(s) Entrevistador(es) (separados por ","):
+        1.4. Códigos do(s) Entrevistador(es) (separados por ","):
             (textbox)
             ____________________________________
-    [TCR17_02] Identificação do Indivíduo
-        [TCR17_02_01] Nome do Indivíduo:
+    2. Identificação do Indivíduo
+        2.1. Nome do Indivíduo:
             (textbox)
             ____________________________________
-        [TCR17_02_02] Código do Indivíduo:
+        2.2. Código do Indivíduo:
             (textbox)
             ____________________________________
-        [TCR17_02_03] Nome do Responsável Legal
+        2.3. Nome do Responsável Legal
             (textbox)
             ____________________________________
-        [TCR17_02_04] Código do Responsável Legal
+        2.4. Código do Responsável Legal
             (textbox)
             ____________________________________
-        [TCR17_02_05] Quem assinou o Termo de Consentimento?
+        2.5. Quem assinou o Termo de Consentimento?
             (simple_choice)
             a) Indivíduo
             b) Responsável Legal
-    [TCR17_03] Consentimentos
-        [TCR17_03_01] 1) Questionário Socioeconômico
+    3. Consentimentos
+        3.1. 1) Questionário Socioeconômico
             (simple_choice)
             Concordo em participar
             Não concordo em participar
-        [TCR17_03_02] 2) Exame coproparasitológico de fezes
+        3.2. 2) Exame coproparasitológico de fezes
             (simple_choice)
             Concordo em participar
             Não concordo em participar
-        [TCR17_03_03] 3) Swab Anal
+        3.3. 3) Swab Anal
             (simple_choice)
             Concordo em participar
             Não concordo em participar
-        [TCR17_03_04] 4) Exame de Anemia
+        3.4. 4) Exame de Anemia
             (simple_choice)
             Concordo em participar
             Não concordo em participar

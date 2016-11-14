@@ -382,56 +382,56 @@ QAN17:
             constr_error_msg: 'Preencher os alimentos que o paciente consome.'
 
             QAN17_06_01_01:
-                model: survey.label.col
-                value: '0 dias ou raramente'
-
-            QAN17_06_01_02:
-                model: survey.label.col
-                value: '1-2 dias'
-
-            QAN17_06_01_03:
-                model: survey.label.col
-                value: '3-4 dias'
-
-            QAN17_06_01_04:
-                model: survey.label.col
-                value: '5 ou mais dias'
-
-            QAN17_06_01_05:
-                model: survey.label.col
-                value: 'Não sabe'
-
-            QAN17_06_01_06:
-                model: survey.label.col
-                value: 'Não quis responder'
-
-            QAN17_06_01_07:
-                model: survey.label.col
-                value: 'Não se aplica'
-
-            QAN17_06_01_08:
                 model: survey.label.row
                 value: 'Feijão, Beterraba (leguminosas)'
 
-            QAN17_06_01_09:
+            QAN17_06_01_02:
                 model: survey.label.row
                 value: 'Fígado de boi'
 
-            QAN17_06_01_10:
+            QAN17_06_01_03:
                 model: survey.label.row
                 value: 'Carnes vermelhas'
 
-            QAN17_06_01_11:
+            QAN17_06_01_04:
                 model: survey.label.row
                 value: 'Verduras e hortaliças verdes escuras (couve, brócolis, agrião, rúcula, escarola)'
 
-            QAN17_06_01_12:
+            QAN17_06_01_05:
                 model: survey.label.row
                 value: 'Carne branca (peixe, frango)'
 
-            QAN17_06_01_13:
+            QAN17_06_01_06:
                 model: survey.label.row
                 value: 'Miúdos (rim, coração)'
+
+            QAN17_06_01_07:
+                model: survey.label.col
+                value: 'a) 0 dias ou raramente'
+
+            QAN17_06_01_08:
+                model: survey.label.col
+                value: 'b) 1-2 dias'
+
+            QAN17_06_01_09:
+                model: survey.label.col
+                value: 'c) 3-4 dias'
+
+            QAN17_06_01_10:
+                model: survey.label.col
+                value: 'd) 5 ou mais dias'
+
+            QAN17_06_01_11:
+                model: survey.label.col
+                value: 'e) Não sabe'
+
+            QAN17_06_01_12:
+                model: survey.label.col
+                value: 'f) Não quis responder'
+
+            QAN17_06_01_13:
+                model: survey.label.col
+                value: 'g) Não se aplica'
 
         QAN17_06_02:
             model: survey.question
@@ -442,50 +442,50 @@ QAN17:
             constr_error_msg: 'Preencher os alimentos que o paciente consome.'
 
             QAN17_06_02_01:
-                model: survey.label.col
-                value: '0 dias ou raramente'
-
-            QAN17_06_02_02:
-                model: survey.label.col
-                value: '1-2 dias'
-
-            QAN17_06_02_03:
-                model: survey.label.col
-                value: '3-4 dias'
-
-            QAN17_06_02_04:
-                model: survey.label.col
-                value: '5 ou mais dias'
-
-            QAN17_06_02_05:
-                model: survey.label.col
-                value: 'Não sabe'
-
-            QAN17_06_02_06:
-                model: survey.label.col
-                value: 'Não quis responder'
-
-            QAN17_06_02_07:
-                model: survey.label.col
-                value: 'Não se aplica'
-
-            QAN17_06_02_08:
                 model: survey.label.row
                 value: 'Fruta ou suco de limão, laranja, acerola'
 
-            QAN17_06_02_09:
+            QAN17_06_02_02:
                 model: survey.label.row
                 value: 'Leite e queijo (laticínios)'
 
-            QAN17_06_02_10:
+            QAN17_06_02_03:
                 model: survey.label.row
                 value: 'Espinafre'
 
-            QAN17_06_02_11:
+            QAN17_06_02_04:
                 model: survey.label.row
                 value: 'Café'
 
-            QAN17_06_02_12:
+            QAN17_06_02_05:
                 model: survey.label.row
                 value: 'Refrigerante a base de cola'
+
+            QAN17_06_02_06:
+                model: survey.label.col
+                value: 'a) 0 dias ou raramente'
+
+            QAN17_06_02_07:
+                model: survey.label.col
+                value: 'b) 1-2 dias'
+
+            QAN17_06_02_08:
+                model: survey.label.col
+                value: 'c) 3-4 dias'
+
+            QAN17_06_02_09:
+                model: survey.label.col
+                value: 'd) 5 ou mais dias'
+
+            QAN17_06_02_10:
+                model: survey.label.col
+                value: 'e) Não sabe'
+
+            QAN17_06_02_11:
+                model: survey.label.col
+                value: 'f) Não quis responder'
+
+            QAN17_06_02_12:
+                model: survey.label.col
+                value: 'g) Não se aplica'
 

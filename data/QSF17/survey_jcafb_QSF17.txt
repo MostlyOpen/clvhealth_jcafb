@@ -1,30 +1,30 @@
 [QSF17] 
-    [QSF17_01] Identificação do Questionário
-        [QSF17_01_01] Código do Questionário:
+    1. Identificação do Questionário
+        1.1. Código do Questionário:
             (textbox)
             ____________________________________
-        [QSF17_01_02] Data da Entrevista (dd-mm-aaaa):
+        1.2. Data da Entrevista (dd-mm-aaaa):
             (textbox)
             ____________________________________
-        [QSF17_01_03] Códigos do(s) Entrevistador(es) (separados por ","):
+        1.3. Códigos do(s) Entrevistador(es) (separados por ","):
             (textbox)
             ____________________________________
-    [QSF17_02] Identificação do Endereço/Entrevistado
-        [QSF17_02_01] Nome do Endereço
+    2. Identificação do Endereço/Entrevistado
+        2.1. Nome do Endereço
             (textbox)
             ____________________________________
-        [QSF17_02_02] Código do Endereço
+        2.2. Código do Endereço
             (textbox)
             ____________________________________
-        [QSF17_02_03] Entrevistado:
+        2.3. Entrevistado:
             (simple_choice)
             a) Responsável pela(s) Criança(s) da casa
             b) Paciente Idoso
             c) Cuidador (da(s) Criança(s) e/ou do(s) Idoso(s) da casa
             d) Outro (especificar)
             Se a resposta for "Outro", especificar o papel na residência:____________________________________
-    [QSF17_03] Residência
-        [QSF17_03_01] Como é o banheiro da casa?
+    3. Residência
+        3.1. Como é o banheiro da casa?
             (simple_choice)
             a) Banheiro com rede de esgoto
             b) Banheiro que dá na fossa
@@ -33,7 +33,7 @@
             e) Não quis responder
             f) Não se aplica
             Se "Outro", especificar:____________________________________
-        [QSF17_03_02] A casa possui (preencher no caso de residência de idosos; se residência de crianças, escolher "Não se aplica"):
+        3.2. A casa possui (preencher no caso de residência de idosos; se residência de crianças, escolher "Não se aplica"):
             (multiple_choice)
             a) Degraus/desníveis
             b) Tapetes
@@ -44,15 +44,15 @@
             g) Não sabe
             h) Não quis responder
             i) Não se aplica
-    [QSF17_04] Horta
-        [QSF17_04_01] Plantam alguma coisa para consumo? (para vender, comer..)
+    4. Horta
+        4.1. Plantam alguma coisa para consumo? (para vender, comer..)
             (simple_choice)
             a) Não
             b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-        [QSF17_04_02] Usam adubo?
+        4.2. Usam adubo?
             (multiple_choice)
             a) Não
             b) Sim, adubo orgânico com esterco
@@ -61,7 +61,7 @@
             e) Não sabe
             f) Não quis responder
             g) Não se aplica
-        [QSF17_04_03] Qual fonte de água é utilizada para irrigar a horta?
+        4.3. Qual fonte de água é utilizada para irrigar a horta?
             (multiple_choice)
             a) Reservatório da prefeitura
             b) Outras (Poço, lagoa, córrego, cisterna, etc).
@@ -69,8 +69,8 @@
             d) Não quis responder
             e) Não se aplica
             Se "Outras", quais?____________________________________
-    [QSF17_05] Água
-        [QSF17_05_01] De onde vem a água da casa?
+    5. Água
+        5.1. De onde vem a água da casa?
             (multiple_choice)
             a) Reservatório da prefeitura
             b) Outros (Poço, lagoa, córrego, cisterna, etc).
@@ -78,14 +78,14 @@
             d) Não quis responder
             e) Não se aplica
             Se "Outros", quais?____________________________________
-        [QSF17_05_02] Existe contato das pessoas da casa com o local de armazenamento (por exemplo caixa d’água)?                        ?
+        5.2. Existe contato das pessoas da casa com o local de armazenamento (por exemplo caixa d’água)?                        ?
             (simple_choice)
             a) Não
             b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-        [QSF17_05_03] Na falta de água, onde é obtida?
+        5.3. Na falta de água, onde é obtida?
             (multiple_choice)
             a) Reservatório da prefeitura
             b) Outros (Poço, lagoa, córrego, cisterna, etc).
@@ -93,7 +93,7 @@
             d) Não quis responder
             e) Não se aplica
             Se "Outros", quais?____________________________________
-        [QSF17_05_04] Antes do consumo de água, é realizado algum dos tratamentos abaixo? (pode-se marcar mais de uma opção)
+        5.4. Antes do consumo de água, é realizado algum dos tratamentos abaixo? (pode-se marcar mais de uma opção)
             (multiple_choice)
             a) Filtração
             b) Fervura
@@ -104,8 +104,8 @@
             g) Não quis responder
             h) Não se aplica
             Se "Outros", quais?____________________________________
-    [QSF17_06] Alimentação / Animais
-        [QSF17_06_01] Criam animais de estimação?
+    6. Alimentação / Animais
+        6.1. Criam animais de estimação?
             (multiple_choice)
             a) Não criam
             b) Galinha
@@ -118,14 +118,14 @@
             i) Não quis responder
             j) Não se aplica
             Se "Outros", quais?____________________________________
-        [QSF17_06_02] Como são criados?
+        6.2. Como são criados?
             (multiple_choice)
             a) Soltos (ou seja, vão pra rua, ou fora de cercados e chiqueiros)
             b) Presos
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-        [QSF17_06_03] Criam animais para a alimentação?
+        6.3. Criam animais para a alimentação?
             (multiple_choice)
             a) Não criam
             b) Galinha
@@ -137,14 +137,14 @@
             h) Não quis responder
             i) Não se aplica
             Se "Outros", quais?____________________________________
-        [QSF17_06_04] Como são criados?
+        6.4. Como são criados?
             (multiple_choice)
             a) Soltos (ou seja, vão pra rua, ou fora de cercados e chiqueiros)
             b) Presos
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-        [QSF17_06_05] Costumam consumir carne proveniente de: (pode-se marcar mais de uma opção)
+        6.5. Costumam consumir carne proveniente de: (pode-se marcar mais de uma opção)
             (multiple_choice)
             a) Não consomem carne
             b) Criação própria
@@ -155,7 +155,7 @@
             g) Não quis responder
             h) Não se aplica
             Se "Outros", quais?____________________________________
-        [QSF17_06_06] Ao preparar os alimentos crus (pode-se marcar mais de uma opção), costumam:
+        6.6. Ao preparar os alimentos crus (pode-se marcar mais de uma opção), costumam:
             (multiple_choice)
             a) Lavar em água corrente
             b) Colocar de molho em água
@@ -165,8 +165,8 @@
             f) Não sabe
             g) Não quis responder
             h) Não se aplica
-    [QSF17_07] Medicamentos (geral familiar)
-        [QSF17_07_01] Costumam tomar medicamentos sem receita médica? (por exemplo pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)           
+    7. Medicamentos (geral familiar)
+        7.1. Costumam tomar medicamentos sem receita médica? (por exemplo pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)           
             (simple_choice)
             a) Não
             b) Sim
@@ -174,14 +174,14 @@
             d) Não quis responder
             e) Não se aplica
             Se "Sim", quais?____________________________________
-        [QSF17_07_02] Possuem remédios na residência?
+        7.2. Possuem remédios na residência?
             (simple_choice)
             a) Não
             b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-        [QSF17_07_03] De que modo adquirem os medicamentos que utilizam?
+        7.3. De que modo adquirem os medicamentos que utilizam?
             (multiple_choice)
             a) Farmácia
             b) Posto
@@ -190,7 +190,7 @@
             e) Não quis responder
             f) Não se aplica
             Se "Outro", especificar____________________________________
-        [QSF17_07_04] Onde guardam os remédios?
+        7.4. Onde guardam os remédios?
             (multiple_choice)
             a) Na cozinha
             b) No banheiro
@@ -200,7 +200,7 @@
             f) Não quis responder
             g) Não se aplica
             Se "Outros", onde?____________________________________
-        [QSF17_07_05] Como descartam os medicamentos?
+        7.5. Como descartam os medicamentos?
             (multiple_choice)
             a) Não descartam
             b) Descarte inadequado (lixo, pia, etc)
@@ -213,7 +213,7 @@
             i) Não quis responder
             j) Não se aplica
             Se "Outros", quais?____________________________________
-        [QSF17_07_06] O que utilizam quando alguém tem diarreia?
+        7.6. O que utilizam quando alguém tem diarreia?
             (multiple_choice)
             a) Nada. Esperam passar
             b) Soro caseiro
@@ -223,22 +223,22 @@
             f) Não quis responder
             g) Não se aplica
             Se "Outros", quais?____________________________________
-        [QSF17_07_07] Conhecem o soro caseiro?
+        7.7. Conhecem o soro caseiro?
             (simple_choice)
             a) Não
             b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-        [QSF17_07_08] Sabem como preparar?
+        7.8. Sabem como preparar?
             (simple_choice)
             a) Não
             b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-    [QSF17_08] Parasitoses
-        [QSF17_08_01] Conhecem algum verme (parasitose)?
+    8. Parasitoses
+        8.1. Conhecem algum verme (parasitose)?
             (multiple_choice)
             a) Não
             b) Barriga d água, "xistose" (Esquistossomose)
@@ -251,7 +251,7 @@
             h) Não sabe
             i) Não quis responder
             j) Não se aplica
-        [QSF17_08_02] Sabem como se prevenir de pegar vermes?
+        8.2. Sabem como se prevenir de pegar vermes?
             (multiple_choice)
             a) Andar calçado
             b) Lavar as mãos
@@ -260,7 +260,7 @@
             e) Não sabe responder
             f) Não quis responder
             g) Não se aplica
-        [QSF17_08_03] Alguém na casa já pegou verme? Qual?
+        8.3. Alguém na casa já pegou verme? Qual?
             (multiple_choice)
             a) Não
             b) Sim, mas não sabe qual verme
@@ -275,8 +275,8 @@
             k) Não sabe
             l) Não quis responder
             m) Não se aplica
-    [QSF17_09] Aspecto Econômico
-        [QSF17_09_01] Qual o valor do rendimento mensal familiar aproximado?
+    9. Aspecto Econômico
+        9.1. Qual o valor do rendimento mensal familiar aproximado?
             (simple_choice)
             a) Valor (colocar abaixo)
             b) Não sabe
