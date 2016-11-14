@@ -44,8 +44,12 @@ if __name__ == '__main__':
     yaml_out_filename = 'TCP17/survey_jcafb_TCP17_out.yaml'
     xml_filename = 'TCP17/survey_jcafb_TCP17.xml'
     txt_filename = 'TCP17/survey_jcafb_TCP17.txt'
-    print('--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename))
-    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
+    xls_filename = 'TCP17/survey_jcafb_TCP17.xls'
+    print(
+        '--> Executing survey_process_yaml(%s, %s, %s, %s) ...' %
+        (yaml_filename, xml_filename, txt_filename, xls_filename)
+    )
+    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename, xls_filename)
     if copy_xml_file:
         shutil.copy(xml_filename, destination_directory)
 
@@ -53,8 +57,12 @@ if __name__ == '__main__':
     yaml_out_filename = 'TCR17/survey_jcafb_TCR17_out.yaml'
     xml_filename = 'TCR17/survey_jcafb_TCR17.xml'
     txt_filename = 'TCR17/survey_jcafb_TCR17.txt'
-    print('--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename))
-    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
+    xls_filename = 'TCR17/survey_jcafb_TCR17.xls'
+    print(
+        '--> Executing survey_process_yaml(%s, %s, %s, %s) ...' %
+        (yaml_filename, xml_filename, txt_filename, xls_filename)
+    )
+    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename, xls_filename)
     if copy_xml_file:
         shutil.copy(xml_filename, destination_directory)
 
@@ -62,8 +70,12 @@ if __name__ == '__main__':
     yaml_out_filename = 'TID17/survey_jcafb_TID17_out.yaml'
     xml_filename = 'TID17/survey_jcafb_TID17.xml'
     txt_filename = 'TID17/survey_jcafb_TID17.txt'
-    print('--> Executing survey_process_yaml(%s, %s, %s) ...' % (yaml_filename, xml_filename, txt_filename))
-    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename)
+    xls_filename = 'TID17/survey_jcafb_TID17.xls'
+    print(
+        '--> Executing survey_process_yaml(%s, %s, %s, %s) ...' %
+        (yaml_filename, xml_filename, txt_filename, xls_filename)
+    )
+    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename, xls_filename)
     if copy_xml_file:
         shutil.copy(xml_filename, destination_directory)
 
