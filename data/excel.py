@@ -39,6 +39,21 @@ import xlrd
 # from jcafb_2017_surveys import *
 
 
+def ir_model_data_get_instance(client, code):
+
+    code = code.replace('[', '')
+    code = code.replace(']', '')
+    ir_model_data = client.model('ir.model.data')
+    ir_model_data_browse = ir_model_data.browse([('name', '=', code), ])
+
+    if ir_model_data_browse.name != []:
+        instance = ir_model_data_browse.name[0], ir_model_data_browse.model[0], ir_model_data_browse.res_id[0]
+        return instance
+    else:
+        instance = False, False, False
+        return instance
+
+
 def get_arguments():
 
     global server
@@ -139,26 +154,172 @@ if __name__ == '__main__':
 
     book = xlrd.open_workbook('data/survey_jcafb_QAN17.xls')
 
-    for sheet in book.sheets():
-        print(sheet.name)
+    survey_question = client.model('survey.question')
+    survey_label = client.model('survey.label')
+
+    # for sheet in book.sheets():
+    #     print(sheet.name)
 
     # sheet = book.sheet_by_name('QAN17')
     sheet = book.sheet_by_index(0)
     print(sheet.name)
-    print(dir(sheet))
+    # print(dir(sheet))
     print(sheet.nrows)
     print(sheet.ncols)
 
+    survey_title = sheet.cell_value(0, 0)
+    print('>>>>>', '"' + survey_title + '"')
+
+    survey_model = client.model('survey.survey')
+    survey_browse = survey_model.browse([('title', '=', survey_title), ])
+    print('>>>>>', survey_browse)
+    title_ok = False
+
+    if survey_browse.id != []:
+        title = survey_browse[0].title
+        description = survey_browse[0].description
+        print('>>>>>', title, description)
+        if title == survey_title:
+            title_ok = True
+
+    print('>>>>> title_ok: ', title_ok)
+
     for i in range(sheet.nrows):
+
         row = sheet.row_values(i)
+        code_row = sheet.cell_value(i, 0)
+
+        if code_row == '[]':
+            code_cols = {}
+            for k in range(sheet.ncols):
+                code_col = sheet.cell_value(i, k)
+                if code_col != xlrd.empty_cell.value:
+                    code_cols.update({k: code_col})
+
         for j in range(sheet.ncols):
+
             if sheet.cell_value(i, j) != xlrd.empty_cell.value:
+
+                if sheet.cell_value(i, j) == 'free_text':
+                    question_type = 'free_text'
+                if sheet.cell_value(i, j) == 'textbox':
+                    question_type = 'textbox'
+                if sheet.cell_value(i, j) == 'datetime':
+                    question_type = 'datetime'
+                if sheet.cell_value(i, j) == 'simple_choice':
+                    question_type = 'simple_choice'
+                if sheet.cell_value(i, j) == 'multiple_choice':
+                    question_type = 'multiple_choice'
+                if sheet.cell_value(i, j) == 'matrix_simple':
+                    question_type = 'matrix_simple'
+
                 if sheet.cell_value(i, j) == '.':
-                    print('>>>>>', i, j, sheet.cell_value(i, j))
                     try:
-                        print('>>>>>', i, j + 1, sheet.cell_value(i, j + 1))
+                        value = sheet.cell_value(i, j + 1)
                     except:
-                        print('>>>>>', i, j + 1, xlrd.empty_cell.value)
+                        value = xlrd.empty_cell.value
+                    if value != xlrd.empty_cell.value:
+                        print()
+                        print('>>>>> (', i, j + 1, ')', value)
+
+                        if question_type == 'textbox':
+                            # print('>>>>>>>>>>', code_row)
+                            instance_row = ir_model_data_get_instance(client, code_row)
+                            # print('------>', instance_row)
+                            if instance_row[1] == 'survey.question':
+                                survey_question_browse = survey_question.browse([
+                                    ('id', '=', instance_row[2]),
+                                ])
+
+                                print('------>(textbox)', survey_question_browse[0].question.encode('utf-8'))
+
+                        if question_type == 'simple_choice':
+                            # print('>>>>>>>>>>', code_row)
+                            instance_row = ir_model_data_get_instance(client, code_row)
+                            # print('------>', instance_row)
+                            if instance_row[1] == 'survey.question':
+                                survey_question_browse = survey_question.browse([
+                                    ('id', '=', instance_row[2]),
+                                ])
+
+                                print(
+                                    '------>(simple_choice_question)',
+                                    survey_question_browse[0].question.encode('utf-8')
+                                )
+                                print(
+                                    '------>(simple_choice_comment)',
+                                    survey_question_browse[0].comments_message.encode('utf-8')
+                                )
+                            if instance_row[1] == 'survey.label':
+                                survey_label_browse = survey_label.browse([
+                                    ('id', '=', instance_row[2]),
+                                ])
+
+                                print(
+                                    '------>(simple_choice_question)',
+                                    survey_label_browse[0].question_id.question.encode('utf-8')
+                                )
+                                print(
+                                    '------>(simple_choice_answer)',
+                                    survey_label_browse[0].value.encode('utf-8')
+                                )
+
+                        if question_type == 'multiple_choice':
+                            # print('>>>>>>>>>>', code_row)
+                            instance_row = ir_model_data_get_instance(client, code_row)
+                            # print('------>', instance_row)
+                            if instance_row[1] == 'survey.question':
+                                survey_question_browse = survey_question.browse([
+                                    ('id', '=', instance_row[2]),
+                                ])
+
+                                print(
+                                    '------>((multiple_choice_question)',
+                                    survey_question_browse[0].question.encode('utf-8')
+                                )
+                                print(
+                                    '------>((multiple_choice_comment)',
+                                    survey_question_browse[0].comments_message.encode('utf-8')
+                                )
+                            if instance_row[1] == 'survey.label':
+                                survey_label_browse = survey_label.browse([
+                                    ('id', '=', instance_row[2]),
+                                ])
+
+                                print(
+                                    '------>(simple_choice_question)',
+                                    survey_label_browse[0].question_id.question.encode('utf-8')
+                                )
+                                print(
+                                    '------>(simple_choice_answer)',
+                                    survey_label_browse[0].value.encode('utf-8')
+                                )
+
+                        if question_type == 'matrix_simple':
+                            code_col = code_cols[j]
+                            # print('>>>>>>>>>>', code_row, code_col)
+                            instance_row = ir_model_data_get_instance(client, code_row)
+                            # print('------>', instance_row)
+                            instance_col = ir_model_data_get_instance(client, code_col)
+                            # print('------>', instance_col)
+                            if instance_row[1] == 'survey.label':
+                                survey_label_browse = survey_label.browse([
+                                    ('id', '=', instance_row[2]),
+                                ])
+
+                                print(
+                                    '------>(matrix_simple_row)',
+                                    survey_label_browse[0].value.encode('utf-8')
+                                )
+                            if instance_col[1] == 'survey.label':
+                                survey_label_browse = survey_label.browse([
+                                    ('id', '=', instance_col[2]),
+                                ])
+
+                                print(
+                                    '------>(matrix_simple_col)',
+                                    survey_label_browse[0].value.encode('utf-8')
+                                )
 
     print()
     print('--> excel.py', '- Execution time:', secondsToStr(time() - start))
