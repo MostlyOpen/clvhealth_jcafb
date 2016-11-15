@@ -1022,42 +1022,6 @@ def buffer():
     # print('--> Executing address_mng_import_from_person_mng()...')
     # address_mng_import_from_person_mng(client, batch_name, state)
 
-
-if __name__ == '__main__':
-
-    server = 'http://localhost:8069'
-    # server = '*'
-
-    username = 'username'
-    # username = '*'
-    password = 'password'
-    # password = '*'
-
-    dbname = 'odoo'
-    # dbname = '*'
-
-    db_server = 'localhost'
-    # db_server = '*'
-
-    db_user = 'openerp'
-    # db_user = '*'
-
-    db_password = 'openerp'
-    # db_password = '*'
-
-    print()
-    print('--> setup.py...')
-    print('--> server:', server)
-
-    get_arguments()
-
-    from time import time
-    start = time()
-
-    client = erppeek.Client(server, dbname, username, password)
-    conn_string = "dbname='" + dbname + "' user='" + db_user + "' host='" + db_server + \
-                  "' password='" + db_password + "'"
-
     # ***** 2016-11-08 *****
     #
 
@@ -1202,6 +1166,42 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
 
+
+if __name__ == '__main__':
+
+    server = 'http://localhost:8069'
+    # server = '*'
+
+    username = 'username'
+    # username = '*'
+    password = 'password'
+    # password = '*'
+
+    dbname = 'odoo'
+    # dbname = '*'
+
+    db_server = 'localhost'
+    # db_server = '*'
+
+    db_user = 'openerp'
+    # db_user = '*'
+
+    db_password = 'openerp'
+    # db_password = '*'
+
+    print()
+    print('--> setup.py...')
+    print('--> server:', server)
+
+    get_arguments()
+
+    from time import time
+    start = time()
+
+    client = erppeek.Client(server, dbname, username, password)
+    conn_string = "dbname='" + dbname + "' user='" + db_user + "' host='" + db_server + \
+                  "' password='" + db_password + "'"
+
     # ***** 2016-11-13 *****
     #
 
@@ -1217,22 +1217,62 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
 
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-10a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
+
+    # ***** 2016-11-15 *****
+    #
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_users()...')
+    # jcafb_set_users(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-10a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-11-15a.sql
+    # # gzip clvhealth_jcafb_dev_2016-11-15a.sql
+    # #
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-15a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
     print('-->', client)
     print('--> Executing jcafb_mass_editing_create()...')
     jcafb_mass_editing_create(client)
-
-    print('-->', client)
-    print('--> Executing jcafb_set_users()...')
-    jcafb_set_users(client)
 
     db_path = 'data/clvhealth_jcafb_2017_2016-11-10a.sqlite'
     print('-->', client, db_path, conn_string)
     print('--> Executing jcafb_import_sqlite()...')
     jcafb_import_sqlite(client, db_path, conn_string)
-
-    print('-->', client)
-    print('--> Executing jcafb_set_communities()...')
-    jcafb_set_communities(client)
 
     print()
     print('--> setup.py', '- Execution time:', secondsToStr(time() - start))
