@@ -53,6 +53,13 @@ def jcafb_export_sqlite(client, db_path, conn_string):
     print()
     res_users_export_sqlite(client, res_users_args, db_path, table_name, conn_string)
 
+    hr_department_args = []
+    table_name = 'hr_department'
+    print('-->', client, hr_department_args, db_path, table_name)
+    print('--> Executing hr_department_export_sqlite()...')
+    print()
+    hr_department_export_sqlite(client, hr_department_args, db_path, table_name)
+
     hr_employee_args = []
     table_name = 'hr_employee'
     print('-->', client, hr_employee_args, db_path, table_name)
@@ -216,6 +223,44 @@ def jcafb_export_sqlite(client, db_path, conn_string):
 
 
 def jcafb_import_sqlite(client, db_path, conn_string):
+
+    res_partner_args = []
+    table_name = 'res_partner'
+    print('-->', client, res_partner_args, db_path, table_name)
+    print('--> Executing res_partner_import_sqlite()...')
+    print()
+    res_partner_import_sqlite(client, res_partner_args, db_path, table_name)
+
+    res_users_args = []
+    table_name = 'res_users'
+    print('-->', client, res_users_args, db_path, table_name)
+    print('--> Executing res_users_import_sqlite()...')
+    print()
+    res_users_import_sqlite(client, res_users_args, db_path, table_name)
+
+    hr_department_args = []
+    table_name = 'hr_department'
+    print('-->', client, hr_department_args, db_path, table_name)
+    print('--> Executing hr_department_import_sqlite()...')
+    print()
+    hr_department_import_sqlite(client, hr_department_args, db_path, table_name)
+
+    hr_employee_args = []
+    table_name = 'hr_employee'
+    hr_department_table_name = 'hr_department'
+    res_partner_table_name = 'res_partner'
+    res_users_table_name = 'res_users'
+    print(
+        '-->',
+        client, hr_employee_args, db_path, table_name, hr_department_table_name,
+        res_partner_table_name, res_users_table_name
+    )
+    print('--> Executing hr_employee_import_sqlite()...')
+    print()
+    hr_employee_import_sqlite(
+        client, hr_employee_args, db_path, table_name, hr_department_table_name,
+        res_partner_table_name, res_users_table_name
+    )
 
     l10n_br_zip_args = []
     table_name = 'l10n_br_zip'
@@ -1260,19 +1305,28 @@ if __name__ == '__main__':
     # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-11-15a.sql
     # # gzip clvhealth_jcafb_dev_2016-11-15a.sql
     # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-11-15a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
     # db_path = 'data/clvhealth_jcafb_2017_2016-11-15a.sqlite'
     # print('-->', client, db_path, conn_string)
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
 
-    print('-->', client)
-    print('--> Executing jcafb_mass_editing_create()...')
-    jcafb_mass_editing_create(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
 
-    db_path = 'data/clvhealth_jcafb_2017_2016-11-10a.sqlite'
-    print('-->', client, db_path, conn_string)
-    print('--> Executing jcafb_import_sqlite()...')
-    jcafb_import_sqlite(client, db_path, conn_string)
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-15a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
 
     print()
     print('--> setup.py', '- Execution time:', secondsToStr(time() - start))
