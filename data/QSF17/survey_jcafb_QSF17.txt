@@ -21,8 +21,14 @@
             a) Responsável pela(s) Criança(s) da casa
             b) Paciente Idoso
             c) Cuidador (da(s) Criança(s) e/ou do(s) Idoso(s) da casa
-            d) Outro (especificar)
-            Se a resposta for "Outro", especificar o papel na residência:____________________________________
+            d) Outro
+            Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:____________________________________
+        2.4. Nome do Entrevistado
+            (textbox)
+            ____________________________________
+        2.5. Código do Entrevistado
+            (textbox)
+            ____________________________________
     3. Residência
         3.1. Como é o banheiro da casa?
             (simple_choice)

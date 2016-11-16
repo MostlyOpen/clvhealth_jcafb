@@ -28,7 +28,13 @@
             b) Paciente
             c) Cuidador
             d) Outro
-            Nome do Cuidador e, se a resposta for "Outro", especificar nome e grau de parentesco____________________________________
+            Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:____________________________________
+        2.6. Nome do Entrevistado
+            (textbox)
+            ____________________________________
+        2.7. Código do Entrevistado
+            (textbox)
+            ____________________________________
     3. Questionário
         3.1. Quem administra os medicamentos do(a) Sr.(a)?
             (multiple_choice)

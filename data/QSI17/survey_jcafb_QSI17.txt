@@ -27,7 +27,13 @@
             a) Paciente
             b) Cuidador
             c) Outro
-            Nome e, se a resposta for "Outro", especificar____________________________________
+            Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:____________________________________
+        2.6. Nome do Entrevistado
+            (textbox)
+            ____________________________________
+        2.7. Código do Entrevistado
+            (textbox)
+            ____________________________________
     3. Aspectos Sociais
         3.1. Qual a relação de parentesco do cuidador com o(a) Sr.(a)?
             (multiple_choice)

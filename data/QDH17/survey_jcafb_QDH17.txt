@@ -28,7 +28,13 @@
             b) Paciente
             c) Cuidador
             c) Outro
-            Nome e grau de parentesco do Responsável ou do Cuidador; se "Outro", especificar:____________________________________
+            Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:____________________________________
+        2.6. Nome do Entrevistado
+            (textbox)
+            ____________________________________
+        2.7. Código do Entrevistado
+            (textbox)
+            ____________________________________
     3. Geral
         3.1. Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")
             (simple_choice)

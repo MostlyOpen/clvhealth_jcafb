@@ -61,7 +61,7 @@ QSF17:
             constr_mandatory: True
             constr_error_msg: 'Informar quem respondeu ao questionário.'
             comments_allowed: True
-            comments_message: 'Se a resposta for "Outro", especificar o papel na residência:'
+            comments_message: 'Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:'
 
             QSF17_02_03_01:
                 model: survey.label
@@ -77,7 +77,21 @@ QSF17:
 
             QSF17_02_03_04:
                 model: survey.label
-                value: 'd) Outro (especificar)'
+                value: 'd) Outro'
+
+        QSF17_02_04:
+            model: survey.question
+            question: 'Nome do Entrevistado'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Entrevistado que respondeu o questionário.'
+
+        QSF17_02_05:
+            model: survey.question
+            question: 'Código do Entrevistado'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Entrevistado que respondeu o questionário.'
 
     QSF17_03:
         model: survey.page

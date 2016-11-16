@@ -75,7 +75,7 @@ QAN17:
             constr_mandatory: True
             constr_error_msg: 'Informar quem respondeu ao questionário.'
             comments_allowed: True
-            comments_message: 'Nome e grau de parentesco do Responsável ou do Cuidador; se "Outro", especificar:'
+            comments_message: 'Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:'
 
             QAN17_02_05_01:
                 model: survey.label
@@ -92,6 +92,20 @@ QAN17:
             QAN17_02_05_04:
                 model: survey.label
                 value: 'd) Outro'
+
+        QAN17_02_06:
+            model: survey.question
+            question: 'Nome do Entrevistado'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Entrevistado que respondeu o questionário.'
+
+        QAN17_02_07:
+            model: survey.question
+            question: 'Código do Entrevistado'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Entrevistado que respondeu o questionário.'
 
     QAN17_03:
         model: survey.page

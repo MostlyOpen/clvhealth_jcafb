@@ -26,8 +26,14 @@
             (simple_choice)
             a) Responsável
             b) Cuidador
-            c) Outro (especificar)
-            Nome e grau de parentesco e, se a resposta for "Outro", especificar____________________________________
+            c) Outro
+            Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:____________________________________
+        2.6. Nome do Entrevistado
+            (textbox)
+            ____________________________________
+        2.7. Código do Entrevistado
+            (textbox)
+            ____________________________________
     3. Aspectos Sociais/Hábitos
         3.1. Onde a criança fica quando não está na escola?
             (multiple_choice)

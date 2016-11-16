@@ -28,7 +28,13 @@
             b) Paciente
             c) Cuidador
             d) Outro
-            Nome e grau de parentesco do Responsável ou do Cuidador; se "Outro", especificar:____________________________________
+            Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:____________________________________
+        2.6. Nome do Entrevistado
+            (textbox)
+            ____________________________________
+        2.7. Código do Entrevistado
+            (textbox)
+            ____________________________________
     3. Medidas de Peso e Altura
         3.1. Peso (kg):
             (textbox)
