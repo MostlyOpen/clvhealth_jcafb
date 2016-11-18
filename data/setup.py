@@ -364,6 +364,89 @@ def jcafb_import_sqlite(client, db_path, conn_string):
         address_mng_table_name, address_table_name, person_table_name
     )
 
+    community_category_args = []
+    table_name = 'myo_community_category'
+    print('-->', client, community_category_args, db_path, table_name)
+    print('--> Executing community_category_import_sqlite()...')
+    print()
+    community_category_import_sqlite(client, community_category_args, db_path, table_name)
+
+    community_args = []
+    table_name = 'myo_community'
+    tag_table_name = 'myo_tag'
+    category_table_name = 'myo_community_category'
+    res_users_table_name = 'res_users'
+    print(
+        '-->',
+        client, community_args, db_path, table_name, tag_table_name, category_table_name, res_users_table_name
+    )
+    print('--> Executing community_import_sqlite()...')
+    print()
+    community_import_sqlite(
+        client, community_args, db_path, table_name, tag_table_name, category_table_name, res_users_table_name
+    )
+
+    community_member_role_args = []
+    table_name = 'myo_community_member_role'
+    print('-->', client, community_member_role_args, db_path, table_name)
+    print('--> Executing community_member_role_import_sqlite()...')
+    print()
+    community_member_role_import_sqlite(client, community_member_role_args, db_path, table_name)
+
+    community_employee_args = []
+    table_name = 'myo_community_employee'
+    tag_table_name = 'myo_tag'
+    role_table_name = 'myo_community_member_role'
+    community_table_name = 'myo_community'
+    employee_table_name = 'hr_employee'
+    print(
+        '-->',
+        client, community_employee_args, db_path, table_name, tag_table_name,
+        role_table_name, community_table_name, employee_table_name
+    )
+    print('--> Executing community_employee_import_sqlite()...')
+    print()
+    community_employee_import_sqlite(
+        client, community_employee_args, db_path, table_name, tag_table_name,
+        role_table_name, community_table_name, employee_table_name
+    )
+
+    community_address_args = []
+    table_name = 'myo_community_address'
+    tag_table_name = 'myo_tag'
+    role_table_name = 'myo_community_member_role'
+    community_table_name = 'myo_community'
+    address_table_name = 'myo_address'
+    print(
+        '-->',
+        client, community_address_args, db_path, table_name, tag_table_name,
+        role_table_name, community_table_name, address_table_name
+    )
+    print('--> Executing community_address_import_sqlite()...')
+    print()
+    community_address_import_sqlite(
+        client, community_address_args, db_path, table_name, tag_table_name,
+        role_table_name, community_table_name, address_table_name
+    )
+
+    community_person_args = []
+    table_name = 'myo_community_person'
+    tag_table_name = 'myo_tag'
+    role_table_name = 'myo_community_member_role'
+    community_table_name = 'myo_community'
+    person_table_name = 'myo_person'
+    print(
+        '-->',
+        client, community_person_args, db_path, table_name, tag_table_name,
+        role_table_name, community_table_name, person_table_name
+    )
+    print('--> Executing community_person_import_sqlite()...')
+    print()
+    community_person_import_sqlite(
+        client, community_person_args, db_path, table_name, tag_table_name,
+        role_table_name, community_table_name, person_table_name
+    )
+
     ir_sequence_args = []
     table_name = 'ir_sequence'
     print('-->', client, ir_sequence_args, db_path, table_name, conn_string)
@@ -376,14 +459,14 @@ def jcafb_mass_editing_create(client):
 
     name = 'Address'
     model = 'myo.address'
-    fields = ['is_residence', 'state', 'category_ids', 'tag_ids', 'active', 'active_log']
+    fields = ['is_residence', 'state', 'category_ids', 'tag_ids', 'notes', 'active', 'active_log']
     print('-->', client, name, model, fields)
     print('--> Executing mass_editing_create()...')
     mass_editing_create(client, name, model, fields)
 
     name = 'Person'
     model = 'myo.person'
-    fields = ['is_patient', 'state', 'category_ids', 'tag_ids', 'address_id', 'active', 'active_log']
+    fields = ['is_patient', 'state', 'category_ids', 'tag_ids', 'address_id', 'notes', 'active', 'active_log']
     print('-->', client, name, model, fields)
     print('--> Executing mass_editing_create()...')
     mass_editing_create(client, name, model, fields)
@@ -422,6 +505,16 @@ def jcafb_mass_editing_create(client):
     fields = [
         'linked_message', 'linked_state',
         'link_survey_user_input', 'active'
+    ]
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
+
+    name = 'Employee'
+    model = 'hr.employee'
+    fields = [
+        'department_id', 'job_id',
+        'community_employee_ids', 'event_employee_ids', 'document_employee_ids',
     ]
     print('-->', client, name, model, fields)
     print('--> Executing mass_editing_create()...')
@@ -1355,10 +1448,74 @@ if __name__ == '__main__':
     # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
     # psql -f clvhealth_jcafb_dev_2016-11-16a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
     #
-    db_path = 'data/clvhealth_jcafb_2017_2016-11-16a.sqlite'
-    print('-->', client, db_path, conn_string)
-    print('--> Executing jcafb_export_sqlite()...')
-    jcafb_export_sqlite(client, db_path, conn_string)
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-16a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # ***** 2016-11-17 *****
+    #
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-16a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_hr_department()...')
+    # jcafb_set_hr_department(client)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_set_communities()...')
+    # jcafb_set_communities(client)
+
+    # ***** odoo-mint18
+    #
+    # cd '/opt/openerp'
+    # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-11-17a.sql
+    # gzip clvhealth_jcafb_dev_2016-11-17a.sql
+    #
+    # cd '/opt/openerp'
+    # dropdb -i clvhealth_jcafb_dev
+    # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # psql -f clvhealth_jcafb_dev_2016-11-17a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    #
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-17a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # ***** 2016-11-18 *****
+    #
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-17a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-11-18a.sql
+    # # gzip clvhealth_jcafb_dev_2016-11-18a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-11-18a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-18a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
 
     print()
     print('--> setup.py', '- Execution time:', secondsToStr(time() - start))
