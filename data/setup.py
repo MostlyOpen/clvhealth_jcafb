@@ -447,6 +447,74 @@ def jcafb_import_sqlite(client, db_path, conn_string):
         role_table_name, community_table_name, person_table_name
     )
 
+    event_category_args = []
+    table_name = 'myo_event_category'
+    print('-->', client, event_category_args, db_path, table_name)
+    print('--> Executing event_category_import_sqlite()...')
+    print()
+    event_category_import_sqlite(client, event_category_args, db_path, table_name)
+
+    event_args = []
+    table_name = 'myo_event'
+    tag_table_name = 'myo_tag'
+    category_table_name = 'myo_event_category'
+    res_users_table_name = 'res_users'
+    address_table_name = 'myo_address'
+    print(
+        '-->',
+        client, event_args, db_path, table_name, tag_table_name, category_table_name, res_users_table_name,
+        address_table_name
+    )
+    print('--> Executing event_import_sqlite()...')
+    print()
+    event_import_sqlite(
+        client, event_args, db_path, table_name, tag_table_name, category_table_name, res_users_table_name,
+        address_table_name
+    )
+
+    event_participant_role_args = []
+    table_name = 'myo_event_participant_role'
+    print('-->', client, event_participant_role_args, db_path, table_name)
+    print('--> Executing event_participant_role_import_sqlite()...')
+    print()
+    event_participant_role_import_sqlite(client, event_participant_role_args, db_path, table_name)
+
+    event_employee_args = []
+    table_name = 'myo_event_employee'
+    tag_table_name = 'myo_tag'
+    role_table_name = 'myo_event_participant_role'
+    event_table_name = 'myo_event'
+    employee_table_name = 'hr_employee'
+    print(
+        '-->',
+        client, event_employee_args, db_path, table_name, tag_table_name,
+        role_table_name, event_table_name, employee_table_name
+    )
+    print('--> Executing event_employee_import_sqlite()...')
+    print()
+    event_employee_import_sqlite(
+        client, event_employee_args, db_path, table_name, tag_table_name,
+        role_table_name, event_table_name, employee_table_name
+    )
+
+    event_person_args = []
+    table_name = 'myo_event_person'
+    tag_table_name = 'myo_tag'
+    role_table_name = 'myo_event_participant_role'
+    event_table_name = 'myo_event'
+    person_table_name = 'myo_person'
+    print(
+        '-->',
+        client, event_person_args, db_path, table_name, tag_table_name,
+        role_table_name, event_table_name, person_table_name
+    )
+    print('--> Executing event_person_import_sqlite()...')
+    print()
+    event_person_import_sqlite(
+        client, event_person_args, db_path, table_name, tag_table_name,
+        role_table_name, event_table_name, person_table_name
+    )
+
     ir_sequence_args = []
     table_name = 'ir_sequence'
     print('-->', client, ir_sequence_args, db_path, table_name, conn_string)
