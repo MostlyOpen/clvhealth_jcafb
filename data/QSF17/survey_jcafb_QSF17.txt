@@ -16,13 +16,13 @@
         2.2. Código do Endereço
             (textbox)
             ____________________________________
-        2.3. Entrevistado:
+        2.3. Relação do Entrevistado com o(s) Paciente(s)
             (simple_choice)
             a) Responsável pela(s) Criança(s) da casa
             b) Paciente Idoso
             c) Cuidador (da(s) Criança(s) e/ou do(s) Idoso(s) da casa
-            d) Outro
-            Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:____________________________________
+            d) Outra
+            Se "Outra", especificar a relação do Entrevistado com o(s) Paciente(s):____________________________________
         2.4. Nome do Entrevistado
             (textbox)
             ____________________________________
@@ -63,7 +63,7 @@
             a) Não
             b) Sim, adubo orgânico com esterco
             c) Sim, adubo orgânico sem esterco
-            d) Sim, adubo comprado
+            d) Sim, adubo industrializado
             e) Não sabe
             f) Não quis responder
             g) Não se aplica
@@ -95,9 +95,10 @@
             (multiple_choice)
             a) Reservatório da prefeitura
             b) Outros (Poço, lagoa, córrego, cisterna, etc).
-            c) Não sabe
-            d) Não quis responder
-            e) Não se aplica
+            c) Não falta água
+            d) Não sabe
+            e) Não quis responder
+            f) Não se aplica
             Se "Outros", quais?____________________________________
         5.4. Antes do consumo de água, é realizado algum dos tratamentos abaixo? (pode-se marcar mais de uma opção)
             (multiple_choice)
@@ -172,7 +173,7 @@
             g) Não quis responder
             h) Não se aplica
     7. Medicamentos (geral familiar)
-        7.1. Costumam tomar medicamentos sem receita médica? (por exemplo pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)           
+        7.1. Costumam tomar medicamentos sem receita médica? (por exemplo, pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)           
             (simple_choice)
             a) Não
             b) Sim
@@ -253,10 +254,11 @@
             e) "Solitária" (Teníase)
             f) "Ameba"(Amebíase/Giardíase)
             g) Coceira (Enterobíase)
-            g) Outros
+            g) Outro
             h) Não sabe
             i) Não quis responder
             j) Não se aplica
+            Se "Outro", especificar:____________________________________
         8.2. Sabem como se prevenir de pegar vermes?
             (multiple_choice)
             a) Andar calçado
@@ -281,6 +283,7 @@
             k) Não sabe
             l) Não quis responder
             m) Não se aplica
+            Se "Outro", especificar:____________________________________
     9. Aspecto Econômico
         9.1. Qual o valor do rendimento mensal familiar aproximado?
             (simple_choice)

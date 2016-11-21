@@ -22,12 +22,12 @@
         2.4. Código do Endereço
             (textbox)
             ____________________________________
-        2.5. Entrevistado
+        2.5. Relação do Entrevistado com o Paciente
             (simple_choice)
             a) Paciente
             b) Cuidador
-            c) Outro
-            Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:____________________________________
+            c) Outra
+            Se "Outra", especificar a relação do Entrevistado com o Paciente:____________________________________
         2.6. Nome do Entrevistado
             (textbox)
             ____________________________________
@@ -48,16 +48,22 @@
             i) Não quis responder
             j) Não se aplica
             Se "Outro familiar", qual a relação de parentesco?____________________________________
-        3.2. Tempo de Escolaridade do cuidador
+        3.2.  Escolaridade do cuidador ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")
             (simple_choice)
-            a) 0 anos
-            b) 1 a 3 anos
-            c) 4 a 11 anos
-            d) 12 a 22 anos
-            e) Mais que 22 anos
-            f) Não sabe
-            g) Não quis responder
-            h) Não se aplica
+            a) É analfabeto 
+            b) Não é analfabeto, mas não frequentou a escola
+            c) Ensino Fundamental incompleto = 1º grau incompleto = antigo Primário      
+            d) Ensino Fundamental completo = 1º grau 
+            e) Ensino Médio incompleto = ant. Clássico/Científico/Normal (Magistério) incompleto
+            f) Ensino Médio Completo = antigo Clássico/Científico/Normal (Magistério) completo
+            g) Ensino Médio – Técnico (técnico em contabilidade, laboratório, etc)            
+            h) Ensino Superior incompleto     
+            i) Ensino Superior completo
+            j) Especialização 
+            k) Pós-graduação (Mestrado/Doutorado) 
+            l) Não sabe
+            m) Não quis responder
+            n) Não se aplica
         3.3. O(A) Sr.(a) é:
             (simple_choice)
             a) Solteiro(a)
@@ -222,7 +228,7 @@
             g) Não quis responder
             h) Não se aplica
             Se "Outros", quais?____________________________________
-        6.2. Nos últimos 12 meses, visitou o médico frequentemente (todo mês)?
+        6.2. Nos últimos 12 meses, visitou o médico frequentemente (2 ou mais vezes ao ano)?
             (simple_choice)
             a) Sim
             b) Não

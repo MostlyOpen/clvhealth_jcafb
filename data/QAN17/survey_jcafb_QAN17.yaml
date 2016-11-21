@@ -68,14 +68,14 @@ QAN17:
 
         QAN17_02_05:
             model: survey.question
-            question: 'Entrevistado'
+            question: 'Relação do Entrevistado com o Paciente'
             type: simple_choice
             display_mode: columns
             column_nb: 12
             constr_mandatory: True
-            constr_error_msg: 'Informar quem respondeu ao questionário.'
+            constr_error_msg: 'Informar a relação do Entrevistado com o Paciente.'
             comments_allowed: True
-            comments_message: 'Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:'
+            comments_message: 'Se "Outra", especificar a relação do Entrevistado com o Paciente:'
 
             QAN17_02_05_01:
                 model: survey.label
@@ -91,7 +91,7 @@ QAN17:
 
             QAN17_02_05_04:
                 model: survey.label
-                value: 'd) Outro'
+                value: 'd) Outra'
 
         QAN17_02_06:
             model: survey.question
@@ -121,7 +121,7 @@ QAN17:
 
         QAN17_03_02:
             model: survey.question
-            question: 'Responsável pela medida:'
+            question: 'Código do Responsável pela medida:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Informar o código do responsável pela medida do peso.'
@@ -135,7 +135,7 @@ QAN17:
 
         QAN17_03_04:
             model: survey.question
-            question: 'Responsável pela medida:'
+            question: 'Código do Responsável pela medida:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Informar o código do responsável pela medida da altura.'
@@ -154,7 +154,7 @@ QAN17:
 
         QAN17_04_02:
             model: survey.question
-            question: 'Responsável pela coleta:'
+            question: 'Código do Responsável pela coleta:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Informar o código do responsável pela coleta.'
@@ -168,7 +168,7 @@ QAN17:
 
         QAN17_04_04:
             model: survey.question
-            question: 'Responsável pela dosagem:'
+            question: 'Código do Responsável pela dosagem:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Informar o código do responsável pela análise.'

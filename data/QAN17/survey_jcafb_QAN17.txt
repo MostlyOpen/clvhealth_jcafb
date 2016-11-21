@@ -22,13 +22,13 @@
         2.4. Código do Endereço
             (textbox)
             ____________________________________
-        2.5. Entrevistado
+        2.5. Relação do Entrevistado com o Paciente
             (simple_choice)
             a) Responsável
             b) Paciente
             c) Cuidador
-            d) Outro
-            Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:____________________________________
+            d) Outra
+            Se "Outra", especificar a relação do Entrevistado com o Paciente:____________________________________
         2.6. Nome do Entrevistado
             (textbox)
             ____________________________________
@@ -39,26 +39,26 @@
         3.1. Peso (kg):
             (textbox)
             ____________________________________
-        3.2. Responsável pela medida:
+        3.2. Código do Responsável pela medida:
             (textbox)
             ____________________________________
         3.3. Altura (cm):
             (textbox)
             ____________________________________
-        3.4. Responsável pela medida:
+        3.4. Código do Responsável pela medida:
             (textbox)
             ____________________________________
     4. Dosagem de Hemoglobina
         4.1. Horário da coleta (hh:mm):
             (textbox)
             ____________________________________
-        4.2. Responsável pela coleta:
+        4.2. Código do Responsável pela coleta:
             (textbox)
             ____________________________________
         4.3. Valor da Hemoglobina (g/dL):
             (textbox)
             ____________________________________
-        4.4. Responsável pela dosagem:
+        4.4. Código do Responsável pela dosagem:
             (textbox)
             ____________________________________
         4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009)

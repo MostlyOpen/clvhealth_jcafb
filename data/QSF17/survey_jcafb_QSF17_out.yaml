@@ -54,14 +54,14 @@ QSF17:
 
         QSF17_02_03:
             model: survey.question
-            question: 'Entrevistado:'
+            question: 'Relação do Entrevistado com o(s) Paciente(s)'
             type: simple_choice
             display_mode: columns
             column_nb: 12
             constr_mandatory: True
-            constr_error_msg: 'Informar quem respondeu ao questionário.'
+            constr_error_msg: 'Informar a relação do Entrevistado com o(s) Paciente(s).'
             comments_allowed: True
-            comments_message: 'Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:'
+            comments_message: 'Se "Outra", especificar a relação do Entrevistado com o(s) Paciente(s):'
 
             QSF17_02_03_01:
                 model: survey.label
@@ -77,7 +77,7 @@ QSF17:
 
             QSF17_02_03_04:
                 model: survey.label
-                value: 'd) Outro'
+                value: 'd) Outra'
 
         QSF17_02_04:
             model: survey.question
@@ -239,7 +239,7 @@ QSF17:
 
             QSF17_04_02_04:
                 model: survey.label
-                value: 'd) Sim, adubo comprado'
+                value: 'd) Sim, adubo industrializado'
 
             QSF17_04_02_05:
                 model: survey.label
@@ -369,15 +369,19 @@ QSF17:
 
             QSF17_05_03_03:
                 model: survey.label
-                value: 'c) Não sabe'
+                value: 'c) Não falta água'
 
             QSF17_05_03_04:
                 model: survey.label
-                value: 'd) Não quis responder'
+                value: 'd) Não sabe'
 
             QSF17_05_03_05:
                 model: survey.label
-                value: 'e) Não se aplica'
+                value: 'e) Não quis responder'
+
+            QSF17_05_03_06:
+                model: survey.label
+                value: 'f) Não se aplica'
 
         QSF17_05_04:
             model: survey.question
@@ -673,7 +677,7 @@ QSF17:
 
         QSF17_07_01:
             model: survey.question
-            question: 'Costumam tomar medicamentos sem receita médica? (por exemplo pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)           '
+            question: 'Costumam tomar medicamentos sem receita médica? (por exemplo, pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)           '
             type: simple_choice
             display_mode: columns
             column_nb: 12
@@ -967,8 +971,8 @@ QSF17:
             column_nb: 12
             constr_mandatory: True
             constr_error_msg: 'Esta questão precisa ser respondida.'
-            comments_allowed: False
-            comments_message: 'Se "Outro", qual?'
+            comments_allowed: True
+            comments_message: 'Se "Outro", especificar:'
 
             QSF17_08_01_01:
                 model: survey.label
@@ -1000,7 +1004,7 @@ QSF17:
 
             QSF17_08_01_08:
                 model: survey.label
-                value: 'g) Outros'
+                value: 'g) Outro'
 
             QSF17_08_01_09:
                 model: survey.label
@@ -1059,8 +1063,8 @@ QSF17:
             column_nb: 12
             constr_mandatory: True
             constr_error_msg: 'Esta questão precisa ser respondida.'
-            comments_allowed: False
-            comments_message: 'Se "Outro", qual?'
+            comments_allowed: True
+            comments_message: 'Se "Outro", especificar:'
 
             QSF17_08_03_01:
                 model: survey.label

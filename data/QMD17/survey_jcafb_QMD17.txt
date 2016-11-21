@@ -16,19 +16,19 @@
         2.2. Código do Paciente:
             (textbox)
             ____________________________________
-        2.3. Nome do Endereço
+        2.3. Nome do Endereço:
             (textbox)
             ____________________________________
-        2.4. Código do Endereço
+        2.4. Código do Endereço:
             (textbox)
             ____________________________________
-        2.5. Entrevistado
+        2.5. Relação do Entrevistado com o Paciente
             (simple_choice)
             a) Responsável
             b) Paciente
             c) Cuidador
-            d) Outro
-            Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:____________________________________
+            d) Outra
+            Se "Outra", especificar a relação do Entrevistado com o Paciente:____________________________________
         2.6. Nome do Entrevistado
             (textbox)
             ____________________________________

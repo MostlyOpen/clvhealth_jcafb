@@ -68,14 +68,14 @@ QSI17:
 
         QSI17_02_05:
             model: survey.question
-            question: 'Entrevistado'
+            question: 'Relação do Entrevistado com o Paciente'
             type: simple_choice
             display_mode: columns
             column_nb: 12
             constr_mandatory: True
-            constr_error_msg: 'Informar quem respondeu ao questionário.'
+            constr_error_msg: 'Informar a relação do Entrevistado com o Paciente.'
             comments_allowed: True
-            comments_message: 'Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:'
+            comments_message: 'Se "Outra", especificar a relação do Entrevistado com o Paciente:'
 
             QSI17_02_05_01:
                 model: survey.label
@@ -87,7 +87,7 @@ QSI17:
 
             QSI17_02_05_03:
                 model: survey.label
-                value: 'c) Outro'
+                value: 'c) Outra'
 
         QSI17_02_06:
             model: survey.question
@@ -106,7 +106,7 @@ QSI17:
     QSI17_03:
         model: survey.page
         title: 'Aspectos Sociais'
-        description: 'Aspectos Sociais'
+        description: ''
 
         QSI17_03_01:
             model: survey.question
@@ -160,7 +160,7 @@ QSI17:
 
         QSI17_03_02:
             model: survey.question
-            question: 'Tempo de Escolaridade do cuidador'
+            question: ' Escolaridade do cuidador ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")'
             type: simple_choice
             display_mode: columns
             column_nb: 12
@@ -171,35 +171,59 @@ QSI17:
 
             QSI17_03_02_01:
                 model: survey.label
-                value: 'a) 0 anos'
+                value: 'a) É analfabeto '
 
             QSI17_03_02_02:
                 model: survey.label
-                value: 'b) 1 a 3 anos'
+                value: 'b) Não é analfabeto, mas não frequentou a escola'
 
             QSI17_03_02_03:
                 model: survey.label
-                value: 'c) 4 a 11 anos'
+                value: 'c) Ensino Fundamental incompleto = 1º grau incompleto = antigo Primário      '
 
             QSI17_03_02_04:
                 model: survey.label
-                value: 'd) 12 a 22 anos'
+                value: 'd) Ensino Fundamental completo = 1º grau '
 
             QSI17_03_02_05:
                 model: survey.label
-                value: 'e) Mais que 22 anos'
+                value: 'e) Ensino Médio incompleto = ant. Clássico/Científico/Normal (Magistério) incompleto'
 
             QSI17_03_02_06:
                 model: survey.label
-                value: 'f) Não sabe'
+                value: 'f) Ensino Médio Completo = antigo Clássico/Científico/Normal (Magistério) completo'
 
             QSI17_03_02_07:
                 model: survey.label
-                value: 'g) Não quis responder'
+                value: 'g) Ensino Médio – Técnico (técnico em contabilidade, laboratório, etc)            '
 
             QSI17_03_02_08:
                 model: survey.label
-                value: 'h) Não se aplica'
+                value: 'h) Ensino Superior incompleto     '
+
+            QSI17_03_02_09:
+                model: survey.label
+                value: 'i) Ensino Superior completo'
+
+            QSI17_03_02_10:
+                model: survey.label
+                value: 'j) Especialização '
+
+            QSI17_03_02_11:
+                model: survey.label
+                value: 'k) Pós-graduação (Mestrado/Doutorado) '
+
+            QSI17_03_02_12:
+                model: survey.label
+                value: 'l) Não sabe'
+
+            QSI17_03_02_13:
+                model: survey.label
+                value: 'm) Não quis responder'
+
+            QSI17_03_02_14:
+                model: survey.label
+                value: 'n) Não se aplica'
 
         QSI17_03_03:
             model: survey.question
@@ -465,7 +489,7 @@ QSI17:
     QSI17_04:
         model: survey.page
         title: 'Hábitos'
-        description: 'Hábitos'
+        description: ''
 
         QSI17_04_01:
             model: survey.question
@@ -692,7 +716,7 @@ QSI17:
     QSI17_05:
         model: survey.page
         title: 'Saúde'
-        description: 'Saúde'
+        description: ''
 
         QSI17_05_01:
             model: survey.question
@@ -829,7 +853,7 @@ QSI17:
     QSI17_06:
         model: survey.page
         title: 'Médico'
-        description: 'Médico'
+        description: ''
 
         QSI17_06_01:
             model: survey.question
@@ -875,7 +899,7 @@ QSI17:
 
         QSI17_06_02:
             model: survey.question
-            question: 'Nos últimos 12 meses, visitou o médico frequentemente (todo mês)?'
+            question: 'Nos últimos 12 meses, visitou o médico frequentemente (2 ou mais vezes ao ano)?'
             type: simple_choice
             display_mode: columns
             column_nb: 12
@@ -1016,7 +1040,7 @@ QSI17:
     QSI17_07:
         model: survey.page
         title: 'Alimentação'
-        description: 'Alimentação'
+        description: ''
 
         QSI17_07_01:
             model: survey.question
@@ -1056,7 +1080,7 @@ QSI17:
     QSI17_08:
         model: survey.page
         title: 'Parasitoses'
-        description: 'Parasitoses'
+        description: ''
 
         QSI17_08_01:
             model: survey.question
@@ -1188,7 +1212,7 @@ QSI17:
     QSI17_09:
         model: survey.page
         title: 'Aspecto Econômico'
-        description: 'Aspecto Econômico'
+        description: ''
 
         QSI17_09_01:
             model: survey.question

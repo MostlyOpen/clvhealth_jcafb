@@ -4,7 +4,7 @@ QMD17:
     stage_id: survey.stage_in_progress
     auth_required: False
     users_can_go_back: True
-    description: 'JCAFB 2017 - Questionário Medicamento'
+    description: 'JCAFB 2017 - Questionário - Medicamentos'
     thank_you_message: 'Obrigado por sua participação.'
 
     QMD17_01:
@@ -54,28 +54,28 @@ QMD17:
 
         QMD17_02_03:
             model: survey.question
-            question: 'Nome do Endereço'
+            question: 'Nome do Endereço:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Endereço em que o Paciente reside.'
 
         QMD17_02_04:
             model: survey.question
-            question: 'Código do Endereço'
+            question: 'Código do Endereço:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Endereço em que o Paciente reside.'
 
         QMD17_02_05:
             model: survey.question
-            question: 'Entrevistado'
+            question: 'Relação do Entrevistado com o Paciente'
             type: simple_choice
             display_mode: columns
             column_nb: 12
             constr_mandatory: True
-            constr_error_msg: 'Informar quem respondeu ao questionário.'
+            constr_error_msg: 'Informar a relação do Entrevistado com o Paciente.'
             comments_allowed: True
-            comments_message: 'Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:'
+            comments_message: 'Se "Outra", especificar a relação do Entrevistado com o Paciente:'
 
             QMD17_02_05_01:
                 model: survey.label
@@ -91,7 +91,7 @@ QMD17:
 
             QMD17_02_05_04:
                 model: survey.label
-                value: 'd) Outro'
+                value: 'd) Outra'
 
         QMD17_02_06:
             model: survey.question

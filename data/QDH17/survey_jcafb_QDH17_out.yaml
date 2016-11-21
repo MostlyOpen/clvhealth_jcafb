@@ -68,14 +68,14 @@ QDH17:
 
         QDH17_02_05:
             model: survey.question
-            question: 'Entrevistado'
+            question: 'Relação do Entrevistado com o Paciente'
             type: simple_choice
             display_mode: columns
             column_nb: 12
             constr_mandatory: True
-            constr_error_msg: 'Informar quem respondeu ao questionário.'
+            constr_error_msg: 'Informar a relação do Entrevistado com o Paciente.'
             comments_allowed: True
-            comments_message: 'Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:'
+            comments_message: 'Se "Outra", especificar a relação do Entrevistado com o Paciente:'
 
             QDH17_02_05_01:
                 model: survey.label
@@ -91,7 +91,7 @@ QDH17:
 
             QDH17_02_05_04:
                 model: survey.label
-                value: 'c) Outro'
+                value: 'c) Outra'
 
         QDH17_02_06:
             model: survey.question
@@ -224,7 +224,7 @@ QDH17:
 
         QDH17_04_02:
             model: survey.question
-            question: 'Responsável pela medida:'
+            question: 'Código do Responsável pela medida:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Informar o código do responsável pela medida do peso.'
@@ -238,7 +238,7 @@ QDH17:
 
         QDH17_04_04:
             model: survey.question
-            question: 'Responsável pela medida:'
+            question: 'Código do Responsável pela medida:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Informar o código do responsável pela medida da altura.'
@@ -270,7 +270,7 @@ QDH17:
 
             QDH17_04_07_01:
                 model: survey.label
-                value: 'a) Baixo peso (Adultos:&#60;18,5; Idosos (M e F):&#60;21,9)'
+                value: 'a) Baixo peso (Adultos:menor que 18,5; Idosos (M e F): menor que 21,9)'
 
             QDH17_04_07_02:
                 model: survey.label
@@ -290,7 +290,7 @@ QDH17:
 
             QDH17_04_07_06:
                 model: survey.label
-                value: 'f) Obesidade Grau III (Adultos:&#62;=40,0; Idosos(M):&#62;=40,0/Idosos(F):&#62;=42,0)'
+                value: 'f) Obesidade Grau III (Adultos:maior ou igual a 40,0; Idosos(M):maior ou igual a 40,0/Idosos(F):maior ou igual a 42,0)'
 
             QDH17_04_07_07:
                 model: survey.label
@@ -309,7 +309,7 @@ QDH17:
 
         QDH17_04_09:
             model: survey.question
-            question: 'Responsável pela medida:'
+            question: 'Cpodigo do Responsável pela medida:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Informar o código do responsável pela medida da circunferência abdominal.'
@@ -327,15 +327,15 @@ QDH17:
 
             QDH17_04_10_01:
                 model: survey.label
-                value: 'a) Normal (H:&#60;94 cm; M:&#60;80 cm)'
+                value: 'a) Normal (H:menor que 94 cm; M:menor que 80 cm)'
 
             QDH17_04_10_02:
                 model: survey.label
-                value: 'b) Risco aumentado (H:&#62;=94 cm; M:&#62;=80 cm)'
+                value: 'b) Risco aumentado (H:maior ou igual a 94 cm; M:maior ou igual a 80 cm)'
 
             QDH17_04_10_03:
                 model: survey.label
-                value: 'c) Risco aumentado substancialmente (H:&#62;=102 cm; M:&#62;=88 cm))'
+                value: 'c) Risco aumentado substancialmente (H:maior ou igual a 102 cm; M:maior ou igual a 88 cm))'
 
             QDH17_04_10_04:
                 model: survey.label
@@ -359,7 +359,7 @@ QDH17:
 
         QDH17_05_02:
             model: survey.question
-            question: 'Responsável pela medida:'
+            question: 'Código do Responsável pela medida:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Informar o código do responsável pela medida da pressão arterial autom.'
@@ -373,7 +373,7 @@ QDH17:
 
         QDH17_05_04:
             model: survey.question
-            question: 'Responsável pela medida (se medida não realizada, escrever nd):'
+            question: 'Código do Responsável pela medida (se medida não realizada, escrever nd):'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Informar o código do responsável pela medida da pressão arterial manual.'
@@ -391,7 +391,7 @@ QDH17:
 
             QDH17_05_05_01:
                 model: survey.label
-                value: 'a) Normal (PAS&#60;130 mmHg e PAD&#60;85 mmHg)'
+                value: 'a) Normal (PAS menor que 130 mmHg e PAD menor que 85 mmHg)'
 
             QDH17_05_05_02:
                 model: survey.label
@@ -399,7 +399,7 @@ QDH17:
 
             QDH17_05_05_03:
                 model: survey.label
-                value: 'c) Alta (PAS:&#62;=140 mmHg e PAD:&#62;=90 mmHg)'
+                value: 'c) Alta (PAS:maior ou igual a 140 mmHg e PAD:maior ou igual a 90 mmHg)'
 
             QDH17_05_05_04:
                 model: survey.label
@@ -423,7 +423,7 @@ QDH17:
 
         QDH17_06_02:
             model: survey.question
-            question: 'Responsável pela medida:'
+            question: 'Código do Responsável pela medida:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Informar o código do responsável pela medida da glicemia.'
@@ -441,7 +441,7 @@ QDH17:
 
             QDH17_06_03_01:
                 model: survey.label
-                value: 'a) Normal para jejum de 8-12 hs(&#60;= 99 mg/dL)'
+                value: 'a) Normal para jejum de 8-12 hs(menor ou igual a 99 mg/dL)'
 
             QDH17_06_03_02:
                 model: survey.label
@@ -449,7 +449,7 @@ QDH17:
 
             QDH17_06_03_03:
                 model: survey.label
-                value: 'c) Diabetes - para jejum de 8-12 hs (&#62;126 mg/dL, )'
+                value: 'c) Diabetes - para jejum de 8-12 hs (maior que 126 mg/dL, )'
 
             QDH17_06_03_04:
                 model: survey.label
@@ -457,7 +457,7 @@ QDH17:
 
             QDH17_06_03_05:
                 model: survey.label
-                value: 'e) Jejum INFERIOR a 8 hs: Aumentado (&#62;=140 mg/dL)'
+                value: 'e) Jejum INFERIOR a 8 hs: Aumentado (maior ou igual a 140 mg/dL)'
 
             QDH17_06_03_06:
                 model: survey.label
@@ -494,7 +494,7 @@ QDH17:
 
             QDH17_06_06_01:
                 model: survey.label
-                value: 'a) Desejável:Acima de 20 anos:&#60;200 mg/dL;2-19 anos:&#60;150 mg/dL'
+                value: 'a) Desejável:Acima de 20 anos:menor que 200 mg/dL;2-19 anos:menor que 150 mg/dL'
 
             QDH17_06_06_02:
                 model: survey.label
@@ -502,7 +502,7 @@ QDH17:
 
             QDH17_06_06_03:
                 model: survey.label
-                value: 'c) Elevado: Acima de 20 anos:&#62;=240 mg/dL;2-19 anos:&#62;=170 mg/dL'
+                value: 'c) Elevado: Acima de 20 anos:maior ou igual a 240 mg/dL;2-19 anos:maior ou igual a 170 mg/dL'
 
             QDH17_06_06_04:
                 model: survey.label
@@ -524,9 +524,9 @@ QDH17:
             display_mode: columns
             column_nb: 12
             constr_mandatory: True
-            constr_error_msg: 'Error Message.'
+            constr_error_msg: 'Esta questão precisa ser respondida.'
             comments_allowed: True
-            comments_message: 'Esta questão precisa ser respondida.'
+            comments_message: ''
 
             QDH17_07_01_01:
                 model: survey.label
@@ -1056,9 +1056,9 @@ QDH17:
             display_mode: columns
             column_nb: 12
             constr_mandatory: True
-            constr_error_msg: 'Error Message.'
+            constr_error_msg: 'Esta questão precisa ser respondida.'
             comments_allowed: True
-            comments_message: 'Esta questão precisa ser respondida.'
+            comments_message: 'Se respondeu alternativa C, parou de fumar há quanto tempo?'
 
             QDH17_09_02_01:
                 model: survey.label
@@ -1300,73 +1300,93 @@ QDH17:
 
             QDH17_10_02_07:
                 model: survey.label.row
-                value: 'Carne Vermelha'
+                value: 'Carne Vermelha com gordura'
 
             QDH17_10_02_08:
                 model: survey.label.row
-                value: 'Miúdos'
+                value: 'Carne vermelha sem gordura'
 
             QDH17_10_02_09:
                 model: survey.label.row
-                value: 'Embutidos'
+                value: 'Miúdos'
 
             QDH17_10_02_10:
                 model: survey.label.row
-                value: 'Frango'
+                value: 'Embutidos'
 
             QDH17_10_02_11:
                 model: survey.label.row
-                value: 'Peixe'
+                value: ' Frango com pele'
 
             QDH17_10_02_12:
                 model: survey.label.row
-                value: 'Leite integral, queijo amarelo'
+                value: 'Frango sem pele'
 
             QDH17_10_02_13:
                 model: survey.label.row
-                value: 'Leite semi ou desnatado, queijo branco'
+                value: 'Peixe'
 
             QDH17_10_02_14:
                 model: survey.label.row
-                value: 'Bolacha recheada, salgadinho, miojo'
+                value: 'Leite integral, queijo amarelo'
 
             QDH17_10_02_15:
                 model: survey.label.row
-                value: 'Margarina, manteiga, maionese'
+                value: 'Leite semi ou desnatado, queijo branco'
 
             QDH17_10_02_16:
                 model: survey.label.row
-                value: 'Refrigerante, suco de saquinho'
+                value: 'Bolacha recheada, salgadinho, miojo'
 
             QDH17_10_02_17:
                 model: survey.label.row
-                value: 'Doces'
+                value: 'Frituras (alimento submerso em óleo quente)'
 
             QDH17_10_02_18:
-                model: survey.label.col
-                value: 'a) 0 dias ou raramente'
+                model: survey.label.row
+                value: ' Margarina, manteiga, maionese'
 
             QDH17_10_02_19:
-                model: survey.label.col
-                value: 'b) 1-2 dias'
+                model: survey.label.row
+                value: 'Bebida com açúcar (café, leite, suco, chá, etc)'
 
             QDH17_10_02_20:
-                model: survey.label.col
-                value: 'c) 3-4 dias'
+                model: survey.label.row
+                value: ' Refrigerante, suco de saquinho'
 
             QDH17_10_02_21:
-                model: survey.label.col
-                value: 'd) 5 ou mais dias'
+                model: survey.label.row
+                value: 'Doces'
 
             QDH17_10_02_22:
-                model: survey.label.col
-                value: 'e) Não quis responder'
+                model: survey.label.row
+                value: 'Tempero pronto (knorr, sazon)'
 
             QDH17_10_02_23:
                 model: survey.label.col
-                value: 'f) Não sabe'
+                value: 'a) 0 dias ou raramente'
 
             QDH17_10_02_24:
+                model: survey.label.col
+                value: 'b) 1-2 dias'
+
+            QDH17_10_02_25:
+                model: survey.label.col
+                value: 'c) 3-4 dias'
+
+            QDH17_10_02_26:
+                model: survey.label.col
+                value: 'd) 5 ou mais dias'
+
+            QDH17_10_02_27:
+                model: survey.label.col
+                value: 'e) Não quis responder'
+
+            QDH17_10_02_28:
+                model: survey.label.col
+                value: 'f) Não sabe'
+
+            QDH17_10_02_29:
                 model: survey.label.col
                 value: 'g) Não se aplica'
 

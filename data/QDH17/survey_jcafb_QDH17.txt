@@ -22,13 +22,13 @@
         2.4. Código do Endereço
             (textbox)
             ____________________________________
-        2.5. Entrevistado
+        2.5. Relação do Entrevistado com o Paciente
             (simple_choice)
             a) Responsável
             b) Paciente
             c) Cuidador
-            c) Outro
-            Grau de parentesco do Entrevistado e, se a resposta for "Outro", especificar o papel na residência:____________________________________
+            c) Outra
+            Se "Outra", especificar a relação do Entrevistado com o Paciente:____________________________________
         2.6. Nome do Entrevistado
             (textbox)
             ____________________________________
@@ -64,13 +64,13 @@
         4.1. Peso (kg):
             (textbox)
             ____________________________________
-        4.2. Responsável pela medida:
+        4.2. Código do Responsável pela medida:
             (textbox)
             ____________________________________
         4.3. Altura (cm):
             (textbox)
             ____________________________________
-        4.4. Responsável pela medida:
+        4.4. Código do Responsável pela medida:
             (textbox)
             ____________________________________
         4.5. IMC (kg/m²) (=Peso/(Altura x Altura)):
@@ -81,26 +81,26 @@
             ____________________________________
         4.7. Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos:&#62;=65 anos)
             (simple_choice)
-            a) Baixo peso (Adultos:&#60;18,5; Idosos (M e F):&#60;21,9)
+            a) Baixo peso (Adultos:menor que 18,5; Idosos (M e F): menor que 21,9)
             b) Peso Normal (Adultos: 18,5 a 24,9; Idosos (M e F): 22,0 a 27,0)
             c) Sobrepeso (Pré-obeso) (Adultos: 25,0 a 29,9; Idosos(M): 27,1 a 30,0/Idosos(F): 27,1 a 32,0)
             d) Obesidade Grau I (Adultos: 30,0 a 34,9; Idosos(M): 30,1,1 a 35,0/Idosos(F): 32,1 a 37,0)
             e) Obesidade Grau II (Adultos: 35,0 a 39,9; Idosos(M): 35,1 a 39,0/Idosos(F): 37,1 a 41,9)
-            f) Obesidade Grau III (Adultos:&#62;=40,0; Idosos(M):&#62;=40,0/Idosos(F):&#62;=42,0)
+            f) Obesidade Grau III (Adultos:maior ou igual a 40,0; Idosos(M):maior ou igual a 40,0/Idosos(F):maior ou igual a 42,0)
             g) Não interpretado (justificar em "Observações")
             h) Não se aplica
             Observações:____________________________________
         4.8. Circunferência abdominal (cm):
             (textbox)
             ____________________________________
-        4.9. Responsável pela medida:
+        4.9. Cpodigo do Responsável pela medida:
             (textbox)
             ____________________________________
         4.10. Interpretação do valor de Circunferência Abdominal (ABESO; Adultos)
             (simple_choice)
-            a) Normal (H:&#60;94 cm; M:&#60;80 cm)
-            b) Risco aumentado (H:&#62;=94 cm; M:&#62;=80 cm)
-            c) Risco aumentado substancialmente (H:&#62;=102 cm; M:&#62;=88 cm))
+            a) Normal (H:menor que 94 cm; M:menor que 80 cm)
+            b) Risco aumentado (H:maior ou igual a 94 cm; M:maior ou igual a 80 cm)
+            c) Risco aumentado substancialmente (H:maior ou igual a 102 cm; M:maior ou igual a 88 cm))
             d) Não interpretado (justificar em observações)
             e) Não se aplica
             Observações:____________________________________
@@ -108,20 +108,20 @@
         5.1. Pressão arterial autom. (mmHg):
             (textbox)
             ____________________________________
-        5.2. Responsável pela medida:
+        5.2. Código do Responsável pela medida:
             (textbox)
             ____________________________________
         5.3. Pressão arterial manual (mmHg) (se medida não realizada, escrever nd):
             (textbox)
             ____________________________________
-        5.4. Responsável pela medida (se medida não realizada, escrever nd):
+        5.4. Código do Responsável pela medida (se medida não realizada, escrever nd):
             (textbox)
             ____________________________________
         5.5. Interpretação do valor de Pressão Arterial (Diretrizes Brasileiras de Hipertensão Arterial de 2010)
             (simple_choice)
-            a) Normal (PAS&#60;130 mmHg e PAD&#60;85 mmHg)
+            a) Normal (PAS menor que 130 mmHg e PAD menor que 85 mmHg)
             b) Limítrofe (PAS:130-139 mmHg e PAD:85-89 mmHg)
-            c) Alta (PAS:&#62;=140 mmHg e PAD:&#62;=90 mmHg)
+            c) Alta (PAS:maior ou igual a 140 mmHg e PAD:maior ou igual a 90 mmHg)
             d) Não interpretado (justificar em "Observações")
             e) Não se aplica
             Observações:____________________________________
@@ -129,16 +129,16 @@
         6.1. Glicemia (mg/dL):
             (textbox)
             ____________________________________
-        6.2. Responsável pela medida:
+        6.2. Código do Responsável pela medida:
             (textbox)
             ____________________________________
         6.3. Interpretação do valor de Glicemia (Associação Americana de Diabetes (2014))
             (simple_choice)
-            a) Normal para jejum de 8-12 hs(&#60;= 99 mg/dL)
+            a) Normal para jejum de 8-12 hs(menor ou igual a 99 mg/dL)
             b) Pré-diabetes (para jejum de 8-12 hs) = risco aumentado para diabetes (100-125 mg/dL)
-            c) Diabetes - para jejum de 8-12 hs (&#62;126 mg/dL, )
+            c) Diabetes - para jejum de 8-12 hs (maior que 126 mg/dL, )
             d) Jejum INFERIOR a 8 hs: Normal (até 140 mg/dL)
-            e) Jejum INFERIOR a 8 hs: Aumentado (&#62;=140 mg/dL)
+            e) Jejum INFERIOR a 8 hs: Aumentado (maior ou igual a 140 mg/dL)
             f) Não avaliado (justificar)
             g) Não se aplica
             Outras situações:____________________________________
@@ -150,9 +150,9 @@
             ____________________________________
         6.6. Interpretação do valor de Colesterol (Diretrizes Brasileiras de Dislipidemias e Prevenção da Aterosclerose-2013)
             (simple_choice)
-            a) Desejável:Acima de 20 anos:&#60;200 mg/dL;2-19 anos:&#60;150 mg/dL
+            a) Desejável:Acima de 20 anos:menor que 200 mg/dL;2-19 anos:menor que 150 mg/dL
             b) Limítrofe:Acima de 20 anos:200–239 mg/dL;2-19 anos:150-169 mg/dL
-            c) Elevado: Acima de 20 anos:&#62;=240 mg/dL;2-19 anos:&#62;=170 mg/dL
+            c) Elevado: Acima de 20 anos:maior ou igual a 240 mg/dL;2-19 anos:maior ou igual a 170 mg/dL
             d) Não interpretado (justificar em "Observações")
             e) Não se aplica
             Observações:____________________________________
@@ -164,7 +164,7 @@
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-            Esta questão precisa ser respondida.____________________________________
+            ____________________________________
         7.2. Faz uso de medicamento para tratamento de DIABETES?
             (simple_choice)
             a) Sim
@@ -289,7 +289,7 @@
             d) Não sabe
             e) Não quis responder
             f) Não se aplica
-            Esta questão precisa ser respondida.____________________________________
+            Se respondeu alternativa C, parou de fumar há quanto tempo?____________________________________
         9.3. Alguém na casa fuma?
             (simple_choice)
             a) Sim
@@ -342,17 +342,22 @@
             [row]Arroz, pão, massas, farinha
             [row]Alimentos integrais (pão, macarrão ou arroz)
             [row]Feijão
-            [row]Carne Vermelha
+            [row]Carne Vermelha com gordura
+            [row]Carne vermelha sem gordura
             [row]Miúdos
             [row]Embutidos
-            [row]Frango
+            [row] Frango com pele
+            [row]Frango sem pele
             [row]Peixe
             [row]Leite integral, queijo amarelo
             [row]Leite semi ou desnatado, queijo branco
             [row]Bolacha recheada, salgadinho, miojo
-            [row]Margarina, manteiga, maionese
-            [row]Refrigerante, suco de saquinho
+            [row]Frituras (alimento submerso em óleo quente)
+            [row] Margarina, manteiga, maionese
+            [row]Bebida com açúcar (café, leite, suco, chá, etc)
+            [row] Refrigerante, suco de saquinho
             [row]Doces
+            [row]Tempero pronto (knorr, sazon)
             [col]a) 0 dias ou raramente
             [col]b) 1-2 dias
             [col]c) 3-4 dias
