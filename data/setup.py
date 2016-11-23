@@ -1704,10 +1704,66 @@ if __name__ == '__main__':
     # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
     # psql -f clvhealth_jcafb_dev_2016-11-21a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
     #
-    db_path = 'data/clvhealth_jcafb_2017_2016-11-21a.sqlite'
-    print('-->', client, db_path, conn_string)
-    print('--> Executing jcafb_export_sqlite()...')
-    jcafb_export_sqlite(client, db_path, conn_string)
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-21a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # ***** 2016-11-22 *****
+    #
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-21a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-11-22a.sql
+    # # gzip clvhealth_jcafb_dev_2016-11-22a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-11-22a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-22a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # file_name = 'data/JCAFB_2017_Dados_Fernao.csv'
+    # batch_name = 'JCAFB_2017_Dados_Fernao'
+    # print('-->', client, file_name, batch_name)
+    # print('--> Executing person_mng_birthday()...')
+    # person_mng_birthday(client, file_name, batch_name)
+
+    # person_mng_args = [('state', '=', 'done'), ]
+    # print('-->', client, person_mng_args)
+    # print('--> Executing person_mng_set_birthday()...')
+    # print()
+    # person_mng_set_birthday(client, person_mng_args)
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-11-22b.sql
+    # # gzip clvhealth_jcafb_dev_2016-11-22b.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-11-22b.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-22b.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
 
     # ***** Test *****
     #
