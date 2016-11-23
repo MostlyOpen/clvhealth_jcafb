@@ -1,0 +1,201 @@
+[EUR17]
+    1. Identificação do Paciente
+        1.1. Código do Paciente:
+            (textbox)
+            ____________________________________
+        1.2. Nome do Paciente:
+            (textbox)
+            ____________________________________
+        1.3. Código do Endereço:
+            (textbox)
+            ____________________________________
+        1.4. Nome do Endereço
+            (textbox)
+            ____________________________________
+        1.5. Procedência do Paciente
+            (simple_choice)
+            a) Criança do Projeto
+            b) Idoso(a) do Projeto
+            c) Extra
+            Se a resposta for "Extra" especificar, se necessário:____________________________________
+    2. Urina Tipo I
+        2.1. Código do Exame:
+            (textbox)
+            ____________________________________
+        2.2. Data de Entrada do Material (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        2.3. Data da Saída do Resultado (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+    3. Identificação do Paciente
+        3.1. Código do Paciente:
+            (textbox)
+            ____________________________________
+        3.2. Nome do Paciente:
+            (textbox)
+            ____________________________________
+    4. Examinadores
+        4.1. Código(s) do(s) Realizador(es) do Exame Físico:
+            (textbox)
+            ____________________________________
+        4.2. Nome(s) do(s) Realizador(es) do Exame Físico:
+            (textbox)
+            ____________________________________
+        4.3. Código(s) do(s) Realizador(es) do Exame Químico:
+            (textbox)
+            ____________________________________
+        4.4. Nome(s) do(s) Realizador(es) do Exame Químico:
+            (textbox)
+            ____________________________________
+        4.5. Código(s) do(s) Realizador(es) do Exame Microscópico:
+            (textbox)
+            ____________________________________
+        4.6. Nome(s) do(s) Realizador(es) do Exame Microscópico:
+            (textbox)
+            ____________________________________
+    5. Resultados do Exame Físico
+        5.1. Volume:
+            (textbox)
+            ____________________________________
+        5.2. Densidade:
+            (textbox)
+            ____________________________________
+        5.3. Aspecto:
+            (simple_choice)
+            a) Límpido
+            b) Ligeiramente turvo
+            c) Turvo
+        5.4. Cor:
+            (simple_choice)
+            a) Incolor
+            b) Amarela claro
+            c) Amarela citrino
+            d) Amarela ouro
+            e) Amarela escuro
+            f) Âmbar
+            g) Ligeiramente Eritrocrômica
+            h) Eritrocrômica
+            i) Rósea
+            j) Alaranjada (medicamentosa)
+            k) Verde (medicamentosa)
+            l) Outra cor
+            Se a resposta for "Outra" especificar:____________________________________
+        5.5. Odor:
+            (simple_choice)
+            a) "Sui generis"
+            b) Pútrido
+    6. Resultados do Exame Químico
+        6.1. pH:
+            (simple_choice)
+            a) 5,0
+            b) 5,5
+            c) 6,0
+            d) 6,5
+            e) 7,0
+            f) 7,5
+            g) 8,0
+            h) 8,5
+        6.2. Proteínas:
+            (simple_choice)
+            a) Resultado NEGATIVO
+            b) Traços
+            c) (+)
+            d) (++)
+            e) (+++)
+            f) (++++)
+            g) (+++++)
+        6.3. Glicose:
+            (simple_choice)
+            a) Resultado NEGATIVO
+            b) Traços
+            c) (+)
+            d) (++)
+            e) (+++)
+            f) (++++)
+            g) (+++++)
+        6.4. Cetona:
+            (simple_choice)
+            a) Resultado NEGATIVO
+            b) Traços
+            c) (+)
+            d) (++)
+            e) (+++)
+            f) (++++)
+            g) (+++++)
+        6.5. Pigmentos biliares:
+            (simple_choice)
+            a) Resultado NEGATIVO
+            b) Traços
+            c) (+)
+            d) (++)
+            e) (+++)
+            f) (++++)
+            g) (+++++)
+        6.6. Sangue:
+            (simple_choice)
+            a) Resultado NEGATIVO
+            b) Traços
+            c) (+)
+            d) (++)
+            e) (+++)
+            f) (++++)
+            g) (+++++)
+        6.7. Urobilinogênio:
+            (simple_choice)
+            a) Normal
+            b) Positivo até diluição 1/40
+            c) Positivo até diluição 1/80
+            d) Positivo até diluição 1/160
+            e) Positivo até diluição 1/320
+            f) Positivo até diluição 1/640
+            g) Positivo até diluição 1/1280
+        6.8. Nitrito:
+            (simple_choice)
+            a) Negativo
+            b) Positivo
+    7. Resultados do Exame Microscópico
+        7.1. Células:
+            (simple_choice)
+            a) Ausentes
+            b) Raras
+            c) Frequentes
+            d) Numerosas
+        7.2. Muco:
+            (simple_choice)
+            a) Ausentes
+            b) Raros filamentos
+            c) Frequentes filamentos
+            d) Numerosos filamentos
+        7.3. Cristais:
+            (multiple_choice)
+            a) Ausentes
+            b) Raros
+            c) Frequentes
+            d) Numerosos
+            Se presentes, especificar o(s) tipo(s) de cristal(ais):____________________________________
+        7.4. Leucócitos (nº/mL):
+            (textbox)
+            ____________________________________
+        7.5. Hemácias (nº/mL):
+            (textbox)
+            ____________________________________
+        7.6. Cilindros:
+            (simple_choice)
+            a) Ausentes
+            b) Presentes
+        7.7. Se presentes, cilindros hialinos em nº/mL:
+            (textbox)
+            ____________________________________
+        7.8. Se presentes, cilindros granulosos em nº/mL:
+            (textbox)
+            ____________________________________
+        7.9. Se presentes, cilindros leucocitários em nº/mL:
+            (textbox)
+            ____________________________________
+        7.10. Se presentes, cilindros hemáticos em nº/mL :
+            (textbox)
+            ____________________________________
+        7.11. Se presentes, outros tipos de cilindros em nº/mL:
+            (textbox)
+            ____________________________________
