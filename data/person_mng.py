@@ -141,7 +141,8 @@ def person_mng_import(client, file_name, batch_name):
                     birthday = birthday.replace("/", "")
                     d = [0, 2, 4, 8]
                     dd = [birthday[d[j - 1]:d[j]] for j in range(1, len(d))]
-                    birthday = '%s-%s-%s' % (dd[2], dd[1], dd[1])
+                    # birthday = '%s-%s-%s' % (dd[2], dd[1], dd[1])
+                    birthday = '%s-%s-%s' % (dd[2], dd[1], dd[0])
                 if birthday[4] == '/':
                     birthday = birthday.replace("/", "-")
 
@@ -269,6 +270,202 @@ def person_mng_import(client, file_name, batch_name):
     print('--> rownum: ', rownum - 1)
     print('--> imported: ', imported)
     print('--> not_imported: ', not_imported)
+
+
+def person_mng_birthday(client, file_name, batch_name):
+
+    delimiter_char = ';'
+
+    file = open(file_name, "rb")
+    reader = csv.reader(file, delimiter=delimiter_char)
+    rownum = 0
+    verified = 0
+    not_verified = 0
+    found = 0
+    not_found = 0
+    column_name = {}
+    names = []
+    for row in reader:
+
+        rowlen = len(row)
+
+        if rownum == 0:
+
+            column_num = 0
+            for column in row:
+                column_name[column] = column_num
+                column_num += 1
+
+            print(rownum, row, rowlen)
+
+            rownum += 1
+            continue
+
+        person_mng_model = client.model('myo.person.mng')
+
+        if len(row) == rowlen:
+            print(rownum,
+                  row[column_name['Nome completo']].decode('utf-8'),
+                  row[column_name['Tipo']].decode('utf-8'),
+                  row, rowlen)
+
+            name = str_title(row[column_name['Nome completo']])
+
+            gender = row[column_name['Sexo']]
+
+            notes = ''
+            notes = notes + 'Idade: ' + row[column_name['Idade']] + '\n'
+
+            birthday = row[column_name['Data de nasc.']]
+            if birthday == '' or birthday == '-':
+                birthday = False
+            if birthday == '2016/12/06':
+                notes = notes + 'Data de Nasc.: ' + row[column_name['Data de nasc.']] + '\n'
+                birthday = False
+            if birthday is not False:
+                if birthday[2] == '/':
+                    birthday = birthday.replace("/", "")
+                    d = [0, 2, 4, 8]
+                    dd = [birthday[d[j - 1]:d[j]] for j in range(1, len(d))]
+                    birthday_old = '%s-%s-%s' % (dd[2], dd[1], dd[1])
+                    birthday = '%s-%s-%s' % (dd[2], dd[1], dd[0])
+                if birthday[4] == '/':
+                    birthday = birthday.replace("/", "-")
+                if birthday_old[4] == '/':
+                    birthday_old = birthday_old.replace("/", "-")
+
+            cep = '17455-000'
+            l10n_br_zip = client.model('l10n_br.zip')
+            l10n_br_zip_browse = l10n_br_zip.browse([('zip', '=', re.sub('[^0-9]', '', cep)), ])
+            zip_id = l10n_br_zip_browse.id
+            if zip_id != []:
+                zip_ = l10n_br_zip_browse[0].zip
+                val = re.sub('[^0-9]', '', zip_)
+                if len(val) == 8:
+                    zip_ = "%s-%s" % (val[0:5], val[5:8])
+                country_id = l10n_br_zip_browse[0].country_id.id
+                state_id = l10n_br_zip_browse[0].state_id.id
+                l10n_br_city_id = l10n_br_zip_browse[0].l10n_br_city_id.id
+
+            street = str_title(row[column_name['Endereço']])
+            if street == '' or street == '-':
+                street = False
+            if street is not False:
+                street = street.replace("Alameda Capitao Cavalcanti", "Alameda Capitão Cavalcanti")
+                street = street.replace("Coronel Eduardo de Souza Porto", "Avenida Coronel Eduardo de Souza Pôrto")
+                street = street.replace("Antonio Cabette", "Rua Antônio Cabette")
+                street = street.replace("Antonio Maria Agostinho Simoes", "Rua Antônio Maria Agostinho Simões")
+                street = street.replace("Benedito Soares Fidencio", "Rua Benedito Soares Fidêncio")
+                street = street.replace("10 de Novembro", "Rua Dez de Novembro")
+                street = street.replace("Fernao Dias Paes Leme", "Rua Fernão Dias Paes Leme")
+                street = street.replace("Joao Albino", "Rua Joâo Albino")
+                street = street.replace("Joao Alves de Mira", "Rua João Alves de Mira")
+                street = street.replace("Joao Pastre", "Rua João Pastre")
+                street = street.replace("Jose Bonifacio", "Rua José Bonifácio")
+                street = street.replace("Jose Sevilha Filho", "Rua José Sevilha Filho")
+                street = street.replace("Salvador Dias de Almeida", "Rua Salvador Dias de Almeida")
+                street = street.replace("Sebastiao Andre da Fonseca", "Rua Sebastião André da Fonseca")
+                street = street.replace("Sete de Setembro", "Rua Sete de Setembro")
+                street = street.replace("Vereador Manoel da Silva Juliao", "Rua Vereador Manoel da Silva Julião")
+
+            number = row[column_name['Número']]
+            number = number.strip()
+            number = number.replace("  ", " ")
+            number = number.replace("  ", " ")
+            if number == 'S/N':
+                number = False
+            if number == '':
+                number = False
+
+            street2 = str_title(row[column_name['Complemento']])
+            if street2 == '':
+                street2 = False
+
+            district = str_title(row[column_name['Bairro']])
+            if district == '' or district == '-':
+                district = False
+            if district is not False:
+                district = district.replace("Água de Peroba", "Água da Peroba")
+                district = district.replace("Agua de Peroba", "Água da Peroba")
+                district = district.replace("Agua da Peroba", "Água da Peroba")
+                district = district.replace("Agua do Arroz", "Água do Arroz")
+                district = district.replace("Agua Virada", "Água Virada")
+                district = district.replace("Poco de Pedra", "Poço de Pedra")
+                district = district.replace("Asfalto Galia", "Asfalto Gália")
+                district = district.replace("Asfalto GáLia", "Asfalto Gália")
+
+            phone = row[column_name['Telefone']]
+            if phone == '-':
+                phone = False
+
+            responsible_name = str_title(row[column_name['Nome do responsável']])
+            if responsible_name == '' or responsible_name == '-':
+                responsible_name = False
+
+            notes = notes + 'Dados conferidos?: ' + row[column_name['Dados conferidos?']] + '\n'
+
+            notes = notes + 'Observações: ' + row[column_name['Observações']] + '\n'
+
+            print('>>>>>', name)
+            state = 'draft'
+            if name is False or name == '':
+                state = 'canceled'
+
+            # values = {
+            #     'name': name,
+            #     'code': False,
+            #     'batch_name': batch_name,
+            #     'gender': gender,
+            #     'birthday': birthday,
+            #     # 'tag_ids': tag_ids,
+            #     'zip': zip_,
+            #     'country_id': country_id,
+            #     'state_id': state_id,
+            #     'l10n_br_city_id': l10n_br_city_id,
+            #     'street': street,
+            #     'number': number,
+            #     'street2': street2,
+            #     'district': district,
+            #     'phone': phone,
+            #     'responsible_name': responsible_name,
+            #     'notes': notes,
+            #     'state': state,
+            # }
+            # person_mng_model.create(values)
+
+            person_mng_browse = person_mng_model.browse(
+                [('name', '=', name), ]
+            )
+            print('>>>>>', person_mng_browse.id)
+
+            if person_mng_browse.id != []:
+                found += 1
+                print('>>>>>', birthday_old, birthday)
+                if birthday is not False:
+                    values = {
+                        'birthday': birthday,
+                    }
+                    person_mng_model.write(person_mng_browse.id, values)
+            else:
+                not_found += 1
+                names += [name]
+
+            verified += 1
+        else:
+            print(rownum, '"Error! len(row) != rowlen"', rowlen, len(row), row)
+            not_verified += 1
+
+        rownum += 1
+
+    file.close()
+
+    print()
+    print('--> rownum: ', rownum - 1)
+    print('--> verified: ', verified)
+    print('--> not_verified: ', not_verified)
+    print('--> found: ', found)
+    print('--> not_found: ', not_found)
+    print('--> names: ', names)
 
 
 def person_mng_export_sqlite(client, args, db_path, table_name):
@@ -917,6 +1114,37 @@ def person_mng_set_responsible(client, args):
 
     print()
     print('--> responsible_count: ', responsible_count)
+    print()
+
+
+def person_mng_set_birthday(client, args):
+
+    person_mng_model = client.model('myo.person.mng')
+    person_model = client.model('myo.person')
+
+    person_mng_browse = person_mng_model.browse(
+        args +
+        [('birthday', '!=', False),
+         ]
+    )
+
+    birthday_count = 0
+    for person_mng_reg in person_mng_browse:
+        birthday_count += 1
+        print(birthday_count, person_mng_reg.birthday)
+
+        person_browse = person_model.browse([('id', '=', person_mng_reg.id), ])
+        if person_browse.id != []:
+            person_id = person_browse.id[0]
+            print('>>>>>', person_id)
+
+            values = {
+                "birthday": person_mng_reg.birthday,
+            }
+            person_model.write(person_mng_reg.person_id.id, values)
+
+    print()
+    print('--> birthday_count: ', birthday_count)
     print()
 
 
