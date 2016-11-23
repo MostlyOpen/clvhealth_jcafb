@@ -39,11 +39,11 @@ if __name__ == '__main__':
     copy_xml_file = True
     print('--> Executing jcafb_2017_surveys.py ...')
 
-    yaml_filename = 'QSF17/survey_jcafb_QSF17.yaml'
-    yaml_out_filename = 'QSF17/survey_jcafb_QSF17_out.yaml'
-    xml_filename = 'QSF17/survey_jcafb_QSF17.xml'
-    txt_filename = 'QSF17/survey_jcafb_QSF17.txt'
-    xls_filename = 'QSF17/survey_jcafb_QSF17.xls'
+    yaml_filename = 'QAN17/survey_jcafb_QAN17.yaml'
+    yaml_out_filename = 'QAN17/survey_jcafb_QAN17_out.yaml'
+    xml_filename = 'QAN17/survey_jcafb_QAN17.xml'
+    txt_filename = 'QAN17/survey_jcafb_QAN17.txt'
+    xls_filename = 'QAN17/survey_jcafb_QAN17.xls'
     print(
         '--> Executing survey_process_yaml(%s, %s, %s, %s) ...' %
         (yaml_filename, xml_filename, txt_filename, xls_filename)
@@ -52,24 +52,11 @@ if __name__ == '__main__':
     if copy_xml_file:
         shutil.copy(xml_filename, destination_directory)
 
-    yaml_filename = 'QSI17/survey_jcafb_QSI17.yaml'
-    yaml_out_filename = 'QSI17/survey_jcafb_QSI17_out.yaml'
-    xml_filename = 'QSI17/survey_jcafb_QSI17.xml'
-    txt_filename = 'QSI17/survey_jcafb_QSI17.txt'
-    xls_filename = 'QSI17/survey_jcafb_QSI17.xls'
-    print(
-        '--> Executing survey_process_yaml(%s, %s, %s, %s) ...' %
-        (yaml_filename, xml_filename, txt_filename, xls_filename)
-    )
-    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename, xls_filename)
-    if copy_xml_file:
-        shutil.copy(xml_filename, destination_directory)
-
-    yaml_filename = 'QSC17/survey_jcafb_QSC17.yaml'
-    yaml_out_filename = 'QSC17/survey_jcafb_QSC17_out.yaml'
-    xml_filename = 'QSC17/survey_jcafb_QSC17.xml'
-    txt_filename = 'QSC17/survey_jcafb_QSC17.txt'
-    xls_filename = 'QSC17/survey_jcafb_QSC17.xls'
+    yaml_filename = 'QDH17/survey_jcafb_QDH17.yaml'
+    yaml_out_filename = 'QDH17/survey_jcafb_QDH17_out.yaml'
+    xml_filename = 'QDH17/survey_jcafb_QDH17.xml'
+    txt_filename = 'QDH17/survey_jcafb_QDH17.txt'
+    xls_filename = 'QDH17/survey_jcafb_QDH17.xls'
     print(
         '--> Executing survey_process_yaml(%s, %s, %s, %s) ...' %
         (yaml_filename, xml_filename, txt_filename, xls_filename)
@@ -91,11 +78,11 @@ if __name__ == '__main__':
     if copy_xml_file:
         shutil.copy(xml_filename, destination_directory)
 
-    yaml_filename = 'QAN17/survey_jcafb_QAN17.yaml'
-    yaml_out_filename = 'QAN17/survey_jcafb_QAN17_out.yaml'
-    xml_filename = 'QAN17/survey_jcafb_QAN17.xml'
-    txt_filename = 'QAN17/survey_jcafb_QAN17.txt'
-    xls_filename = 'QAN17/survey_jcafb_QAN17.xls'
+    yaml_filename = 'QSC17/survey_jcafb_QSC17.yaml'
+    yaml_out_filename = 'QSC17/survey_jcafb_QSC17_out.yaml'
+    xml_filename = 'QSC17/survey_jcafb_QSC17.xml'
+    txt_filename = 'QSC17/survey_jcafb_QSC17.txt'
+    xls_filename = 'QSC17/survey_jcafb_QSC17.xls'
     print(
         '--> Executing survey_process_yaml(%s, %s, %s, %s) ...' %
         (yaml_filename, xml_filename, txt_filename, xls_filename)
@@ -104,11 +91,24 @@ if __name__ == '__main__':
     if copy_xml_file:
         shutil.copy(xml_filename, destination_directory)
 
-    yaml_filename = 'QDH17/survey_jcafb_QDH17.yaml'
-    yaml_out_filename = 'QDH17/survey_jcafb_QDH17_out.yaml'
-    xml_filename = 'QDH17/survey_jcafb_QDH17.xml'
-    txt_filename = 'QDH17/survey_jcafb_QDH17.txt'
-    xls_filename = 'QDH17/survey_jcafb_QDH17.xls'
+    yaml_filename = 'QSF17/survey_jcafb_QSF17.yaml'
+    yaml_out_filename = 'QSF17/survey_jcafb_QSF17_out.yaml'
+    xml_filename = 'QSF17/survey_jcafb_QSF17.xml'
+    txt_filename = 'QSF17/survey_jcafb_QSF17.txt'
+    xls_filename = 'QSF17/survey_jcafb_QSF17.xls'
+    print(
+        '--> Executing survey_process_yaml(%s, %s, %s, %s) ...' %
+        (yaml_filename, xml_filename, txt_filename, xls_filename)
+    )
+    survey_process_yaml(yaml_filename, yaml_out_filename, xml_filename, txt_filename, xls_filename)
+    if copy_xml_file:
+        shutil.copy(xml_filename, destination_directory)
+
+    yaml_filename = 'QSI17/survey_jcafb_QSI17.yaml'
+    yaml_out_filename = 'QSI17/survey_jcafb_QSI17_out.yaml'
+    xml_filename = 'QSI17/survey_jcafb_QSI17.xml'
+    txt_filename = 'QSI17/survey_jcafb_QSI17.txt'
+    xls_filename = 'QSI17/survey_jcafb_QSI17.xls'
     print(
         '--> Executing survey_process_yaml(%s, %s, %s, %s) ...' %
         (yaml_filename, xml_filename, txt_filename, xls_filename)
