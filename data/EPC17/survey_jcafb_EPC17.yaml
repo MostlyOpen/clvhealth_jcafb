@@ -1,0 +1,516 @@
+EPC17:
+    model: survey.survey
+    title: ''
+    stage_id: survey.stage_in_progress
+    auth_required: False
+    users_can_go_back: True
+    description: 'JCAFB 2017 - Laboratório - Parasitologia (Criança)'
+    thank_you_message: 'Obrigado por sua participação.'
+
+    EPC17_01:
+        model: survey.page
+        title: 'Identificação do Paciente'
+        description: ''
+
+        EPC17_01_01:
+            model: survey.question
+            question: 'Código do Paciente:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Paciente.'
+
+        EPC17_01_02:
+            model: survey.question
+            question: 'Nome do Paciente:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Paciente.'
+
+        EPC17_01_03:
+            model: survey.question
+            question: 'Código do Endereço:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Endereço em que o Paciente reside.'
+
+        EPC17_01_04:
+            model: survey.question
+            question: 'Nome do Endereço'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Endereço em que o Paciente reside.'
+
+        EPC17_01_05:
+            model: survey.question
+            question: 'Procedência do Paciente'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Escolher uma alternativa.'
+            comments_allowed: True
+            comments_message: 'Se a resposta for "Extra" especificar, se necessário:'
+
+            EPC17_01_05_01:
+                model: survey.label
+                value: 'a) Criança do Projeto'
+
+            EPC17_01_05_02:
+                model: survey.label
+                value: 'b) Idoso(a) do Projeto'
+
+            EPC17_01_05_03:
+                model: survey.label
+                value: 'c) Extra'
+
+    EPC17_02:
+        model: survey.page
+        title: 'Exame Coproparasitológico'
+        description: ''
+
+        EPC17_02_01:
+            model: survey.question
+            question: 'Código do Exame:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Exame.'
+
+        EPC17_02_02:
+            model: survey.question
+            question: 'Data de Entrada do Material (dd-mm-aaaa):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com a data de Entrada do Material.'
+
+        EPC17_02_03:
+            model: survey.question
+            question: 'Data de Saída do Resultado (dd-mm-aaaa):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com a data de Saída do Resultado.'
+
+        EPC17_02_04:
+            model: survey.question
+            question: 'Resultado:'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Escolher uma alternativa'
+            comments_allowed: True
+            comments_message: 'Se a resposta for "Outro", especificar:'
+
+            EPC17_02_04_01:
+                model: survey.label
+                value: 'a) NÃO REALIZADO'
+
+            EPC17_02_04_02:
+                model: survey.label
+                value: 'b) NEGATIVO'
+
+            EPC17_02_04_03:
+                model: survey.label
+                value: 'c) Cistos de Endolimax nana'
+
+            EPC17_02_04_04:
+                model: survey.label
+                value: 'd) Cistos de Entamoeba coli'
+
+            EPC17_02_04_05:
+                model: survey.label
+                value: 'e) Cistos de Entamoeba histolytica'
+
+            EPC17_02_04_06:
+                model: survey.label
+                value: 'f) Cistos de Giardia lamblia'
+
+            EPC17_02_04_07:
+                model: survey.label
+                value: 'g) Cistos de Iodamoeba butschlii'
+
+            EPC17_02_04_08:
+                model: survey.label
+                value: 'h) Cistos de Chilomastix mesnil'
+
+            EPC17_02_04_09:
+                model: survey.label
+                value: 'i) Oocistos de Isospora belli'
+
+            EPC17_02_04_10:
+                model: survey.label
+                value: 'j) Ovos de Ascaris lumbricoides'
+
+            EPC17_02_04_11:
+                model: survey.label
+                value: 'k) Ovos de Ancilostomídeo'
+
+            EPC17_02_04_12:
+                model: survey.label
+                value: 'l) Ovos de Trichuris trichiura'
+
+            EPC17_02_04_13:
+                model: survey.label
+                value: 'm) Ovos de Taenia sp'
+
+            EPC17_02_04_14:
+                model: survey.label
+                value: 'n) Ovos de Hymenolepis nana'
+
+            EPC17_02_04_15:
+                model: survey.label
+                value: 'o) Ovos de Schistosoma mansoni'
+
+            EPC17_02_04_16:
+                model: survey.label
+                value: 'p) Ovos de Enterobius vermicularis'
+
+            EPC17_02_04_17:
+                model: survey.label
+                value: 'q) Larvas de Strongyloides stercoralis'
+
+            EPC17_02_04_18:
+                model: survey.label
+                value: 'r) Outro'
+
+        EPC17_02_05:
+            model: survey.question
+            question: 'Método de Ritchie - Código do Examinador'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Examinador'
+
+        EPC17_02_06:
+            model: survey.question
+            question: 'Método de Ritchie - Nome do Examinador'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Examinador'
+
+        EPC17_02_07:
+            model: survey.question
+            question: 'Método de Ritchie - Resultado:'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Escolher uma alternativa'
+            comments_allowed: True
+            comments_message: 'Se a resposta for "Outro", especificar:'
+
+            EPC17_02_07_01:
+                model: survey.label
+                value: 'a) NÃO REALIZADO'
+
+            EPC17_02_07_02:
+                model: survey.label
+                value: 'b) NEGATIVO'
+
+            EPC17_02_07_03:
+                model: survey.label
+                value: 'c) Cistos de Endolimax nana'
+
+            EPC17_02_07_04:
+                model: survey.label
+                value: 'd) Cistos de Entamoeba coli'
+
+            EPC17_02_07_05:
+                model: survey.label
+                value: 'e) Cistos de Entamoeba histolytica'
+
+            EPC17_02_07_06:
+                model: survey.label
+                value: 'f) Cistos de Giardia lamblia'
+
+            EPC17_02_07_07:
+                model: survey.label
+                value: 'g) Cistos de Iodamoeba butschlii'
+
+            EPC17_02_07_08:
+                model: survey.label
+                value: 'h) Cistos de Chilomastix mesnil'
+
+            EPC17_02_07_09:
+                model: survey.label
+                value: 'i) Oocistos de Isospora belli'
+
+            EPC17_02_07_10:
+                model: survey.label
+                value: 'j) Ovos de Ascaris lumbricoides'
+
+            EPC17_02_07_11:
+                model: survey.label
+                value: 'k) Ovos de Ancilostomídeo'
+
+            EPC17_02_07_12:
+                model: survey.label
+                value: 'l) Ovos de Trichuris trichiura'
+
+            EPC17_02_07_13:
+                model: survey.label
+                value: 'm) Ovos de Taenia sp'
+
+            EPC17_02_07_14:
+                model: survey.label
+                value: 'n) Ovos de Hymenolepis nana'
+
+            EPC17_02_07_15:
+                model: survey.label
+                value: 'o) Ovos de Schistosoma mansoni'
+
+            EPC17_02_07_16:
+                model: survey.label
+                value: 'p) Ovos de Enterobius vermicularis'
+
+            EPC17_02_07_17:
+                model: survey.label
+                value: 'q) Larvas de Strongyloides stercoralis'
+
+            EPC17_02_07_18:
+                model: survey.label
+                value: 'r) Outro'
+
+        EPC17_02_08:
+            model: survey.question
+            question: 'Método de Hoffmann - Código do Examinador'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Examinador'
+
+        EPC17_02_09:
+            model: survey.question
+            question: 'Método de Hoffmann - Nome do Examinador'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Examinador'
+
+        EPC17_02_10:
+            model: survey.question
+            question: 'Método de Hoffmann - Resultado:'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Escolher uma alternativa'
+            comments_allowed: True
+            comments_message: 'Se a resposta for "Outro", especificar:'
+
+            EPC17_02_10_01:
+                model: survey.label
+                value: 'a) NÃO REALIZADO'
+
+            EPC17_02_10_02:
+                model: survey.label
+                value: 'b) NEGATIVO'
+
+            EPC17_02_10_03:
+                model: survey.label
+                value: 'c) Cistos de Endolimax nana'
+
+            EPC17_02_10_04:
+                model: survey.label
+                value: 'd) Cistos de Entamoeba coli'
+
+            EPC17_02_10_05:
+                model: survey.label
+                value: 'e) Cistos de Entamoeba histolytica'
+
+            EPC17_02_10_06:
+                model: survey.label
+                value: 'f) Cistos de Giardia lamblia'
+
+            EPC17_02_10_07:
+                model: survey.label
+                value: 'g) Cistos de Iodamoeba butschlii'
+
+            EPC17_02_10_08:
+                model: survey.label
+                value: 'h) Cistos de Chilomastix mesnil'
+
+            EPC17_02_10_09:
+                model: survey.label
+                value: 'i) Oocistos de Isospora belli'
+
+            EPC17_02_10_10:
+                model: survey.label
+                value: 'j) Ovos de Ascaris lumbricoides'
+
+            EPC17_02_10_11:
+                model: survey.label
+                value: 'k) Ovos de Ancilostomídeo'
+
+            EPC17_02_10_12:
+                model: survey.label
+                value: 'l) Ovos de Trichuris trichiura'
+
+            EPC17_02_10_13:
+                model: survey.label
+                value: 'm) Ovos de Taenia sp'
+
+            EPC17_02_10_14:
+                model: survey.label
+                value: 'n) Ovos de Hymenolepis nana'
+
+            EPC17_02_10_15:
+                model: survey.label
+                value: 'o) Ovos de Schistosoma mansoni'
+
+            EPC17_02_10_16:
+                model: survey.label
+                value: 'p) Ovos de Enterobius vermicularis'
+
+            EPC17_02_10_17:
+                model: survey.label
+                value: 'q) Larvas de Strongyloides stercoralis'
+
+            EPC17_02_10_18:
+                model: survey.label
+                value: 'r) Outro'
+
+    EPC17_03:
+        model: survey.page
+        title: 'Pesquisa de Enterobius vermicularis (pelo Método do Swab Anal)'
+        description: ''
+
+        EPC17_03_01:
+            model: survey.question
+            question: 'Código do Exame:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Exame.'
+
+        EPC17_03_02:
+            model: survey.question
+            question: 'Data de Entrada do Material (dd-mm-aaaa):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com a data de Entrada do Material.'
+
+        EPC17_03_03:
+            model: survey.question
+            question: 'Data de Saída do Resultado (dd-mm-aaaa):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com a data de Saída do Resultado.'
+
+        EPC17_03_04:
+            model: survey.question
+            question: 'Resultado:'
+            type: multiple_choice
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Escolher uma alternativa'
+            comments_allowed: True
+            comments_message: 'Se a resposta for "Outro", especificar:'
+
+            EPC17_03_04_01:
+                model: survey.label
+                value: 'a) NÃO REALIZADO'
+
+            EPC17_03_04_02:
+                model: survey.label
+                value: 'b) NEGATIVO'
+
+            EPC17_03_04_03:
+                model: survey.label
+                value: 'c) POSITIVO'
+
+        EPC17_03_05:
+            model: survey.question
+            question: 'Código do Examinador'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Examinador'
+
+        EPC17_03_06:
+            model: survey.question
+            question: 'Nome do Examinador'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Examinador'
+
+    EPC17_04:
+        model: survey.page
+        title: 'Farmacêutico Responsável'
+        description: ''
+
+        EPC17_04_01:
+            model: survey.question
+            question: 'Código do Farmacêutico Responsável'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Farmacêutico Responsável'
+
+        EPC17_04_02:
+            model: survey.question
+            question: 'Nome do Farmacêutico Responsável'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Nome do Farmacêutico Responsável'
+
+    EPC17_05:
+        model: survey.page
+        title: 'Levantamento Protoparasitológico/Swab Anal'
+        description: ''
+
+        EPC17_05_01:
+            model: survey.question
+            question: 'Realizados ambos os exames:'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Escolher uma alternativa'
+            comments_allowed: True
+            comments_message: 'Obs:'
+
+            EPC17_05_01_01:
+                model: survey.label
+                value: 'a) Ambos negativos'
+
+            EPC17_05_01_02:
+                model: survey.label
+                value: 'b) Ambos positivos'
+
+            EPC17_05_01_03:
+                model: survey.label
+                value: 'c) Parasitológico negativo e swab anal positivo'
+
+            EPC17_05_01_04:
+                model: survey.label
+                value: 'c) Parasitológico positivo e swab anal negativo'
+
+        EPC17_05_02:
+            model: survey.question
+            question: 'Realizado somente o Protoparasitológico:'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Escolher uma alternativa'
+            comments_allowed: True
+            comments_message: 'Obs:'
+
+            EPC17_05_02_01:
+                model: survey.label
+                value: 'a) Resultado negativo'
+
+            EPC17_05_02_02:
+                model: survey.label
+                value: 'b) Resultado positivo'
+
+        EPC17_05_03:
+            model: survey.question
+            question: 'Realizado somente o Swab Anal:'
+            type: simple_choice
+            display_mode: columns
+            column_nb: 12
+            constr_mandatory: True
+            constr_error_msg: 'Escolher uma alternativa'
+            comments_allowed: True
+            comments_message: 'Obs:'
+
+            EPC17_05_03_01:
+                model: survey.label
+                value: 'a) Resultado negativo'
+
+            EPC17_05_03_02:
+                model: survey.label
+                value: 'b) Resultado positivo'
+

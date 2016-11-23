@@ -1,0 +1,152 @@
+[EPC17]
+    1. Identificação do Paciente
+        1.1. Código do Paciente:
+            (textbox)
+            ____________________________________
+        1.2. Nome do Paciente:
+            (textbox)
+            ____________________________________
+        1.3. Código do Endereço:
+            (textbox)
+            ____________________________________
+        1.4. Nome do Endereço
+            (textbox)
+            ____________________________________
+        1.5. Procedência do Paciente
+            (simple_choice)
+            a) Criança do Projeto
+            b) Idoso(a) do Projeto
+            c) Extra
+            Se a resposta for "Extra" especificar, se necessário:____________________________________
+    2. Exame Coproparasitológico
+        2.1. Código do Exame:
+            (textbox)
+            ____________________________________
+        2.2. Data de Entrada do Material (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        2.3. Data de Saída do Resultado (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        2.4. Resultado:
+            (multiple_choice)
+            a) NÃO REALIZADO
+            b) NEGATIVO
+            c) Cistos de Endolimax nana
+            d) Cistos de Entamoeba coli
+            e) Cistos de Entamoeba histolytica
+            f) Cistos de Giardia lamblia
+            g) Cistos de Iodamoeba butschlii
+            h) Cistos de Chilomastix mesnil
+            i) Oocistos de Isospora belli
+            j) Ovos de Ascaris lumbricoides
+            k) Ovos de Ancilostomídeo
+            l) Ovos de Trichuris trichiura
+            m) Ovos de Taenia sp
+            n) Ovos de Hymenolepis nana
+            o) Ovos de Schistosoma mansoni
+            p) Ovos de Enterobius vermicularis
+            q) Larvas de Strongyloides stercoralis
+            r) Outro
+            Se a resposta for "Outro", especificar:____________________________________
+        2.5. Método de Ritchie - Código do Examinador
+            (textbox)
+            ____________________________________
+        2.6. Método de Ritchie - Nome do Examinador
+            (textbox)
+            ____________________________________
+        2.7. Método de Ritchie - Resultado:
+            (multiple_choice)
+            a) NÃO REALIZADO
+            b) NEGATIVO
+            c) Cistos de Endolimax nana
+            d) Cistos de Entamoeba coli
+            e) Cistos de Entamoeba histolytica
+            f) Cistos de Giardia lamblia
+            g) Cistos de Iodamoeba butschlii
+            h) Cistos de Chilomastix mesnil
+            i) Oocistos de Isospora belli
+            j) Ovos de Ascaris lumbricoides
+            k) Ovos de Ancilostomídeo
+            l) Ovos de Trichuris trichiura
+            m) Ovos de Taenia sp
+            n) Ovos de Hymenolepis nana
+            o) Ovos de Schistosoma mansoni
+            p) Ovos de Enterobius vermicularis
+            q) Larvas de Strongyloides stercoralis
+            r) Outro
+            Se a resposta for "Outro", especificar:____________________________________
+        2.8. Método de Hoffmann - Código do Examinador
+            (textbox)
+            ____________________________________
+        2.9. Método de Hoffmann - Nome do Examinador
+            (textbox)
+            ____________________________________
+        2.10. Método de Hoffmann - Resultado:
+            (multiple_choice)
+            a) NÃO REALIZADO
+            b) NEGATIVO
+            c) Cistos de Endolimax nana
+            d) Cistos de Entamoeba coli
+            e) Cistos de Entamoeba histolytica
+            f) Cistos de Giardia lamblia
+            g) Cistos de Iodamoeba butschlii
+            h) Cistos de Chilomastix mesnil
+            i) Oocistos de Isospora belli
+            j) Ovos de Ascaris lumbricoides
+            k) Ovos de Ancilostomídeo
+            l) Ovos de Trichuris trichiura
+            m) Ovos de Taenia sp
+            n) Ovos de Hymenolepis nana
+            o) Ovos de Schistosoma mansoni
+            p) Ovos de Enterobius vermicularis
+            q) Larvas de Strongyloides stercoralis
+            r) Outro
+            Se a resposta for "Outro", especificar:____________________________________
+    3. Pesquisa de Enterobius vermicularis (pelo Método do Swab Anal)
+        3.1. Código do Exame:
+            (textbox)
+            ____________________________________
+        3.2. Data de Entrada do Material (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        3.3. Data de Saída do Resultado (dd-mm-aaaa):
+            (textbox)
+            ____________________________________
+        3.4. Resultado:
+            (multiple_choice)
+            a) NÃO REALIZADO
+            b) NEGATIVO
+            c) POSITIVO
+            Se a resposta for "Outro", especificar:____________________________________
+        3.5. Código do Examinador
+            (textbox)
+            ____________________________________
+        3.6. Nome do Examinador
+            (textbox)
+            ____________________________________
+    4. Farmacêutico Responsável
+        4.1. Código do Farmacêutico Responsável
+            (textbox)
+            ____________________________________
+        4.2. Nome do Farmacêutico Responsável
+            (textbox)
+            ____________________________________
+    5. Levantamento Protoparasitológico/Swab Anal
+        5.1. Realizados ambos os exames:
+            (simple_choice)
+            a) Ambos negativos
+            b) Ambos positivos
+            c) Parasitológico negativo e swab anal positivo
+            c) Parasitológico positivo e swab anal negativo
+            Obs:____________________________________
+        5.2. Realizado somente o Protoparasitológico:
+            (simple_choice)
+            a) Resultado negativo
+            b) Resultado positivo
+            Obs:____________________________________
+        5.3. Realizado somente o Swab Anal:
+            (simple_choice)
+            a) Resultado negativo
+            b) Resultado positivo
+            Obs:____________________________________
