@@ -120,6 +120,7 @@ def clvhealth_jcafb_install():
     install_update_module('myo_lab_test_cst', update)
     install_update_module('jcafb_2017_consent_forms', update)
     install_update_module('jcafb_2017_surveys', update)
+    install_update_module('jcafb_2017_lab_tests', update)
 
     install_update_module('mass_editing', update)
 
