@@ -1056,7 +1056,7 @@ def person_mng_include_responsible(client, args, batch_name):
                 'name': person_mng_reg.responsible_name,
                 'code': False,
                 'address_id': person_mng_reg.address_id.id,
-                'address_mng_id': person_mng_reg.address_mng_id.id,
+                # 'address_mng_id': person_mng_reg.address_mng_id.id,
                 'batch_name': batch_name,
                 'state': 'waiting',
                 'tag_ids': tag_ids,
