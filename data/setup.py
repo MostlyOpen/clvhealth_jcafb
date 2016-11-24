@@ -1381,42 +1381,6 @@ def buffer():
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
 
-
-if __name__ == '__main__':
-
-    server = 'http://localhost:8069'
-    # server = '*'
-
-    username = 'username'
-    # username = '*'
-    password = 'password'
-    # password = '*'
-
-    dbname = 'odoo'
-    # dbname = '*'
-
-    db_server = 'localhost'
-    # db_server = '*'
-
-    db_user = 'openerp'
-    # db_user = '*'
-
-    db_password = 'openerp'
-    # db_password = '*'
-
-    print()
-    print('--> setup.py...')
-    print('--> server:', server)
-
-    get_arguments()
-
-    from time import time
-    start = time()
-
-    client = erppeek.Client(server, dbname, username, password)
-    conn_string = "dbname='" + dbname + "' user='" + db_user + "' host='" + db_server + \
-                  "' password='" + db_password + "'"
-
     # ***** 2016-11-13 *****
     #
 
@@ -1709,6 +1673,42 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
 
+
+if __name__ == '__main__':
+
+    server = 'http://localhost:8069'
+    # server = '*'
+
+    username = 'username'
+    # username = '*'
+    password = 'password'
+    # password = '*'
+
+    dbname = 'odoo'
+    # dbname = '*'
+
+    db_server = 'localhost'
+    # db_server = '*'
+
+    db_user = 'openerp'
+    # db_user = '*'
+
+    db_password = 'openerp'
+    # db_password = '*'
+
+    print()
+    print('--> setup.py...')
+    print('--> server:', server)
+
+    get_arguments()
+
+    from time import time
+    start = time()
+
+    client = erppeek.Client(server, dbname, username, password)
+    conn_string = "dbname='" + dbname + "' user='" + db_user + "' host='" + db_server + \
+                  "' password='" + db_password + "'"
+
     # ***** 2016-11-22 *****
     #
 
@@ -1761,6 +1761,99 @@ if __name__ == '__main__':
     # # psql -f clvhealth_jcafb_dev_2016-11-22b.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
     # #
     # db_path = 'data/clvhealth_jcafb_2017_2016-11-22b.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # ***** 2016-11-23 *****
+    #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-11-23a.sql
+    # # gzip clvhealth_jcafb_dev_2016-11-23a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-11-23a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-23a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-23a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # ***** 2016-11-24 *****
+    #
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-24a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-24a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-24b.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-24c.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
+
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-24c.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
+
+    # person_mng_args = [('state', '=', 'done'), ]
+    # batch_name = 'JCAFB_2017_Dados_Fernao_responsible_02'
+    # print('-->', client, person_mng_args, batch_name)
+    # print('--> Executing person_mng_include_responsible()...')
+    # print()
+    # person_mng_include_responsible(client, person_mng_args, batch_name)
+
+    # person_mng_args = [('state', '=', 'done'), ]
+    # print('-->', client, person_mng_args)
+    # print('--> Executing person_mng_set_responsible()...')
+    # print()
+    # person_mng_set_responsible(client, person_mng_args)
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-11-24d.sql
+    # # gzip clvhealth_jcafb_dev_2016-11-24d.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-11-24d.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+    # db_path = 'data/clvhealth_jcafb_2017_2016-11-24d.sqlite'
     # print('-->', client, db_path, conn_string)
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
