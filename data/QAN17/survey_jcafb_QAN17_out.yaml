@@ -10,7 +10,7 @@ QAN17:
     QAN17_01:
         model: survey.page
         title: 'Identificação do Questionário'
-        description: ''
+        description: 'As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário.'
 
         QAN17_01_01:
             model: survey.question
@@ -33,10 +33,17 @@ QAN17:
             constr_mandatory: True
             constr_error_msg: 'Informar o(s) Código(s) do(s) entrevistador(es).'
 
+        QAN17_01_04:
+            model: survey.question
+            question: 'Código da Requisição de Exames:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Código da Requisição de Exames associada a este questionário.'
+
     QAN17_02:
         model: survey.page
         title: 'Identificação do Paciente/Entrevistado'
-        description: ''
+        description: 'As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário e/ou ao Termo de Consentimento associado a este questionário.'
 
         QAN17_02_01:
             model: survey.question
@@ -54,19 +61,26 @@ QAN17:
 
         QAN17_02_03:
             model: survey.question
+            question: 'Idade do Paciente em 31/01/2017'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com Idade do Paciente em 31/01/2017 (data de referência)'
+
+        QAN17_02_04:
+            model: survey.question
             question: 'Nome do Endereço'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Endereço em que o Paciente reside.'
 
-        QAN17_02_04:
+        QAN17_02_05:
             model: survey.question
             question: 'Código do Endereço'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Endereço em que o Paciente reside.'
 
-        QAN17_02_05:
+        QAN17_02_06:
             model: survey.question
             question: 'Relação do Entrevistado com o Paciente'
             type: simple_choice
@@ -77,30 +91,30 @@ QAN17:
             comments_allowed: True
             comments_message: 'Se "Outra", especificar a relação do Entrevistado com o Paciente:'
 
-            QAN17_02_05_01:
+            QAN17_02_06_01:
                 model: survey.label
                 value: 'a) Responsável'
 
-            QAN17_02_05_02:
+            QAN17_02_06_02:
                 model: survey.label
                 value: 'b) Paciente'
 
-            QAN17_02_05_03:
+            QAN17_02_06_03:
                 model: survey.label
                 value: 'c) Cuidador'
 
-            QAN17_02_05_04:
+            QAN17_02_06_04:
                 model: survey.label
                 value: 'd) Outra'
 
-        QAN17_02_06:
+        QAN17_02_07:
             model: survey.question
             question: 'Nome do Entrevistado'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Entrevistado que respondeu o questionário.'
 
-        QAN17_02_07:
+        QAN17_02_08:
             model: survey.question
             question: 'Código do Entrevistado'
             type: textbox

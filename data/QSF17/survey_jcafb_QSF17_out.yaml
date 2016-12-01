@@ -10,7 +10,7 @@ QSF17:
     QSF17_01:
         model: survey.page
         title: 'Identificação do Questionário'
-        description: ''
+        description: 'As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário.'
 
         QSF17_01_01:
             model: survey.question
@@ -36,7 +36,7 @@ QSF17:
     QSF17_02:
         model: survey.page
         title: 'Identificação do Endereço/Entrevistado'
-        description: ''
+        description: 'As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário e/ou ao Termo de Consentimento associado a este questionário.'
 
         QSF17_02_01:
             model: survey.question

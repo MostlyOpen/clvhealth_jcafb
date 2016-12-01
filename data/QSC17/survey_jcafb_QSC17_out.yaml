@@ -10,7 +10,7 @@ QSC17:
     QSC17_01:
         model: survey.page
         title: 'Identificação do Questionário'
-        description: ''
+        description: 'As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário.'
 
         QSC17_01_01:
             model: survey.question
@@ -36,7 +36,7 @@ QSC17:
     QSC17_02:
         model: survey.page
         title: 'Identificação da Criança/Entrevistado'
-        description: ''
+        description: 'As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário e/ou ao Termo de Consentimento associado a este questionário.'
 
         QSC17_02_01:
             model: survey.question
@@ -54,19 +54,26 @@ QSC17:
 
         QSC17_02_03:
             model: survey.question
+            question: 'Idade da Criança em 31/01/2017'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com Idade da Criança em 31/01/2017 (data de referência)'
+
+        QSC17_02_04:
+            model: survey.question
             question: 'Nome do Endereço'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Endereço em que a Criança reside.'
 
-        QSC17_02_04:
+        QSC17_02_05:
             model: survey.question
             question: 'Código do Endereço'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Endereço em que a Criança reside.'
 
-        QSC17_02_05:
+        QSC17_02_06:
             model: survey.question
             question: 'Relação do Entrevistado com a Criança'
             type: simple_choice
@@ -77,26 +84,26 @@ QSC17:
             comments_allowed: True
             comments_message: 'Se "Outra", especificar a relação do Entrevistado com a Criança:'
 
-            QSC17_02_05_01:
+            QSC17_02_06_01:
                 model: survey.label
                 value: 'a) Responsável'
 
-            QSC17_02_05_02:
+            QSC17_02_06_02:
                 model: survey.label
                 value: 'b) Cuidador'
 
-            QSC17_02_05_03:
+            QSC17_02_06_03:
                 model: survey.label
                 value: 'c) Outra'
 
-        QSC17_02_06:
+        QSC17_02_07:
             model: survey.question
             question: 'Nome do Entrevistado'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Entrevistado que respondeu o questionário.'
 
-        QSC17_02_07:
+        QSC17_02_08:
             model: survey.question
             question: 'Código do Entrevistado'
             type: textbox

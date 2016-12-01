@@ -16,23 +16,26 @@
         2.2. Código do Paciente:
             (textbox)
             ____________________________________
-        2.3. Nome do Endereço:
+        2.3. Idade do Paciente em 31/01/2017
             (textbox)
             ____________________________________
-        2.4. Código do Endereço:
+        2.4. Nome do Endereço:
             (textbox)
             ____________________________________
-        2.5. Relação do Entrevistado com o Paciente
+        2.5. Código do Endereço:
+            (textbox)
+            ____________________________________
+        2.6. Relação do Entrevistado com o Paciente
             (simple_choice)
             a) Responsável
             b) Paciente
             c) Cuidador
             d) Outra
             Se "Outra", especificar a relação do Entrevistado com o Paciente:____________________________________
-        2.6. Nome do Entrevistado
+        2.7. Nome do Entrevistado
             (textbox)
             ____________________________________
-        2.7. Código do Entrevistado
+        2.8. Código do Entrevistado
             (textbox)
             ____________________________________
     3. Questionário

@@ -10,7 +10,7 @@ QDH17:
     QDH17_01:
         model: survey.page
         title: 'Identificação do Questionário'
-        description: ''
+        description: 'As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário.'
 
         QDH17_01_01:
             model: survey.question
@@ -33,10 +33,17 @@ QDH17:
             constr_mandatory: True
             constr_error_msg: 'Informar o(s) Código(s) do(s) entrevistador(es).'
 
+        QDH17_01_04:
+            model: survey.question
+            question: 'Código da Requisição de Exames:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Código da Requisição de Exames associadaa este questionário.'
+
     QDH17_02:
         model: survey.page
         title: 'Identificação do Paciente/Entrevistado'
-        description: ''
+        description: 'As questões desta sessão não serão submetidas ao Paciente/Entrevistado e devem ser preenchidas pelo(s) entrevistador(es) a partir de informações cadastrais relacionadas a este questionário e/ou ao Termo de Consentimento associado a este questionário.'
 
         QDH17_02_01:
             model: survey.question
@@ -54,19 +61,26 @@ QDH17:
 
         QDH17_02_03:
             model: survey.question
+            question: 'Idade do Paciente em 31/01/2017'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com Idade do Paciente em 31/01/2017 (data de referência)'
+
+        QDH17_02_04:
+            model: survey.question
             question: 'Nome do Endereço'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Endereço em que o Paciente reside.'
 
-        QDH17_02_04:
+        QDH17_02_05:
             model: survey.question
             question: 'Código do Endereço'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Endereço em que o Paciente reside.'
 
-        QDH17_02_05:
+        QDH17_02_06:
             model: survey.question
             question: 'Relação do Entrevistado com o Paciente'
             type: simple_choice
@@ -77,30 +91,30 @@ QDH17:
             comments_allowed: True
             comments_message: 'Se "Outra", especificar a relação do Entrevistado com o Paciente:'
 
-            QDH17_02_05_01:
+            QDH17_02_06_01:
                 model: survey.label
                 value: 'a) Responsável'
 
-            QDH17_02_05_02:
+            QDH17_02_06_02:
                 model: survey.label
                 value: 'b) Paciente'
 
-            QDH17_02_05_03:
+            QDH17_02_06_03:
                 model: survey.label
                 value: 'c) Cuidador'
 
-            QDH17_02_05_04:
+            QDH17_02_06_04:
                 model: survey.label
                 value: 'c) Outra'
 
-        QDH17_02_06:
+        QDH17_02_07:
             model: survey.question
             question: 'Nome do Entrevistado'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Entrevistado que respondeu o questionário.'
 
-        QDH17_02_07:
+        QDH17_02_08:
             model: survey.question
             question: 'Código do Entrevistado'
             type: textbox
@@ -1268,7 +1282,7 @@ QDH17:
 
         QDH17_10_02:
             model: survey.question
-            question: 'Consome qual dos ítens abaixo e com que frequência na semana?'
+            question: 'Consome qual dos ítens abaixo e com que frequência na semana? (1)'
             type: matrix
             matrix_subtype: simple
             constr_mandatory: True
@@ -1307,86 +1321,158 @@ QDH17:
                 value: 'Carne vermelha sem gordura'
 
             QDH17_10_02_09:
-                model: survey.label.row
-                value: 'Miúdos'
-
-            QDH17_10_02_10:
-                model: survey.label.row
-                value: 'Embutidos'
-
-            QDH17_10_02_11:
-                model: survey.label.row
-                value: ' Frango com pele'
-
-            QDH17_10_02_12:
-                model: survey.label.row
-                value: 'Frango sem pele'
-
-            QDH17_10_02_13:
-                model: survey.label.row
-                value: 'Peixe'
-
-            QDH17_10_02_14:
-                model: survey.label.row
-                value: 'Leite integral, queijo amarelo'
-
-            QDH17_10_02_15:
-                model: survey.label.row
-                value: 'Leite semi ou desnatado, queijo branco'
-
-            QDH17_10_02_16:
-                model: survey.label.row
-                value: 'Bolacha recheada, salgadinho, miojo'
-
-            QDH17_10_02_17:
-                model: survey.label.row
-                value: 'Frituras (alimento submerso em óleo quente)'
-
-            QDH17_10_02_18:
-                model: survey.label.row
-                value: ' Margarina, manteiga, maionese'
-
-            QDH17_10_02_19:
-                model: survey.label.row
-                value: 'Bebida com açúcar (café, leite, suco, chá, etc)'
-
-            QDH17_10_02_20:
-                model: survey.label.row
-                value: ' Refrigerante, suco de saquinho'
-
-            QDH17_10_02_21:
-                model: survey.label.row
-                value: 'Doces'
-
-            QDH17_10_02_22:
-                model: survey.label.row
-                value: 'Tempero pronto (knorr, sazon)'
-
-            QDH17_10_02_23:
                 model: survey.label.col
                 value: 'a) 0 dias ou raramente'
 
-            QDH17_10_02_24:
+            QDH17_10_02_10:
                 model: survey.label.col
                 value: 'b) 1-2 dias'
 
-            QDH17_10_02_25:
+            QDH17_10_02_11:
                 model: survey.label.col
                 value: 'c) 3-4 dias'
 
-            QDH17_10_02_26:
+            QDH17_10_02_12:
                 model: survey.label.col
                 value: 'd) 5 ou mais dias'
 
-            QDH17_10_02_27:
+            QDH17_10_02_13:
                 model: survey.label.col
                 value: 'e) Não quis responder'
 
-            QDH17_10_02_28:
+            QDH17_10_02_14:
                 model: survey.label.col
                 value: 'f) Não sabe'
 
-            QDH17_10_02_29:
+            QDH17_10_02_15:
+                model: survey.label.col
+                value: 'g) Não se aplica'
+
+        QDH17_10_03:
+            model: survey.question
+            question: 'Consome qual dos ítens abaixo e com que frequência na semana? (2)'
+            type: matrix
+            matrix_subtype: simple
+            constr_mandatory: True
+            constr_error_msg: 'Preencher os alimentos que o paciente consome.'
+
+            QDH17_10_03_01:
+                model: survey.label.row
+                value: 'Miúdos'
+
+            QDH17_10_03_02:
+                model: survey.label.row
+                value: 'Embutidos'
+
+            QDH17_10_03_03:
+                model: survey.label.row
+                value: ' Frango com pele'
+
+            QDH17_10_03_04:
+                model: survey.label.row
+                value: 'Frango sem pele'
+
+            QDH17_10_03_05:
+                model: survey.label.row
+                value: 'Peixe'
+
+            QDH17_10_03_06:
+                model: survey.label.row
+                value: 'Leite integral, queijo amarelo'
+
+            QDH17_10_03_07:
+                model: survey.label.row
+                value: 'Leite semi ou desnatado, queijo branco'
+
+            QDH17_10_03_08:
+                model: survey.label.row
+                value: 'Bolacha recheada, salgadinho, miojo'
+
+            QDH17_10_03_09:
+                model: survey.label.col
+                value: 'a) 0 dias ou raramente'
+
+            QDH17_10_03_10:
+                model: survey.label.col
+                value: 'b) 1-2 dias'
+
+            QDH17_10_03_11:
+                model: survey.label.col
+                value: 'c) 3-4 dias'
+
+            QDH17_10_03_12:
+                model: survey.label.col
+                value: 'd) 5 ou mais dias'
+
+            QDH17_10_03_13:
+                model: survey.label.col
+                value: 'e) Não quis responder'
+
+            QDH17_10_03_14:
+                model: survey.label.col
+                value: 'f) Não sabe'
+
+            QDH17_10_03_15:
+                model: survey.label.col
+                value: 'g) Não se aplica'
+
+        QDH17_10_04:
+            model: survey.question
+            question: 'Consome qual dos ítens abaixo e com que frequência na semana? (3)'
+            type: matrix
+            matrix_subtype: simple
+            constr_mandatory: True
+            constr_error_msg: 'Preencher os alimentos que o paciente consome.'
+
+            QDH17_10_04_01:
+                model: survey.label.row
+                value: 'Frituras (alimento submerso em óleo quente)'
+
+            QDH17_10_04_02:
+                model: survey.label.row
+                value: ' Margarina, manteiga, maionese'
+
+            QDH17_10_04_03:
+                model: survey.label.row
+                value: 'Bebida com açúcar (café, leite, suco, chá, etc)'
+
+            QDH17_10_04_04:
+                model: survey.label.row
+                value: ' Refrigerante, suco de saquinho'
+
+            QDH17_10_04_05:
+                model: survey.label.row
+                value: 'Doces'
+
+            QDH17_10_04_06:
+                model: survey.label.row
+                value: 'Tempero pronto (knorr, sazon)'
+
+            QDH17_10_04_07:
+                model: survey.label.col
+                value: 'a) 0 dias ou raramente'
+
+            QDH17_10_04_08:
+                model: survey.label.col
+                value: 'b) 1-2 dias'
+
+            QDH17_10_04_09:
+                model: survey.label.col
+                value: 'c) 3-4 dias'
+
+            QDH17_10_04_10:
+                model: survey.label.col
+                value: 'd) 5 ou mais dias'
+
+            QDH17_10_04_11:
+                model: survey.label.col
+                value: 'e) Não quis responder'
+
+            QDH17_10_04_12:
+                model: survey.label.col
+                value: 'f) Não sabe'
+
+            QDH17_10_04_13:
                 model: survey.label.col
                 value: 'g) Não se aplica'
 

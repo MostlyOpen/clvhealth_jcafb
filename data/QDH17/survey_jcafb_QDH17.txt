@@ -9,6 +9,9 @@
         1.3. Códigos do(s) Entrevistador(es) (separados por ","):
             (textbox)
             ____________________________________
+        1.4. Código da Requisição de Exames:
+            (textbox)
+            ____________________________________
     2. Identificação do Paciente/Entrevistado
         2.1. Nome do Paciente:
             (textbox)
@@ -16,23 +19,26 @@
         2.2. Código do Paciente:
             (textbox)
             ____________________________________
-        2.3. Nome do Endereço
+        2.3. Idade do Paciente em 31/01/2017
             (textbox)
             ____________________________________
-        2.4. Código do Endereço
+        2.4. Nome do Endereço
             (textbox)
             ____________________________________
-        2.5. Relação do Entrevistado com o Paciente
+        2.5. Código do Endereço
+            (textbox)
+            ____________________________________
+        2.6. Relação do Entrevistado com o Paciente
             (simple_choice)
             a) Responsável
             b) Paciente
             c) Cuidador
             c) Outra
             Se "Outra", especificar a relação do Entrevistado com o Paciente:____________________________________
-        2.6. Nome do Entrevistado
+        2.7. Nome do Entrevistado
             (textbox)
             ____________________________________
-        2.7. Código do Entrevistado
+        2.8. Código do Entrevistado
             (textbox)
             ____________________________________
     3. Geral
@@ -334,7 +340,7 @@
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-        10.2. Consome qual dos ítens abaixo e com que frequência na semana?
+        10.2. Consome qual dos ítens abaixo e com que frequência na semana? (1)
             (matrix, simple)
             [row]Frutas ou suco natural
             [row]Salada crua
@@ -344,6 +350,15 @@
             [row]Feijão
             [row]Carne Vermelha com gordura
             [row]Carne vermelha sem gordura
+            [col]a) 0 dias ou raramente
+            [col]b) 1-2 dias
+            [col]c) 3-4 dias
+            [col]d) 5 ou mais dias
+            [col]e) Não quis responder
+            [col]f) Não sabe
+            [col]g) Não se aplica
+        10.3. Consome qual dos ítens abaixo e com que frequência na semana? (2)
+            (matrix, simple)
             [row]Miúdos
             [row]Embutidos
             [row] Frango com pele
@@ -352,6 +367,15 @@
             [row]Leite integral, queijo amarelo
             [row]Leite semi ou desnatado, queijo branco
             [row]Bolacha recheada, salgadinho, miojo
+            [col]a) 0 dias ou raramente
+            [col]b) 1-2 dias
+            [col]c) 3-4 dias
+            [col]d) 5 ou mais dias
+            [col]e) Não quis responder
+            [col]f) Não sabe
+            [col]g) Não se aplica
+        10.4. Consome qual dos ítens abaixo e com que frequência na semana? (3)
+            (matrix, simple)
             [row]Frituras (alimento submerso em óleo quente)
             [row] Margarina, manteiga, maionese
             [row]Bebida com açúcar (café, leite, suco, chá, etc)

@@ -16,22 +16,25 @@
         2.2. Código da Criança:
             (textbox)
             ____________________________________
-        2.3. Nome do Endereço
+        2.3. Idade da Criança em 31/01/2017
             (textbox)
             ____________________________________
-        2.4. Código do Endereço
+        2.4. Nome do Endereço
             (textbox)
             ____________________________________
-        2.5. Relação do Entrevistado com a Criança
+        2.5. Código do Endereço
+            (textbox)
+            ____________________________________
+        2.6. Relação do Entrevistado com a Criança
             (simple_choice)
             a) Responsável
             b) Cuidador
             c) Outra
             Se "Outra", especificar a relação do Entrevistado com a Criança:____________________________________
-        2.6. Nome do Entrevistado
+        2.7. Nome do Entrevistado
             (textbox)
             ____________________________________
-        2.7. Código do Entrevistado
+        2.8. Código do Entrevistado
             (textbox)
             ____________________________________
     3. Aspectos Sociais/Hábitos
