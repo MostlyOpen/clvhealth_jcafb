@@ -40,21 +40,21 @@ QSF17:
 
         QSF17_02_01:
             model: survey.question
-            question: 'Nome do Endereço'
+            question: 'Nome do Endereço:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Endereço em que o(s) Paciente(s) reside(m).'
 
         QSF17_02_02:
             model: survey.question
-            question: 'Código do Endereço'
+            question: 'Código do Endereço:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Endereço em que o(s) Paciente(s) reside(m).'
 
         QSF17_02_03:
             model: survey.question
-            question: 'Relação do Entrevistado com o(s) Paciente(s)'
+            question: 'Relação do Entrevistado com o(s) Paciente(s):'
             type: simple_choice
             display_mode: columns
             column_nb: 12
@@ -81,14 +81,14 @@ QSF17:
 
         QSF17_02_04:
             model: survey.question
-            question: 'Nome do Entrevistado'
+            question: 'Nome do Entrevistado:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Entrevistado que respondeu o questionário.'
 
         QSF17_02_05:
             model: survey.question
-            question: 'Código do Entrevistado'
+            question: 'Código do Entrevistado:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Entrevistado que respondeu o questionário.'
@@ -320,7 +320,7 @@ QSF17:
 
         QSF17_05_02:
             model: survey.question
-            question: 'Existe contato das pessoas da casa com o local de armazenamento (por exemplo caixa d’água)?                        ?'
+            question: 'Existe contato das pessoas da casa com o local de armazenamento (por exemplo caixa d’água)?'
             type: simple_choice
             display_mode: columns
             column_nb: 12
@@ -677,7 +677,7 @@ QSF17:
 
         QSF17_07_01:
             model: survey.question
-            question: 'Costumam tomar medicamentos sem receita médica? (por exemplo, pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)           '
+            question: 'Costumam tomar medicamentos sem receita médica? (por exemplo, pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)'
             type: simple_choice
             display_mode: columns
             column_nb: 12

@@ -9,40 +9,80 @@ EPI17:
 
     EPI17_01:
         model: survey.page
-        title: 'Identificação do Paciente'
+        title: 'Identificação do Questionário para transcrição dos resultados dos exames'
         description: ''
 
         EPI17_01_01:
+            model: survey.question
+            question: 'Código do Questionário:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com o Código do Questionário.'
+
+        EPI17_01_02:
+            model: survey.question
+            question: 'Data da transcrição (dd-mm-aaaa):'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com a data da transcrição do exame.'
+
+        EPI17_01_03:
+            model: survey.question
+            question: 'Código do Transcritor:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Informar o Código do transcritor.'
+
+        EPI17_01_04:
+            model: survey.question
+            question: 'Código da Requisição dos Exames:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Informar o Código da Requisição dos Exames.'
+
+    EPI17_02:
+        model: survey.page
+        title: 'Identificação do Paciente'
+        description: ''
+
+        EPI17_02_01:
             model: survey.question
             question: 'Código do Paciente:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Paciente.'
 
-        EPI17_01_02:
+        EPI17_02_02:
             model: survey.question
             question: 'Nome do Paciente:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Paciente.'
 
-        EPI17_01_03:
+        EPI17_02_03:
+            model: survey.question
+            question: 'Idade do Paciente em 31/01/2017:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com Idade do Paciente em 31/01/2017 (data de referência)'
+
+        EPI17_02_04:
             model: survey.question
             question: 'Código do Endereço:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Endereço em que o Paciente reside.'
 
-        EPI17_01_04:
+        EPI17_02_05:
             model: survey.question
-            question: 'Nome do Endereço'
+            question: 'Nome do Endereço:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Endereço em que o Paciente reside.'
 
-        EPI17_01_05:
+        EPI17_02_06:
             model: survey.question
-            question: 'Procedência do Paciente'
+            question: 'Procedência do Paciente:'
             type: simple_choice
             display_mode: columns
             column_nb: 12
@@ -51,45 +91,45 @@ EPI17:
             comments_allowed: True
             comments_message: 'Se a resposta for "Extra" especificar, se necessário:'
 
-            EPI17_01_05_01:
+            EPI17_02_06_01:
                 model: survey.label
                 value: 'a) Criança do Projeto'
 
-            EPI17_01_05_02:
+            EPI17_02_06_02:
                 model: survey.label
                 value: 'b) Idoso(a) do Projeto'
 
-            EPI17_01_05_03:
+            EPI17_02_06_03:
                 model: survey.label
                 value: 'c) Extra'
 
-    EPI17_02:
+    EPI17_03:
         model: survey.page
         title: 'Exame Coproparasitológico'
         description: ''
 
-        EPI17_02_01:
+        EPI17_03_01:
             model: survey.question
             question: 'Código do Exame:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Exame.'
 
-        EPI17_02_02:
+        EPI17_03_02:
             model: survey.question
             question: 'Data de Entrada do Material (dd-mm-aaaa):'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com a data de Entrada do Material.'
 
-        EPI17_02_03:
+        EPI17_03_03:
             model: survey.question
             question: 'Data de Saída do Resultado (dd-mm-aaaa):'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com a data de Saída do Resultado.'
 
-        EPI17_02_04:
+        EPI17_03_04:
             model: survey.question
             question: 'Resultado:'
             type: multiple_choice
@@ -99,93 +139,93 @@ EPI17:
             comments_allowed: True
             comments_message: 'Se a resposta for "Outro", especificar:'
 
-            EPI17_02_04_01:
+            EPI17_03_04_01:
                 model: survey.label
                 value: 'a) NÃO REALIZADO'
 
-            EPI17_02_04_02:
+            EPI17_03_04_02:
                 model: survey.label
                 value: 'b) NEGATIVO'
 
-            EPI17_02_04_03:
+            EPI17_03_04_03:
                 model: survey.label
                 value: 'c) Cistos de Endolimax nana'
 
-            EPI17_02_04_04:
+            EPI17_03_04_04:
                 model: survey.label
                 value: 'd) Cistos de Entamoeba coli'
 
-            EPI17_02_04_05:
+            EPI17_03_04_05:
                 model: survey.label
                 value: 'e) Cistos de Entamoeba histolytica'
 
-            EPI17_02_04_06:
+            EPI17_03_04_06:
                 model: survey.label
                 value: 'f) Cistos de Giardia lamblia'
 
-            EPI17_02_04_07:
+            EPI17_03_04_07:
                 model: survey.label
                 value: 'g) Cistos de Iodamoeba butschlii'
 
-            EPI17_02_04_08:
+            EPI17_03_04_08:
                 model: survey.label
                 value: 'h) Cistos de Chilomastix mesnil'
 
-            EPI17_02_04_09:
+            EPI17_03_04_09:
                 model: survey.label
                 value: 'i) Oocistos de Isospora belli'
 
-            EPI17_02_04_10:
+            EPI17_03_04_10:
                 model: survey.label
                 value: 'j) Ovos de Ascaris lumbricoides'
 
-            EPI17_02_04_11:
+            EPI17_03_04_11:
                 model: survey.label
                 value: 'k) Ovos de Ancilostomídeo'
 
-            EPI17_02_04_12:
+            EPI17_03_04_12:
                 model: survey.label
                 value: 'l) Ovos de Trichuris trichiura'
 
-            EPI17_02_04_13:
+            EPI17_03_04_13:
                 model: survey.label
                 value: 'm) Ovos de Taenia sp'
 
-            EPI17_02_04_14:
+            EPI17_03_04_14:
                 model: survey.label
                 value: 'n) Ovos de Hymenolepis nana'
 
-            EPI17_02_04_15:
+            EPI17_03_04_15:
                 model: survey.label
                 value: 'o) Ovos de Schistosoma mansoni'
 
-            EPI17_02_04_16:
+            EPI17_03_04_16:
                 model: survey.label
                 value: 'p) Ovos de Enterobius vermicularis'
 
-            EPI17_02_04_17:
+            EPI17_03_04_17:
                 model: survey.label
                 value: 'q) Larvas de Strongyloides stercoralis'
 
-            EPI17_02_04_18:
+            EPI17_03_04_18:
                 model: survey.label
                 value: 'r) Outro'
 
-        EPI17_02_05:
+        EPI17_03_05:
             model: survey.question
-            question: 'Método de Ritchie - Código do Examinador'
+            question: 'Método de Ritchie - Código do Examinador:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Examinador'
 
-        EPI17_02_06:
+        EPI17_03_06:
             model: survey.question
-            question: 'Método de Ritchie - Nome do Examinador'
+            question: 'Método de Ritchie - Nome do Examinador:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Examinador'
 
-        EPI17_02_07:
+        EPI17_03_07:
             model: survey.question
             question: 'Método de Ritchie - Resultado:'
             type: multiple_choice
@@ -195,93 +235,93 @@ EPI17:
             comments_allowed: True
             comments_message: 'Se a resposta for "Outro", especificar:'
 
-            EPI17_02_07_01:
+            EPI17_03_07_01:
                 model: survey.label
                 value: 'a) NÃO REALIZADO'
 
-            EPI17_02_07_02:
+            EPI17_03_07_02:
                 model: survey.label
                 value: 'b) NEGATIVO'
 
-            EPI17_02_07_03:
+            EPI17_03_07_03:
                 model: survey.label
                 value: 'c) Cistos de Endolimax nana'
 
-            EPI17_02_07_04:
+            EPI17_03_07_04:
                 model: survey.label
                 value: 'd) Cistos de Entamoeba coli'
 
-            EPI17_02_07_05:
+            EPI17_03_07_05:
                 model: survey.label
                 value: 'e) Cistos de Entamoeba histolytica'
 
-            EPI17_02_07_06:
+            EPI17_03_07_06:
                 model: survey.label
                 value: 'f) Cistos de Giardia lamblia'
 
-            EPI17_02_07_07:
+            EPI17_03_07_07:
                 model: survey.label
                 value: 'g) Cistos de Iodamoeba butschlii'
 
-            EPI17_02_07_08:
+            EPI17_03_07_08:
                 model: survey.label
                 value: 'h) Cistos de Chilomastix mesnil'
 
-            EPI17_02_07_09:
+            EPI17_03_07_09:
                 model: survey.label
                 value: 'i) Oocistos de Isospora belli'
 
-            EPI17_02_07_10:
+            EPI17_03_07_10:
                 model: survey.label
                 value: 'j) Ovos de Ascaris lumbricoides'
 
-            EPI17_02_07_11:
+            EPI17_03_07_11:
                 model: survey.label
                 value: 'k) Ovos de Ancilostomídeo'
 
-            EPI17_02_07_12:
+            EPI17_03_07_12:
                 model: survey.label
                 value: 'l) Ovos de Trichuris trichiura'
 
-            EPI17_02_07_13:
+            EPI17_03_07_13:
                 model: survey.label
                 value: 'm) Ovos de Taenia sp'
 
-            EPI17_02_07_14:
+            EPI17_03_07_14:
                 model: survey.label
                 value: 'n) Ovos de Hymenolepis nana'
 
-            EPI17_02_07_15:
+            EPI17_03_07_15:
                 model: survey.label
                 value: 'o) Ovos de Schistosoma mansoni'
 
-            EPI17_02_07_16:
+            EPI17_03_07_16:
                 model: survey.label
                 value: 'p) Ovos de Enterobius vermicularis'
 
-            EPI17_02_07_17:
+            EPI17_03_07_17:
                 model: survey.label
                 value: 'q) Larvas de Strongyloides stercoralis'
 
-            EPI17_02_07_18:
+            EPI17_03_07_18:
                 model: survey.label
                 value: 'r) Outro'
 
-        EPI17_02_08:
+        EPI17_03_08:
             model: survey.question
-            question: 'Método de Hoffmann - Código do Examinador'
+            question: 'Método de Hoffmann - Código do Examinador:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Examinador'
 
-        EPI17_02_09:
+        EPI17_03_09:
             model: survey.question
-            question: 'Método de Hoffmann - Nome do Examinador'
+            question: 'Método de Hoffmann - Nome do Examinador:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Examinador'
 
-        EPI17_02_10:
+        EPI17_03_10:
             model: survey.question
             question: 'Método de Hoffmann - Resultado:'
             type: multiple_choice
@@ -291,103 +331,103 @@ EPI17:
             comments_allowed: True
             comments_message: 'Se a resposta for "Outro", especificar:'
 
-            EPI17_02_10_01:
+            EPI17_03_10_01:
                 model: survey.label
                 value: 'a) NÃO REALIZADO'
 
-            EPI17_02_10_02:
+            EPI17_03_10_02:
                 model: survey.label
                 value: 'b) NEGATIVO'
 
-            EPI17_02_10_03:
+            EPI17_03_10_03:
                 model: survey.label
                 value: 'c) Cistos de Endolimax nana'
 
-            EPI17_02_10_04:
+            EPI17_03_10_04:
                 model: survey.label
                 value: 'd) Cistos de Entamoeba coli'
 
-            EPI17_02_10_05:
+            EPI17_03_10_05:
                 model: survey.label
                 value: 'e) Cistos de Entamoeba histolytica'
 
-            EPI17_02_10_06:
+            EPI17_03_10_06:
                 model: survey.label
                 value: 'f) Cistos de Giardia lamblia'
 
-            EPI17_02_10_07:
+            EPI17_03_10_07:
                 model: survey.label
                 value: 'g) Cistos de Iodamoeba butschlii'
 
-            EPI17_02_10_08:
+            EPI17_03_10_08:
                 model: survey.label
                 value: 'h) Cistos de Chilomastix mesnil'
 
-            EPI17_02_10_09:
+            EPI17_03_10_09:
                 model: survey.label
                 value: 'i) Oocistos de Isospora belli'
 
-            EPI17_02_10_10:
+            EPI17_03_10_10:
                 model: survey.label
                 value: 'j) Ovos de Ascaris lumbricoides'
 
-            EPI17_02_10_11:
+            EPI17_03_10_11:
                 model: survey.label
                 value: 'k) Ovos de Ancilostomídeo'
 
-            EPI17_02_10_12:
+            EPI17_03_10_12:
                 model: survey.label
                 value: 'l) Ovos de Trichuris trichiura'
 
-            EPI17_02_10_13:
+            EPI17_03_10_13:
                 model: survey.label
                 value: 'm) Ovos de Taenia sp'
 
-            EPI17_02_10_14:
+            EPI17_03_10_14:
                 model: survey.label
                 value: 'n) Ovos de Hymenolepis nana'
 
-            EPI17_02_10_15:
+            EPI17_03_10_15:
                 model: survey.label
                 value: 'o) Ovos de Schistosoma mansoni'
 
-            EPI17_02_10_16:
+            EPI17_03_10_16:
                 model: survey.label
                 value: 'p) Ovos de Enterobius vermicularis'
 
-            EPI17_02_10_17:
+            EPI17_03_10_17:
                 model: survey.label
                 value: 'q) Larvas de Strongyloides stercoralis'
 
-            EPI17_02_10_18:
+            EPI17_03_10_18:
                 model: survey.label
                 value: 'r) Outro'
 
-    EPI17_03:
+    EPI17_04:
         model: survey.page
         title: 'Farmacêutico Responsável'
         description: ''
 
-        EPI17_03_01:
+        EPI17_04_01:
             model: survey.question
-            question: 'Código do Farmacêutico Responsável'
+            question: 'Código do Farmacêutico Responsável:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Farmacêutico Responsável'
 
-        EPI17_03_02:
+        EPI17_04_02:
             model: survey.question
-            question: 'Nome do Farmacêutico Responsável'
+            question: 'Nome do Farmacêutico Responsável:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Farmacêutico Responsável'
 
-    EPI17_04:
+    EPI17_05:
         model: survey.page
         title: 'Levantamento Protoparasitológico'
         description: ''
 
-        EPI17_04_01:
+        EPI17_05_01:
             model: survey.question
             question: 'Realizado somente o Protoparasitológico:'
             type: simple_choice
@@ -398,11 +438,11 @@ EPI17:
             comments_allowed: True
             comments_message: 'Obs:'
 
-            EPI17_04_01_01:
+            EPI17_05_01_01:
                 model: survey.label
                 value: 'a) Resultado negativo'
 
-            EPI17_04_01_02:
+            EPI17_05_01_02:
                 model: survey.label
                 value: 'b) Resultado positivo'
 

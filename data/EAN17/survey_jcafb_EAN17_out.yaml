@@ -9,29 +9,36 @@ EAN17:
 
     EAN17_01:
         model: survey.page
-        title: 'Identificação do Exame'
+        title: 'Identificação do Questionário para transcrição dos resultados dos exames'
         description: ''
 
         EAN17_01_01:
             model: survey.question
-            question: 'Código do Exame:'
+            question: 'Código do Questionário:'
             type: textbox
             constr_mandatory: True
-            constr_error_msg: 'Preencher com o Código do Exame.'
+            constr_error_msg: 'Preencher com o Código do Questionário.'
 
         EAN17_01_02:
             model: survey.question
-            question: 'Data do Exame (dd-mm-aaaa):'
+            question: 'Data da transcrição (dd-mm-aaaa):'
             type: textbox
             constr_mandatory: True
-            constr_error_msg: 'Preencher com a data do exame.'
+            constr_error_msg: 'Preencher com a data da transcrição do exame.'
 
         EAN17_01_03:
             model: survey.question
-            question: 'Códigos do Transcritor:'
+            question: 'Código do Transcritor:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Informar o Código do transcritor.'
+
+        EAN17_01_04:
+            model: survey.question
+            question: 'Código da Requisição dos Exames:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Informar o Código da Requisição dos Exames.'
 
     EAN17_02:
         model: survey.page
@@ -54,14 +61,21 @@ EAN17:
 
         EAN17_02_03:
             model: survey.question
-            question: 'Nome do Endereço'
+            question: 'Idade do Paciente em 31/01/2017:'
+            type: textbox
+            constr_mandatory: True
+            constr_error_msg: 'Preencher com Idade do Paciente em 31/01/2017 (data de referência)'
+
+        EAN17_02_04:
+            model: survey.question
+            question: 'Nome do Endereço:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Endereço em que o Paciente reside.'
 
-        EAN17_02_04:
+        EAN17_02_05:
             model: survey.question
-            question: 'Código do Endereço'
+            question: 'Código do Endereço:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Endereço em que o Paciente reside.'
@@ -134,7 +148,7 @@ EAN17:
 
         EAN17_04_05:
             model: survey.question
-            question: 'Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009)'
+            question: 'Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009):'
             type: simple_choice
             display_mode: columns
             column_nb: 12

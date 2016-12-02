@@ -10,23 +10,23 @@
             (textbox)
             ____________________________________
     2. Identificação do Endereço/Entrevistado
-        2.1. Nome do Endereço
+        2.1. Nome do Endereço:
             (textbox)
             ____________________________________
-        2.2. Código do Endereço
+        2.2. Código do Endereço:
             (textbox)
             ____________________________________
-        2.3. Relação do Entrevistado com o(s) Paciente(s)
+        2.3. Relação do Entrevistado com o(s) Paciente(s):
             (simple_choice)
             a) Responsável pela(s) Criança(s) da casa
             b) Paciente Idoso
             c) Cuidador (da(s) Criança(s) e/ou do(s) Idoso(s) da casa
             d) Outra
             Se "Outra", especificar a relação do Entrevistado com o(s) Paciente(s):____________________________________
-        2.4. Nome do Entrevistado
+        2.4. Nome do Entrevistado:
             (textbox)
             ____________________________________
-        2.5. Código do Entrevistado
+        2.5. Código do Entrevistado:
             (textbox)
             ____________________________________
     3. Residência
@@ -84,7 +84,7 @@
             d) Não quis responder
             e) Não se aplica
             Se "Outros", quais?____________________________________
-        5.2. Existe contato das pessoas da casa com o local de armazenamento (por exemplo caixa d’água)?                        ?
+        5.2. Existe contato das pessoas da casa com o local de armazenamento (por exemplo caixa d’água)?
             (simple_choice)
             a) Não
             b) Sim
@@ -173,7 +173,7 @@
             g) Não quis responder
             h) Não se aplica
     7. Medicamentos (geral familiar)
-        7.1. Costumam tomar medicamentos sem receita médica? (por exemplo, pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)           
+        7.1. Costumam tomar medicamentos sem receita médica? (por exemplo, pegar remédio com a vizinha, etc. Desconsiderar remédios que não necessitam de receita)
             (simple_choice)
             a) Não
             b) Sim

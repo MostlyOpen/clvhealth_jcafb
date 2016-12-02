@@ -19,26 +19,26 @@
         2.2. Código do Paciente:
             (textbox)
             ____________________________________
-        2.3. Idade do Paciente em 31/01/2017
+        2.3. Idade do Paciente em 31/01/2017:
             (textbox)
             ____________________________________
-        2.4. Nome do Endereço
+        2.4. Nome do Endereço:
             (textbox)
             ____________________________________
-        2.5. Código do Endereço
+        2.5. Código do Endereço:
             (textbox)
             ____________________________________
-        2.6. Relação do Entrevistado com o Paciente
+        2.6. Relação do Entrevistado com o Paciente:
             (simple_choice)
             a) Responsável
             b) Paciente
             c) Cuidador
             d) Outra
             Se "Outra", especificar a relação do Entrevistado com o Paciente:____________________________________
-        2.7. Nome do Entrevistado
+        2.7. Nome do Entrevistado:
             (textbox)
             ____________________________________
-        2.8. Código do Entrevistado
+        2.8. Código do Entrevistado:
             (textbox)
             ____________________________________
     3. Medidas de Peso e Altura
@@ -67,7 +67,7 @@
         4.4. Código do Responsável pela dosagem:
             (textbox)
             ____________________________________
-        4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009)
+        4.5. Interpretação do Resultado de Hemoglobina (Wintrobe, 12ª ed., 2009):
             (simple_choice)
             a) Normal
             b) Abaixo do normal (anemia)
@@ -88,7 +88,7 @@
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-        5.3. (Se já foi diagnosticado): Ainda tem Anemia? (Senão, a resposta é “e) Não se aplica”)?
+        5.3. (Se já foi diagnosticado): Ainda tem Anemia? (Se não, a resposta é “e) Não se aplica”)?
             (simple_choice)
             a) Não
             b) Sim
@@ -106,7 +106,7 @@
             g) Não quis responder
             h) Não se aplica
             Se "Outras medidas", especificar____________________________________
-        5.5. Você sabe quais cuidados tomar para evitar a anemia (Apenas para marcar o que as pessoas falarem livremente, sem dar as opções uma a uma, para evitar indução)
+        5.5. Você sabe quais cuidados tomar para evitar a anemia? (Marcar apenas o que as pessoas falarem livremente, sem dar as opções uma a uma, para evitar indução)
             (multiple_choice)
             a) Consumo de feijão
             b) Consumo de verduras verde-escuras
@@ -119,7 +119,7 @@
             i) Não se aplica
             Se "Outro", especificar____________________________________
     6. Alimentação
-        6.1. Alimentos que a criança consome (Alimentos ricos em Ferro, B12 e ácido fólico)
+        6.1. Alimentos que a criança consome (Alimentos ricos em Ferro, B12 e ácido fólico):
             (matrix, simple)
             [row]Feijão, Beterraba (leguminosas)
             [row]Fígado de boi

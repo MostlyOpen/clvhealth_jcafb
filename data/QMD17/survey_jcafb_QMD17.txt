@@ -96,7 +96,6 @@
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-            ____________________________________
         4.2. Você, às vezes, é descuidado quanto ao horário de tomar o seu remédio?
             (simple_choice)
             a) Sim
@@ -104,7 +103,6 @@
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-            ____________________________________
         4.3. Quando você se sente bem, alguma vez, você deixa de tomar seu remédio?
             (simple_choice)
             a) Sim
@@ -112,7 +110,6 @@
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-            ____________________________________
         4.4. Quando você se sente mal com o remédio, às vezes, deixa de tomá-lo?
             (simple_choice)
             a) Sim
@@ -120,5 +117,4 @@
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-            ____________________________________
     5. Lista de todos os medicamentos que o paciente utilizou nos últimos 15 dias, incluindo as receitas que tiver

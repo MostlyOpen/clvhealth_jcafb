@@ -324,7 +324,7 @@ QMD17:
             column_nb: 12
             constr_mandatory: True
             constr_error_msg: 'Esta questão precisa ser respondida.'
-            comments_allowed: True
+            comments_allowed: False
             comments_message: ''
 
             QMD17_04_01_01:
@@ -355,7 +355,7 @@ QMD17:
             column_nb: 12
             constr_mandatory: True
             constr_error_msg: 'Esta questão precisa ser respondida.'
-            comments_allowed: True
+            comments_allowed: False
             comments_message: ''
 
             QMD17_04_02_01:
@@ -386,7 +386,7 @@ QMD17:
             column_nb: 12
             constr_mandatory: True
             constr_error_msg: 'Esta questão precisa ser respondida.'
-            comments_allowed: True
+            comments_allowed: False
             comments_message: ''
 
             QMD17_04_03_01:
@@ -417,7 +417,7 @@ QMD17:
             column_nb: 12
             constr_mandatory: True
             constr_error_msg: 'Esta questão precisa ser respondida.'
-            comments_allowed: True
+            comments_allowed: False
             comments_message: ''
 
             QMD17_04_04_01:

@@ -16,25 +16,25 @@
         2.2. Código da Criança:
             (textbox)
             ____________________________________
-        2.3. Idade da Criança em 31/01/2017
+        2.3. Idade da Criança em 31/01/2017:
             (textbox)
             ____________________________________
-        2.4. Nome do Endereço
+        2.4. Nome do Endereço:
             (textbox)
             ____________________________________
-        2.5. Código do Endereço
+        2.5. Código do Endereço:
             (textbox)
             ____________________________________
-        2.6. Relação do Entrevistado com a Criança
+        2.6. Relação do Entrevistado com a Criança:
             (simple_choice)
             a) Responsável
             b) Cuidador
             c) Outra
             Se "Outra", especificar a relação do Entrevistado com a Criança:____________________________________
-        2.7. Nome do Entrevistado
+        2.7. Nome do Entrevistado:
             (textbox)
             ____________________________________
-        2.8. Código do Entrevistado
+        2.8. Código do Entrevistado:
             (textbox)
             ____________________________________
     3. Aspectos Sociais/Hábitos
@@ -109,6 +109,7 @@
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
+            Se sim, qual(ais)?____________________________________
         5.2. A criança tem acesso aos medicamentos?
             (simple_choice)
             a) Sim, ela sabe onde estão guardados e os alcança quando quiser
@@ -133,11 +134,11 @@
             a) Com resultado de exame de fezes
             b) Saiu nas fezes
             c) Foi no médico
-            d) Outros
+            d) Outro
             e) Não sabe
             f) Não quis responder
             g) Não se aplica
-            Se "Outros", quais?____________________________________
+            Se "Outro", quais?____________________________________
         6.3. A criança já tomou vermífugo (lombrigueira)?
             (simple_choice)
             a) Não

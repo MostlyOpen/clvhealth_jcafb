@@ -19,30 +19,30 @@
         2.2. Código do Paciente:
             (textbox)
             ____________________________________
-        2.3. Idade do Paciente em 31/01/2017
+        2.3. Idade do Paciente em 31/01/2017:
             (textbox)
             ____________________________________
-        2.4. Nome do Endereço
+        2.4. Nome do Endereço:
             (textbox)
             ____________________________________
-        2.5. Código do Endereço
+        2.5. Código do Endereço:
             (textbox)
             ____________________________________
-        2.6. Relação do Entrevistado com o Paciente
+        2.6. Relação do Entrevistado com o Paciente:
             (simple_choice)
             a) Responsável
             b) Paciente
             c) Cuidador
             c) Outra
             Se "Outra", especificar a relação do Entrevistado com o Paciente:____________________________________
-        2.7. Nome do Entrevistado
+        2.7. Nome do Entrevistado:
             (textbox)
             ____________________________________
-        2.8. Código do Entrevistado
+        2.8. Código do Entrevistado:
             (textbox)
             ____________________________________
     3. Geral
-        3.1. Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?")
+        3.1. Escolaridade do paciente ("Qual a última série (e de que grau) da escola que o Sr.(a) obteve aprovação?"):
             (simple_choice)
             a) É analfabeto
             b) Não é analfabeto, mas não frequentou a escola
@@ -57,7 +57,7 @@
             k) Não sabe
             l) Não quis responder
             m) Não se aplica
-        3.2. Tempo de Jejum
+        3.2. Tempo de Jejum:
             (simple_choice)
             a) Menor que 8 hs
             b) Entre 8 e 12 hs
@@ -85,7 +85,7 @@
         4.6. Responsável pela medida:
             (textbox)
             ____________________________________
-        4.7. Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos:&#62;=65 anos)
+        4.7. Interpretação do valor de IMC (OMS; Adultos.: 19 a 64 anos; Idosos:igual ou maior a 65 anos):
             (simple_choice)
             a) Baixo peso (Adultos:menor que 18,5; Idosos (M e F): menor que 21,9)
             b) Peso Normal (Adultos: 18,5 a 24,9; Idosos (M e F): 22,0 a 27,0)
@@ -99,10 +99,10 @@
         4.8. Circunferência abdominal (cm):
             (textbox)
             ____________________________________
-        4.9. Cpodigo do Responsável pela medida:
+        4.9. Código do Responsável pela medida:
             (textbox)
             ____________________________________
-        4.10. Interpretação do valor de Circunferência Abdominal (ABESO; Adultos)
+        4.10. Interpretação do valor de Circunferência Abdominal (ABESO; Adultos):
             (simple_choice)
             a) Normal (H:menor que 94 cm; M:menor que 80 cm)
             b) Risco aumentado (H:maior ou igual a 94 cm; M:maior ou igual a 80 cm)
@@ -123,7 +123,7 @@
         5.4. Código do Responsável pela medida (se medida não realizada, escrever nd):
             (textbox)
             ____________________________________
-        5.5. Interpretação do valor de Pressão Arterial (Diretrizes Brasileiras de Hipertensão Arterial de 2010)
+        5.5. Interpretação do valor de Pressão Arterial (Diretrizes Brasileiras de Hipertensão Arterial de 2010):
             (simple_choice)
             a) Normal (PAS menor que 130 mmHg e PAD menor que 85 mmHg)
             b) Limítrofe (PAS:130-139 mmHg e PAD:85-89 mmHg)
@@ -138,7 +138,7 @@
         6.2. Código do Responsável pela medida:
             (textbox)
             ____________________________________
-        6.3. Interpretação do valor de Glicemia (Associação Americana de Diabetes (2014))
+        6.3. Interpretação do valor de Glicemia (Associação Americana de Diabetes (2014)):
             (simple_choice)
             a) Normal para jejum de 8-12 hs(menor ou igual a 99 mg/dL)
             b) Pré-diabetes (para jejum de 8-12 hs) = risco aumentado para diabetes (100-125 mg/dL)
@@ -154,7 +154,7 @@
         6.5. Responsável pela medida (se medida não realizada, escrever nd):
             (textbox)
             ____________________________________
-        6.6. Interpretação do valor de Colesterol (Diretrizes Brasileiras de Dislipidemias e Prevenção da Aterosclerose-2013)
+        6.6. Interpretação do valor de Colesterol (Diretrizes Brasileiras de Dislipidemias e Prevenção da Aterosclerose-2013):
             (simple_choice)
             a) Desejável:Acima de 20 anos:menor que 200 mg/dL;2-19 anos:menor que 150 mg/dL
             b) Limítrofe:Acima de 20 anos:200–239 mg/dL;2-19 anos:150-169 mg/dL
@@ -170,7 +170,6 @@
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
-            ____________________________________
         7.2. Faz uso de medicamento para tratamento de DIABETES?
             (simple_choice)
             a) Sim
@@ -311,7 +310,6 @@
             d) Não sabe
             e) Não quis responder
             f) Não se aplica
-            ____________________________________
         9.5. Pratica uma ou mais das atividades físicas abaixo?
             (multiple_choice)
             a) Não pratica nenhuma atividade

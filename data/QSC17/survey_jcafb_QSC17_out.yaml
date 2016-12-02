@@ -54,28 +54,28 @@ QSC17:
 
         QSC17_02_03:
             model: survey.question
-            question: 'Idade da Criança em 31/01/2017'
+            question: 'Idade da Criança em 31/01/2017:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com Idade da Criança em 31/01/2017 (data de referência)'
 
         QSC17_02_04:
             model: survey.question
-            question: 'Nome do Endereço'
+            question: 'Nome do Endereço:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Endereço em que a Criança reside.'
 
         QSC17_02_05:
             model: survey.question
-            question: 'Código do Endereço'
+            question: 'Código do Endereço:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Endereço em que a Criança reside.'
 
         QSC17_02_06:
             model: survey.question
-            question: 'Relação do Entrevistado com a Criança'
+            question: 'Relação do Entrevistado com a Criança:'
             type: simple_choice
             display_mode: columns
             column_nb: 12
@@ -98,14 +98,14 @@ QSC17:
 
         QSC17_02_07:
             model: survey.question
-            question: 'Nome do Entrevistado'
+            question: 'Nome do Entrevistado:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Nome do Entrevistado que respondeu o questionário.'
 
         QSC17_02_08:
             model: survey.question
-            question: 'Código do Entrevistado'
+            question: 'Código do Entrevistado:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Preencher com o Código do Entrevistado que respondeu o questionário.'
@@ -388,7 +388,7 @@ QSC17:
             column_nb: 12
             constr_mandatory: True
             constr_error_msg: 'Esta questão precisa ser respondida.'
-            comments_allowed: False
+            comments_allowed: True
             comments_message: 'Se sim, qual(ais)?'
 
             QSC17_05_01_01:
@@ -497,7 +497,7 @@ QSC17:
             constr_mandatory: True
             constr_error_msg: 'Esta questão precisa ser respondida.'
             comments_allowed: True
-            comments_message: 'Se "Outros", quais?'
+            comments_message: 'Se "Outro", quais?'
 
             QSC17_06_02_01:
                 model: survey.label
@@ -513,7 +513,7 @@ QSC17:
 
             QSC17_06_02_04:
                 model: survey.label
-                value: 'd) Outros'
+                value: 'd) Outro'
 
             QSC17_06_02_05:
                 model: survey.label
