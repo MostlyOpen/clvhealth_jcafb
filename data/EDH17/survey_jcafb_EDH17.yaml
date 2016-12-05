@@ -219,7 +219,7 @@ EDH17:
 
         EDH17_04_09:
             model: survey.question
-            question: 'Cpodigo do Responsável pela medida:'
+            question: 'Código do Responsável pela medida:'
             type: textbox
             constr_mandatory: True
             constr_error_msg: 'Informar o código do responsável pela medida da circunferência abdominal.'
