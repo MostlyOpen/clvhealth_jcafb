@@ -535,71 +535,71 @@ def jcafb_mass_editing_create(client):
     print('--> Executing mass_editing_create()...')
     mass_editing_create(client, name, model, fields)
 
-    # name = 'Person'
-    # model = 'myo.person'
-    # fields = [
-    #     'is_patient', 'state', 'category_ids', 'tag_ids', 'address_id', 'notes', 'user_id', 'active', 'active_log',
-    #     'date_reference', 'community_person_ids'
-    # ]
-    # print('-->', client, name, model, fields)
-    # print('--> Executing mass_editing_create()...')
-    # mass_editing_create(client, name, model, fields)
+    name = 'Person'
+    model = 'myo.person'
+    fields = [
+        'is_patient', 'state', 'category_ids', 'tag_ids', 'address_id', 'notes', 'user_id', 'active', 'active_log',
+        'date_reference', 'community_person_ids'
+    ]
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
 
-    # name = 'Person Address'
-    # model = 'myo.person.address'
-    # fields = ['address_id', 'role_id', 'sign_in_date', 'sign_out_date', 'tag_ids', 'active', 'active_log']
-    # print('-->', client, name, model, fields)
-    # print('--> Executing mass_editing_create()...')
-    # mass_editing_create(client, name, model, fields)
+    name = 'Person Address'
+    model = 'myo.person.address'
+    fields = ['address_id', 'role_id', 'sign_in_date', 'sign_out_date', 'tag_ids', 'active', 'active_log']
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
 
-    # name = 'Community'
-    # model = 'myo.community'
-    # fields = ['parent_id', 'comm_location', 'category_ids', 'tag_ids', 'notes', 'user_id', 'active', 'active_log']
-    # print('-->', client, name, model, fields)
-    # print('--> Executing mass_editing_create()...')
-    # mass_editing_create(client, name, model, fields)
+    name = 'Community'
+    model = 'myo.community'
+    fields = ['parent_id', 'comm_location', 'category_ids', 'tag_ids', 'notes', 'user_id', 'active', 'active_log']
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
 
-    # name = 'Event'
-    # model = 'myo.event'
-    # fields = [
-    #     'user_id', 'state', 'category_ids', 'tag_ids',
-    #     'planned_hours', 'date_start', 'date_foreseen', 'date_deadline',
-    #     'active', 'active_log'
-    # ]
-    # print('-->', client, name, model, fields)
-    # print('--> Executing mass_editing_create()...')
-    # mass_editing_create(client, name, model, fields)
+    name = 'Event'
+    model = 'myo.event'
+    fields = [
+        'user_id', 'state', 'category_ids', 'tag_ids',
+        'planned_hours', 'date_start', 'date_foreseen', 'date_deadline',
+        'active', 'active_log'
+    ]
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
 
-    # name = 'Document'
-    # model = 'myo.document'
-    # fields = [
-    #     'user_id', 'state', 'category_ids', 'tag_ids',
-    #     'date_document', 'date_foreseen', 'date_deadline',
-    #     'active', 'active_log'
-    # ]
-    # print('-->', client, name, model, fields)
-    # print('--> Executing mass_editing_create()...')
-    # mass_editing_create(client, name, model, fields)
+    name = 'Document'
+    model = 'myo.document'
+    fields = [
+        'user_id', 'state', 'category_ids', 'tag_ids',
+        'date_document', 'date_foreseen', 'date_deadline',
+        'active', 'active_log'
+    ]
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
 
-    # name = 'Survey User Input'
-    # model = 'survey.user_input'
-    # fields = [
-    #     'linked_message', 'linked_state',
-    #     'link_survey_user_input', 'active'
-    # ]
-    # print('-->', client, name, model, fields)
-    # print('--> Executing mass_editing_create()...')
-    # mass_editing_create(client, name, model, fields)
+    name = 'Survey User Input'
+    model = 'survey.user_input'
+    fields = [
+        'linked_message', 'linked_state',
+        'link_survey_user_input', 'active'
+    ]
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
 
-    # name = 'Employee'
-    # model = 'hr.employee'
-    # fields = [
-    #     'department_id', 'job_id',
-    #     'community_employee_ids', 'event_employee_ids', 'document_employee_ids', 'community_person_ids'
-    # ]
-    # print('-->', client, name, model, fields)
-    # print('--> Executing mass_editing_create()...')
-    # mass_editing_create(client, name, model, fields)
+    name = 'Employee'
+    model = 'hr.employee'
+    fields = [
+        'department_id', 'job_id',
+        'community_employee_ids', 'event_employee_ids', 'document_employee_ids', 'community_person_ids'
+    ]
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
 
 
 def get_arguments():
@@ -2105,21 +2105,49 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_mass_editing_create()...')
     # jcafb_mass_editing_create(client)
 
-    # ***** odoo-mint18
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-05b.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-05b.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-05b.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+    # db_path = 'data/clvhealth_jcafb_2017_2016-12-05b.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
+
+    # ***** 2016-12-06 *****
     #
-    # cd '/opt/openerp'
-    # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-05b.sql
-    # gzip clvhealth_jcafb_dev_2016-12-05b.sql
-    #
-    # cd '/opt/openerp'
-    # dropdb -i clvhealth_jcafb_dev
-    # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
-    # psql -f clvhealth_jcafb_dev_2016-12-05b.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
-    #
+
+    print('-->', client)
+    print('--> Executing jcafb_mass_editing_create()...')
+    jcafb_mass_editing_create(client)
+
     db_path = 'data/clvhealth_jcafb_2017_2016-12-05b.sqlite'
     print('-->', client, db_path, conn_string)
-    print('--> Executing jcafb_export_sqlite()...')
-    jcafb_export_sqlite(client, db_path, conn_string)
+    print('--> Executing jcafb_import_sqlite()...')
+    jcafb_import_sqlite(client, db_path, conn_string)
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-06a.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-06a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-06a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+    # db_path = 'data/clvhealth_jcafb_2017_2016-12-06a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_export_sqlite()...')
+    # jcafb_export_sqlite(client, db_path, conn_string)
 
     # ***** Test *****
     #
