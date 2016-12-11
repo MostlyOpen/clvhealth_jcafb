@@ -2246,7 +2246,7 @@ if __name__ == '__main__':
     #
     # cd '/opt/openerp'
     # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_test.sql
-    # gzip clvhealth_jcafb_dev_2test.sql
+    # gzip clvhealth_jcafb_dev_test.sql
     #
     # cd '/opt/openerp'
     # dropdb -i clvhealth_jcafb_dev
