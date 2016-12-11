@@ -2230,22 +2230,33 @@ if __name__ == '__main__':
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
 
-    print('-->', client)
-    print('--> Executing jcafb_mass_editing_create()...')
-    jcafb_mass_editing_create(client)
+    # print('-->', client)
+    # print('--> Executing jcafb_mass_editing_create()...')
+    # jcafb_mass_editing_create(client)
 
-    db_path = 'data/clvhealth_jcafb_2017_2016-12-09a.sqlite'
-    print('-->', client, db_path, conn_string)
-    print('--> Executing jcafb_import_sqlite()...')
-    jcafb_import_sqlite(client, db_path, conn_string)
+    # db_path = 'data/clvhealth_jcafb_2017_2016-12-09a.sqlite'
+    # print('-->', client, db_path, conn_string)
+    # print('--> Executing jcafb_import_sqlite()...')
+    # jcafb_import_sqlite(client, db_path, conn_string)
 
     # ***** Test *****
     #
 
-    # db_path = 'data/clvhealth_jcafb_2017_test.sqlite'
-    # print('-->', client, db_path, conn_string)
-    # print('--> Executing jcafb_export_sqlite()...')
-    # jcafb_export_sqlite(client, db_path, conn_string)
+    # ***** odoo-mint18
+    #
+    # cd '/opt/openerp'
+    # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_test.sql
+    # gzip clvhealth_jcafb_dev_2test.sql
+    #
+    # cd '/opt/openerp'
+    # dropdb -i clvhealth_jcafb_dev
+    # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # psql -f clvhealth_jcafb_dev_test.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    #
+    db_path = 'data/clvhealth_jcafb_2017_test.sqlite'
+    print('-->', client, db_path, conn_string)
+    print('--> Executing jcafb_export_sqlite()...')
+    jcafb_export_sqlite(client, db_path, conn_string)
 
     # print('-->', client)
     # print('--> Executing jcafb_mass_editing_create()...')
