@@ -2338,6 +2338,132 @@ if __name__ == '__main__':
     # # psql -f clvhealth_jcafb_dev_2016-12-13c.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
     # #
 
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-13d.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-13d.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-13d.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # ***** 2016-12-14 *****
+    #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-14a.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-14a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-14a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-14b.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-14b.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-14b.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # ***** 2016-12-16 *****
+    #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-16a.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-16a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-16a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-16b.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-16b.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-16b.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-16c.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-16c.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-16c.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-16d.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-16d.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-16d.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-16e.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-16e.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-16e.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-16f.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-16f.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-16f.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-16g.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-16g.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-16g.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
     # ***** Test *****
     #
 
