@@ -82,6 +82,7 @@ def clvhealth_jcafb_install():
     install_update_module('myo_address', update, True)
     install_update_module('myo_document', update, True)
     install_update_module('myo_event', update, True)
+    install_update_module('myo_summary', update, True)
     install_update_module('myo_professional', update, True)
 
     install_update_module('myo_residence', update, True)
@@ -113,6 +114,7 @@ def clvhealth_jcafb_install():
     install_update_module('myo_address_cst', update)
     install_update_module('myo_document_cst', update)
     install_update_module('myo_event_cst', update)
+    install_update_module('myo_summary_cst', update)
     install_update_module('myo_professional_cst', update)
     install_update_module('myo_person_cst', update)
     install_update_module('myo_person_address_cst', update)
@@ -122,7 +124,7 @@ def clvhealth_jcafb_install():
     install_update_module('myo_lab_test_cst', update)
     install_update_module('jcafb_2017_consent_forms', update)
     install_update_module('jcafb_2017_surveys', update)
-    # install_update_module('jcafb_2017_lab_tests', update)
+    install_update_module('jcafb_2017_lab_tests', update)
 
     install_update_module('mass_editing', update)
 
