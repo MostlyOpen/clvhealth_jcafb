@@ -1854,42 +1854,6 @@ def buffer():
     # print('--> Executing jcafb_export_sqlite()...')
     # jcafb_export_sqlite(client, db_path, conn_string)
 
-
-if __name__ == '__main__':
-
-    server = 'http://localhost:8069'
-    # server = '*'
-
-    username = 'username'
-    # username = '*'
-    password = 'password'
-    # password = '*'
-
-    dbname = 'odoo'
-    # dbname = '*'
-
-    db_server = 'localhost'
-    # db_server = '*'
-
-    db_user = 'openerp'
-    # db_user = '*'
-
-    db_password = 'openerp'
-    # db_password = '*'
-
-    print()
-    print('--> setup.py...')
-    print('--> server:', server)
-
-    get_arguments()
-
-    from time import time
-    start = time()
-
-    client = erppeek.Client(server, dbname, username, password)
-    conn_string = "dbname='" + dbname + "' user='" + db_user + "' host='" + db_server + \
-                  "' password='" + db_password + "'"
-
     # ***** 2016-11-28 *****
     #
 
@@ -2503,6 +2467,42 @@ if __name__ == '__main__':
     # # psql -f clvhealth_jcafb_dev_2016-12-19c.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
     # #
 
+
+if __name__ == '__main__':
+
+    server = 'http://localhost:8069'
+    # server = '*'
+
+    username = 'username'
+    # username = '*'
+    password = 'password'
+    # password = '*'
+
+    dbname = 'odoo'
+    # dbname = '*'
+
+    db_server = 'localhost'
+    # db_server = '*'
+
+    db_user = 'openerp'
+    # db_user = '*'
+
+    db_password = 'openerp'
+    # db_password = '*'
+
+    print()
+    print('--> setup.py...')
+    print('--> server:', server)
+
+    get_arguments()
+
+    from time import time
+    start = time()
+
+    client = erppeek.Client(server, dbname, username, password)
+    conn_string = "dbname='" + dbname + "' user='" + db_user + "' host='" + db_server + \
+                  "' password='" + db_password + "'"
+
     # ***** 2016-12-20 *****
     #
 
@@ -2516,6 +2516,21 @@ if __name__ == '__main__':
     # # dropdb -i clvhealth_jcafb_dev
     # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
     # # psql -f clvhealth_jcafb_dev_2016-12-20a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # ***** 2016-12-22 *****
+    #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-22a.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-22a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-22a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
     # #
 
     # ***** Test *****
