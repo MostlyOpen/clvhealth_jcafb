@@ -601,6 +601,17 @@ def jcafb_mass_editing_create(client):
     print('--> Executing mass_editing_create()...')
     mass_editing_create(client, name, model, fields)
 
+    name = 'Summary'
+    model = 'myo.summary'
+    fields = [
+        'user_id', 'state', 'category_ids', 'tag_ids',
+        'date_summary', 'is_address_summary', 'is_person_summary',
+        'active', 'active_log'
+    ]
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
+
 
 def get_arguments():
 
@@ -2531,6 +2542,59 @@ if __name__ == '__main__':
     # # dropdb -i clvhealth_jcafb_dev
     # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
     # # psql -f clvhealth_jcafb_dev_2016-12-22a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # ***** 2016-12-28 *****
+    #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-28a.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-28a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-28a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-28b.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-28b.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-28b.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # ***** 2016-12-29 *****
+    #
+
+    # name = 'Summary'
+    # model = 'myo.summary'
+    # fields = [
+    #     'user_id', 'state', 'category_ids', 'tag_ids',
+    #     'date_summary', 'is_address_summary', 'is_person_summary',
+    #     'active', 'active_log'
+    # ]
+    # print('-->', client, name, model, fields)
+    # print('--> Executing mass_editing_create()...')
+    # mass_editing_create(client, name, model, fields)
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-29a.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-29a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-29a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
     # #
 
     # ***** Test *****
