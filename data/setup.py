@@ -2597,6 +2597,21 @@ if __name__ == '__main__':
     # # psql -f clvhealth_jcafb_dev_2016-12-29a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
     # #
 
+    # ***** 2016-12-31 *****
+    #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2016-12-31a.sql
+    # # gzip clvhealth_jcafb_dev_2016-12-31a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2016-12-31a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
     # ***** Test *****
     #
 
