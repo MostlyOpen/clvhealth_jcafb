@@ -613,6 +613,122 @@ def jcafb_mass_editing_create(client):
     mass_editing_create(client, name, model, fields)
 
 
+def summary_responsible_updt(client):
+
+    delimiter_char = ','
+
+    file_users = open('/opt/openerp/mostlyopen_clvhealth_jcafb/data/data/res.users.csv', "rb")
+    reader_users = csv.reader(file_users, delimiter=delimiter_char)
+
+    file_summary = open('/opt/openerp/mostlyopen_clvhealth_jcafb/data/data/myo.summary.csv', "rb")
+    reader_summary = csv.reader(file_summary, delimiter=delimiter_char)
+
+    res_users_model = client.model('res.users')
+    summary_model = client.model('myo.summary')
+
+    res_users = {}
+    rownum = 0
+    column_name = {}
+    for row in reader_users:
+
+        rowlen = len(row)
+
+        if rownum == 0:
+
+            column_num = 0
+            for column in row:
+                column_name[column] = column_num
+                column_num += 1
+
+            print(rownum, row, rowlen)
+
+            rownum += 1
+            continue
+
+        if len(row) == rowlen:
+
+            res_users_browse = res_users_model.browse([('name', '=', row[column_name['name']]), ])
+            user_id = res_users_browse[0].id
+            res_users[row[column_name['id']]] = user_id
+
+            print(rownum,
+                  row[column_name['id']],
+                  row[column_name['name']].decode('utf-8'),
+                  row[column_name['email']],
+                  user_id,
+                  # row, rowlen
+                  )
+
+        rownum += 1
+
+    print()
+    print('--> rownum: ', rownum - 1)
+    print()
+
+    rownum = 0
+    updated = 0
+    not_updated = 0
+    column_name = {}
+    for row in reader_summary:
+
+        rowlen = len(row)
+
+        if rownum == 0:
+
+            column_num = 0
+            for column in row:
+                column_name[column] = column_num
+                column_num += 1
+
+            print(rownum, row, rowlen)
+
+            rownum += 1
+            continue
+
+        if len(row) == rowlen:
+
+            summary_browse = summary_model.browse([('code', '=', row[column_name['code']]), ])
+            summary_id = summary_browse[0].id
+
+            if row[column_name['user_id/id']] != '':
+
+                user_id = res_users[row[column_name['user_id/id']]]
+                res_users_browse = res_users_model.browse([('id', '=', user_id), ])
+
+                print(rownum,
+                      row[column_name['id']],
+                      row[column_name['code']],
+                      row[column_name['date_summary']],
+                      row[column_name['name']].decode('utf-8'),
+                      row[column_name['user_id/id']],
+                      res_users_browse[0].name,
+                      summary_id,
+                      summary_browse[0].name,
+                      # row, rowlen
+                      )
+
+                values = {
+                    'user_id': user_id,
+                }
+                summary_model.write(summary_id, values)
+
+                updated += 1
+
+            else:
+                not_updated += 1
+
+        rownum += 1
+
+    file_users.close()
+    file_summary.close()
+
+    print()
+    print('--> rownum: ', rownum - 1)
+    print('--> updated: ', updated)
+    print('--> not_updated: ', not_updated)
+    print()
+
+
 def get_arguments():
 
     global server
@@ -2612,11 +2728,57 @@ if __name__ == '__main__':
     # # psql -f clvhealth_jcafb_dev_2016-12-31a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
     # #
 
-    # ***** Test *****
+    # ***** 2017-01-01 *****
     #
 
     # # ***** odoo-mint18
     # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2017-01-01a.sql
+    # # gzip clvhealth_jcafb_dev_2017-01-01a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2017-01-01a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # print('-->', client)
+    # print('--> Executing summary_responsible_updt()...')
+    # summary_responsible_updt(client)
+
+    # ***** 2017-01-07 *****
+    #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2017-01-07a.sql
+    # # gzip clvhealth_jcafb_dev_2017-01-07a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2017-01-07a.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # # ***** odoo-mint18
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_2017-01-07b.sql
+    # # gzip clvhealth_jcafb_dev_2017-01-07b.sql
+    # #
+    # # cd '/opt/openerp'
+    # # dropdb -i clvhealth_jcafb_dev
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_dev
+    # # psql -f clvhealth_jcafb_dev_2017-01-07b.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
+    # #
+
+    # ***** Test *****
+    #
+
+    # # ***** odoo-mint18
+    # #gzip clvhealth_jcafb_dev_2017-01-07a.sql
     # # cd '/opt/openerp'
     # # pg_dump clvhealth_jcafb_dev -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_dev_test.sql
     # # gzip clvhealth_jcafb_dev_test.sql
