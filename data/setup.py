@@ -2774,6 +2774,37 @@ if __name__ == '__main__':
     # # psql -f clvhealth_jcafb_dev_2017-01-07b.sql -d clvhealth_jcafb_dev -U postgres -h localhost -p 5432 -q
     # #
 
+    # # ***** clvhealh-jcafb-2017-pro
+    # #
+    # # cd '/opt/openerp'
+    # # pg_dump clvhealth_jcafb_pro -Fp -U postgres -h localhost -p 5432 > clvhealth_jcafb_pro_2017-01-07a.sql
+    # # gzip clvhealth_jcafb_pro_2017-01-07a.sql
+    # #
+    # # cd '/opt/openerp'
+    # # ls -al
+    # # gzip -d clvhealth_jcafb_dev_2017-01-07b.sql.gz
+    # # ls -al
+    # #
+    # # /etc/init.d/openerp-server stop
+    # #
+    # # dropdb -i clvhealth_jcafb_pro
+    # # createdb -O openerp -E UTF8 -T template0 clvhealth_jcafb_pro
+    # # psql -f clvhealth_jcafb_dev_2017-01-07b.sql -d clvhealth_jcafb_pro -U postgres -h localhost -p 5432 -q
+    # #
+    # # su openerp
+    # # cd /opt/openerp/mostlyopen_odoo_addons
+    # # git pull
+    # # cd /opt/openerp/mostlyopen_odoo_addons_l10n_br
+    # # git pull
+    # # cd /opt/openerp/mostlyopen_odoo_addons_extra
+    # # git pull
+    # # cd /opt/openerp/mostlyopen_odoo_addons_jcafb
+    # # git pull
+    # # exit
+    # #
+    # # /etc/init.d/openerp-server start
+    # #
+
     # ***** Test *****
     #
 
