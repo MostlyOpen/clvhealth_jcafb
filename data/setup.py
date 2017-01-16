@@ -563,6 +563,7 @@ def jcafb_mass_editing_create(client):
     model = 'myo.event'
     fields = [
         'user_id', 'state', 'category_ids', 'tag_ids',
+        'address_id',
         'planned_hours', 'date_start', 'date_foreseen', 'date_deadline',
         'active', 'active_log'
     ]
@@ -574,6 +575,7 @@ def jcafb_mass_editing_create(client):
     model = 'myo.document'
     fields = [
         'user_id', 'state', 'category_ids', 'tag_ids',
+        'address_id',
         'date_document', 'date_foreseen', 'date_deadline',
         'active', 'active_log'
     ]
@@ -2804,6 +2806,33 @@ if __name__ == '__main__':
     # #
     # # /etc/init.d/openerp-server start
     # #
+
+    # ***** 2017-01-13 *****
+    #
+
+    # name = 'Event'
+    # model = 'myo.event'
+    # fields = [
+    #     'user_id', 'state', 'category_ids', 'tag_ids',
+    #     'address_id',
+    #     'planned_hours', 'date_start', 'date_foreseen', 'date_deadline',
+    #     'active', 'active_log'
+    # ]
+    # print('-->', client, name, model, fields)
+    # print('--> Executing mass_editing_create()...')
+    # mass_editing_create(client, name, model, fields)
+
+    # name = 'Document'
+    # model = 'myo.document'
+    # fields = [
+    #     'user_id', 'state', 'category_ids', 'tag_ids',
+    #     'address_id',
+    #     'date_document', 'date_foreseen', 'date_deadline',
+    #     'active', 'active_log'
+    # ]
+    # print('-->', client, name, model, fields)
+    # print('--> Executing mass_editing_create()...')
+    # mass_editing_create(client, name, model, fields)
 
     # ***** Test *****
     #
