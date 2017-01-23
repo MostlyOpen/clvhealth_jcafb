@@ -165,71 +165,71 @@
     7. Histórico de DHC
         7.1. Possui DIABETES?
             (simple_choice)
-            a) Sim
-            b) Não
+            a) Não
+            b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
         7.2. Faz uso de medicamento para tratamento de DIABETES?
             (simple_choice)
-            a) Sim
-            b) Não
+            a) Não
+            b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
         7.3. Fez uso hoje (de medicamento para DIABETES)?
             (simple_choice)
-            a) Sim
-            b) Não
+            a) Não
+            b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
         7.4. Teve DIABETES em alguma gestação?
             (simple_choice)
-            a) Sim
-            b) Não
+            a) Não
+            b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
         7.5. Possui HIPERTENSÃO?
             (simple_choice)
-            a) Sim
-            b) Não
+            a) Não
+            b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
         7.6. Faz uso de medicamento para tratamento de HIPERTENSÃO?
             (simple_choice)
-            a) Sim
-            b) Não
+            a) Não
+            b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
         7.7. Fez uso hoje (do medicamento para HIPERTENSÃO)?
             (simple_choice)
-            a) Sim
-            b) Não
+            a) Não
+            b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
         7.8. Possui HIPERCOLESTEROLEMIA?
             (simple_choice)
-            a) Sim
-            b) Não
+            a) Não
+            b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
         7.9. Faz uso de medicamento para tratamento de HIPERCOLESTEROLEMIA?
             (simple_choice)
-            a) Sim
-            b) Não
+            a) Não
+            b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
         7.10. Fez uso hoje (do medicamento para HIPERCOLESTEROLEMIA)?
             (simple_choice)
-            a) Sim
-            b) Não
+            a) Não
+            b) Sim
             d) Não sabe
             e) Não quis responder
             f) Não se aplica
@@ -297,8 +297,8 @@
             Se respondeu alternativa C, parou de fumar há quanto tempo?____________________________________
         9.3. Alguém na casa fuma?
             (simple_choice)
-            a) Sim
-            b) Não
+            a) Não
+            b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
@@ -333,8 +333,8 @@
     10. Hábitos Alimentares
         10.1. Costuma adicionar sal na comida, depois de pronta? (Tem saleiro na mesa?)
             (simple_choice)
-            a) Sim
-            b) Não
+            a) Não
+            b) Sim
             c) Não sabe
             d) Não quis responder
             e) Não se aplica
