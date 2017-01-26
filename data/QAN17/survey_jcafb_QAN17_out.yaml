@@ -30,7 +30,7 @@ QAN17:
             model: survey.question
             question: 'Códigos do(s) Entrevistador(es) (separados por ","):'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Informar o(s) Código(s) do(s) entrevistador(es).'
 
         QAN17_01_04:
@@ -63,21 +63,21 @@ QAN17:
             model: survey.question
             question: 'Idade do Paciente em 31/01/2017:'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Preencher com Idade do Paciente em 31/01/2017 (data de referência)'
 
         QAN17_02_04:
             model: survey.question
             question: 'Nome do Endereço:'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Preencher com o Nome do Endereço em que o Paciente reside.'
 
         QAN17_02_05:
             model: survey.question
             question: 'Código do Endereço:'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Preencher com o Código do Endereço em que o Paciente reside.'
 
         QAN17_02_06:
@@ -111,14 +111,14 @@ QAN17:
             model: survey.question
             question: 'Nome do Entrevistado:'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Preencher com o Nome do Entrevistado que respondeu o questionário.'
 
         QAN17_02_08:
             model: survey.question
             question: 'Código do Entrevistado:'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Preencher com o Código do Entrevistado que respondeu o questionário.'
 
     QAN17_03:
@@ -137,7 +137,7 @@ QAN17:
             model: survey.question
             question: 'Código do Responsável pela medida:'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Informar o código do responsável pela medida do peso.'
 
         QAN17_03_03:
@@ -151,7 +151,7 @@ QAN17:
             model: survey.question
             question: 'Código do Responsável pela medida:'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Informar o código do responsável pela medida da altura.'
 
     QAN17_04:
@@ -163,14 +163,14 @@ QAN17:
             model: survey.question
             question: 'Horário da coleta (hh:mm):'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Informar o horário em que foi feita a coleta.'
 
         QAN17_04_02:
             model: survey.question
             question: 'Código do Responsável pela coleta:'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Informar o código do responsável pela coleta.'
 
         QAN17_04_03:
@@ -184,7 +184,7 @@ QAN17:
             model: survey.question
             question: 'Código do Responsável pela dosagem:'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Informar o código do responsável pela análise.'
 
         QAN17_04_05:

@@ -63,14 +63,14 @@ TCP17:
             model: survey.question
             question: 'Nome do Responsável Legal'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Preencher com o Nome do Responsável Legal.'
 
         TCP17_02_04:
             model: survey.question
             question: 'Código do Responsável Legal'
             type: textbox
-            constr_mandatory: True
+            constr_mandatory: False
             constr_error_msg: 'Preencher com o Código do Responsável Legal.'
 
         TCP17_02_05:
