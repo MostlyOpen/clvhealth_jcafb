@@ -41,3 +41,4 @@ data/jcafb_2017_*.py
 export
 survey_files
 lab_test
+*.tar.gz
