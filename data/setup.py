@@ -614,6 +614,16 @@ def jcafb_mass_editing_create(client):
     print('--> Executing mass_editing_create()...')
     mass_editing_create(client, name, model, fields)
 
+    name = 'Lab Test Request'
+    model = 'myo.lab_test.request'
+    fields = [
+        'lab_test_type_id', 'state',
+        'active'
+    ]
+    print('-->', client, name, model, fields)
+    print('--> Executing mass_editing_create()...')
+    mass_editing_create(client, name, model, fields)
+
 
 def summary_responsible_updt(client):
 
@@ -2829,6 +2839,19 @@ if __name__ == '__main__':
     #     'address_id',
     #     'date_document', 'date_foreseen', 'date_deadline',
     #     'active', 'active_log'
+    # ]
+    # print('-->', client, name, model, fields)
+    # print('--> Executing mass_editing_create()...')
+    # mass_editing_create(client, name, model, fields)
+
+    # ***** 2017-02-17 *****
+    #
+
+    # name = 'Lab Test Request'
+    # model = 'myo.lab_test.request'
+    # fields = [
+    #     'lab_test_type_id', 'state',
+    #     'active'
     # ]
     # print('-->', client, name, model, fields)
     # print('--> Executing mass_editing_create()...')
